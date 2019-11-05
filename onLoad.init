@@ -1,1 +1,4 @@
 repeat -name warn-starving -time 10 -timeUnits days -command [ warn-starving ]
+fix/blood-del
+fix/diplomats
+fix/merchants

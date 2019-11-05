@@ -30,7 +30,7 @@ This option controls whether or not your choice to embark has a confirmation win
 
 You can change the option below to ALWAYS and NO.  More restrictive world parameter settings override these.  ALWAYS lets you see the features in the Local view during embark, and NO stops you from looking for features in the site finder (though if you really want to stop the finder, it might be better for you to generate worlds that restrict the use of this feature completely, in which case you don't need to change the settings here).
 
-[SHOW_EMBARK_TUNNEL:FINDER]
+[SHOW_EMBARK_TUNNEL:ALWAYS]
 
 Use these options to remove features from the game.  Permitted values are YES and NO.  Removal might speed the game up in the case of temperature and weather.
 
@@ -41,7 +41,7 @@ Use these options to remove features from the game.  Permitted values are YES an
 [CAVEINS:YES]
 [ARTIFACTS:YES]
 [ZERO_RENT:NO]
-[TESTING_ARENA:YES]
+[TESTING_ARENA:NO]
 [WALKING_SPREADS_SPATTER_DWF:NO]
 [WALKING_SPREADS_SPATTER_ADV:YES]
 
@@ -61,14 +61,14 @@ The format is (PATH_COST:<high>:<normal>:<low>:<restricted>).
 Alter these options to control how aggressively your dwarves place objects in a container with like items (rather than an empty container).  The default options are very aggressive.  STORE_DIST_ITEM_DECREASE controls the cap on objects it will consider -- for each object it finds in a container, one tile is removed from its apparent distance to the dwarf, up to this cap.  The others control how many tiles are removed for each combination type for any match at all.  For instance, if ITEM_DECREASE is set to 20, and SEED_COMBINE is set to 100, a dwarf carrying seeds will see a seed bag with 15 seeds as 115 tiles closer than it actually is (and thus pass up any empties within that distance), whereas a seed bag with 30 seeds would be treated as 120 tiles closer (because it hits the ITEM_DECREASE cap).  Values from 2 to 1000 are permitted.  Before these init options, the behavior was roughly ITEM_DECREASE 2, SEED_COMBINE 2 and the rest at 1000.
 
 [STORE_DIST_ITEM_DECREASE:20]
-[STORE_DIST_SEED_COMBINE:1000]
-[STORE_DIST_BUCKET_COMBINE:1000]
-[STORE_DIST_BARREL_COMBINE:1000]
-[STORE_DIST_BIN_COMBINE:1000]
+[STORE_DIST_SEED_COMBINE:2]
+[STORE_DIST_BUCKET_COMBINE:2]
+[STORE_DIST_BARREL_COMBINE:2]
+[STORE_DIST_BIN_COMBINE:2]
 
 Change this to YES to disallow pets from coffin burial as the default option.
 
-[COFFIN_NO_PETS_DEFAULT:NO]
+[COFFIN_NO_PETS_DEFAULT:YES]
 
 Use these to set the color of wounded body parts.  The format is <foreground color>:<background color>:<brightness>.
 
@@ -237,7 +237,7 @@ This controls the "IDLERS: <number>" that is displayed in dwarf mode.  You can s
 
 You can have your dwarves start/arrive without any labor types enabled here by setting this to NO.  You can also set it to SKILLS to make the labor list set by skill, or BY_UNIT_TYPE to have it done by overall unit type.
 
-[SET_LABOR_LISTS:SKILLS]
+[SET_LABOR_LISTS:NO]
 
 You can set the maximum population of your fortress here.  Keep in mind that your population must be at least 80 to get a king and 100 to obtain the current game features.  The strict cap also stops fort births.  Both caps can be violated by a few special cases, like the arrival of the monarch if you qualify.
 
@@ -303,7 +303,7 @@ This controls the up/down views in adventure mode.  The first parameter can be O
 You can use these to say how nicknames are displayed in each mode
 Options are REPLACE_FIRST, CENTRALIZE (between first and last), REPLACE_ALL
 
-[NICKNAME_DWARF:REPLACE_FIRST]
+[NICKNAME_DWARF:CENTRALIZE]
 [NICKNAME_ADVENTURE:REPLACE_FIRST]
 [NICKNAME_LEGENDS:REPLACE_FIRST]
 
