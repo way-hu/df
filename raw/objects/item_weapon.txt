@@ -9,12 +9,12 @@ item_weapon
 [TWO_HANDED:27500]
 [MINIMUM_SIZE:22500]
 [MATERIAL_SIZE:1]
-[ATTACK:BLUNT:1:10:lash:lashes:NO_SUB:5000]
+[ATTACK:BLUNT:10:10:lash:lashes:NO_SUB:5000]{:BLUNT:1:10:  Revision: increased the contact area of whips to weaken the weapon.}
 	[ATTACK_PREPARE_AND_RECOVER:4:4]
 	[ATTACK_FLAG_BAD_MULTIATTACK]
 
 [ITEM_WEAPON:ITEM_WEAPON_AXE_BATTLE]
-[NAME:battle axe:battle axes]
+[NAME:battle-axe:battle-axes]{:battle axe:battle axes}
 [SIZE:800]
 [SKILL:AXE]
 [TWO_HANDED:47500]
@@ -32,7 +32,7 @@ Penetration size currently only matters for edged attacks.
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 
 [ITEM_WEAPON:ITEM_WEAPON_HAMMER_WAR]
-[NAME:war hammer:war hammers]
+[NAME:warhammer:warhammers]{:war hammer:war hammers}
 [SIZE:400]
 [SKILL:HAMMER]
 [TWO_HANDED:37500]
@@ -42,7 +42,7 @@ Penetration size currently only matters for edged attacks.
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 
 [ITEM_WEAPON:ITEM_WEAPON_SWORD_SHORT]
-[NAME:short sword:short swords]
+[NAME:shortsword:shortswords]{:short sword:short swords}
 [SIZE:300]
 [SKILL:SWORD]
 [TWO_HANDED:37500]
@@ -51,7 +51,7 @@ Penetration size currently only matters for edged attacks.
 [MATERIAL_SIZE:3]
 [ATTACK:EDGE:20000:4000:slash:slashes:NO_SUB:1250]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
-[ATTACK:EDGE:50:2000:stab:stabs:NO_SUB:1000]
+[ATTACK:EDGE:12:4000:stab:stabs:NO_SUB:1000]{:50:2000:  Revision: short swords have a smaller contact area and penetrate better.}
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 [ATTACK:BLUNT:20000:4000:slap:slaps:flat:1250]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
@@ -64,8 +64,9 @@ Penetration size currently only matters for edged attacks.
 [SKILL:SPEAR]
 [TWO_HANDED:47500]
 [MINIMUM_SIZE:5000] amphibian men, etc., need variants
+[CAN_STONE]{+         Revision: allow more obsidian weapons.}
 [MATERIAL_SIZE:3]
-[ATTACK:EDGE:20:10000:stab:stabs:NO_SUB:1000]
+[ATTACK:EDGE:12:10000:stab:stabs:NO_SUB:1000]{:20  Revision: spears have a smaller contact area.}
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 [ATTACK:BLUNT:10000:6000:bash:bashes:shaft:1250]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
@@ -85,8 +86,8 @@ Penetration size currently only matters for edged attacks.
 [SIZE:400]
 [SKILL:HAMMER]
 [RANGED:CROSSBOW:BOLT]
-[SHOOT_FORCE:1000]
-[SHOOT_MAXVEL:200]  This is just to make sure a near-weightless object doesn't go faster than the string could possibly go.
+[SHOOT_FORCE:400]{:1000  Revision: crossbows don't shoot as forcefully.}
+[SHOOT_MAXVEL:500]{:200  Revision: crossbows fire faster.}  This is just to make sure a near-weightless object doesn't go faster than the string could possibly go.
 [TWO_HANDED:0]
 [MINIMUM_SIZE:15000]
 [MATERIAL_SIZE:3]
@@ -108,8 +109,8 @@ Penetration size currently only matters for edged attacks.
 [SIZE:300]
 [SKILL:SWORD]
 [RANGED:BOW:ARROW]
-[SHOOT_FORCE:1000]
-[SHOOT_MAXVEL:200]
+[SHOOT_FORCE:300]{:1000  Revision: bows don't shoot as forcefully.}
+[SHOOT_MAXVEL:400]{:200  Revision: bows fire faster.}
 [TWO_HANDED:0]
 [MINIMUM_SIZE:15000]
 [MATERIAL_SIZE:3]
@@ -135,6 +136,7 @@ Penetration size currently only matters for edged attacks.
 [SKILL:PIKE]
 [TWO_HANDED:77500]
 [MINIMUM_SIZE:62500]
+[CAN_STONE]{+  Revision: allow more obsidian weapons.}
 [MATERIAL_SIZE:4]
 [ATTACK:EDGE:20:12000:stab:stabs:NO_SUB:1000]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
@@ -156,7 +158,7 @@ Penetration size currently only matters for edged attacks.
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 
 [ITEM_WEAPON:ITEM_WEAPON_SWORD_2H]
-[NAME:two-handed sword:two-handed swords]
+[NAME:greatsword:greatswords]{:two-handed sword:two-handed swords}
 [SIZE:900]
 [SKILL:SWORD]
 [TWO_HANDED:77500]
@@ -172,16 +174,19 @@ Penetration size currently only matters for edged attacks.
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 
 [ITEM_WEAPON:ITEM_WEAPON_SWORD_LONG]
-[NAME:long sword:long swords]
+[NAME:longsword:longswords]{:long sword:long swords}
 [SIZE:700]
 [SKILL:SWORD]
-[TWO_HANDED:57500]
+[TWO_HANDED:65500]{:57500  Revision: increased the minimum size requirement for one-handed longsword use.}
 [MINIMUM_SIZE:52500]
 [MATERIAL_SIZE:4]
-[ATTACK:EDGE:60000:6000:slash:slashes:NO_SUB:1250]
+[ATTACK:EDGE:70000:6000:slash:slashes:NO_SUB:1250]{:EDGE:60000  Revision: increased the contact area of longsword slashes.}
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 [ATTACK:EDGE:50:3000:stab:stabs:NO_SUB:1000]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
+{+  Revision: added a half-sworded stab to long swords.}
+[ATTACK:EDGE:12:6000:half-sworded stab:grabs the blade and stabs:NO_SUB:1000]{+}
+	[ATTACK_PREPARE_AND_RECOVER:5:4]
 [ATTACK:BLUNT:60000:6000:slap:slaps:flat:1250]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 [ATTACK:BLUNT:100:1000:strike:strikes:pommel:1000]
@@ -193,12 +198,13 @@ Penetration size currently only matters for edged attacks.
 [SKILL:HAMMER]
 [TWO_HANDED:77500]
 [MINIMUM_SIZE:62500]
+[CAN_STONE]{+         Revision: allow more obsidian weapons.}
 [MATERIAL_SIZE:5]
 [ATTACK:BLUNT:100:6000:bash:bashes:NO_SUB:2000]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 
 [ITEM_WEAPON:ITEM_WEAPON_AXE_GREAT]
-[NAME:great axe:great axes]
+[NAME:greataxe:greataxes]{:great axe:great axes}
 [SIZE:1300]
 [SKILL:AXE]
 [TWO_HANDED:77500]
@@ -232,6 +238,7 @@ Penetration size currently only matters for edged attacks.
 [SKILL:WHIP]
 [TWO_HANDED:27500]
 [MINIMUM_SIZE:22500]
+[CAN_STONE]{+  Revision: allow more obsidian weapons.}
 [MATERIAL_SIZE:2]
 [ATTACK:EDGE:10:50:lash:lashes:NO_SUB:2000]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
@@ -261,12 +268,12 @@ Penetration size currently only matters for edged attacks.
 
 [ITEM_WEAPON:ITEM_WEAPON_SCIMITAR]
 [NAME:scimitar:scimitars]
-[SIZE:300]
+[SIZE:500]{:300  Revision: increased the size of scimitars are larger.  More menacing.}
 [SKILL:SWORD]
 [TWO_HANDED:37500]
 [MINIMUM_SIZE:32500]
 [MATERIAL_SIZE:3]
-[ATTACK:EDGE:20000:4000:slash:slashes:NO_SUB:1250]
+[ATTACK:EDGE:50000:6000:slash:slashes:NO_SUB:1250]{:20000:4000  Revision: scimitar slashes have a greater contact area and more force.}
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 [ATTACK:EDGE:50:2000:stab:stabs:NO_SUB:1000]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]

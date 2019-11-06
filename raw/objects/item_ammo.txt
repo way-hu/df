@@ -6,19 +6,26 @@ item_ammo
 [NAME:bolt:bolts]
 [CLASS:BOLT]
 [SIZE:150]
-[ATTACK:EDGE:5:1000:stab:stabs:NO_SUB:1000]
+[ATTACK:EDGE:20:2000:stab:stabs:NO_SUB:1000]{:5:1000  Revision: bolts have greater contact area and penetrate better.}
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 
 [ITEM_AMMO:ITEM_AMMO_ARROWS]
 [NAME:arrow:arrows]
 [CLASS:ARROW]
 [SIZE:150]
-[ATTACK:EDGE:5:1000:stab:stabs:NO_SUB:1000]
+[ATTACK:EDGE:10:1000:stab:stabs:NO_SUB:1000]{:5  Revision: arrows have greater contact area.}
 	[ATTACK_PREPARE_AND_RECOVER:3:3]
 
 [ITEM_AMMO:ITEM_AMMO_BLOWDARTS]
 [NAME:blowdart:blowdarts]
 [CLASS:BLOWDART]
 [SIZE:20]
-[ATTACK:EDGE:1:50:stick:sticks:NO_SUB:1000]
+[ATTACK:EDGE:5:50:stick:sticks:NO_SUB:1000]{:1  Revision: blowdarts have greater contact area.}
+	[ATTACK_PREPARE_AND_RECOVER:3:3]
+
+[ITEM_AMMO:ITEM_AMMO_GREATARROWS]{+  Revision: elves needed stronger wooden arrows.}
+[NAME:greatarrow:greatarrows]
+[CLASS:ARROW]
+[SIZE:250]
+[ATTACK:EDGE:5:1000:stab:stabs:NO_SUB:1000]
 	[ATTACK_PREPARE_AND_RECOVER:3:3]

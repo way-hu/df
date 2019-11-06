@@ -3,14 +3,14 @@ creature_annelids
 [OBJECT:CREATURE]
 
 [CREATURE:WORM]
-	[DESCRIPTION:A tiny burrowing creature, found in moist soil.  It is legless, long and thin.]
+	[DESCRIPTION:A tiny burrowing creature: segmented, legless, and wriggling.  It feels its way through moist soil and surfaces when it rains.]{:A tiny burrowing creature, found in moist soil.  It is legless, long, and thin.}
 	[NAME:worm:worms:worm]
 	[CASTE_NAME:worm:worms:worm]
 	[CREATURE_TILE:'~'][COLOR:7:0:0]
 	[PETVALUE:10]
 	[VERMIN_SOIL][FREQUENCY:100][VERMIN_HATEABLE]
 	[SMALL_REMAINS][VERMIN_NOTRAP][NOBONES]
-	[NATURAL][PET]
+	[NATURAL][PET_EXOTIC]{PET  Revision: this isn't a common pet.}
 	[NOT_BUTCHERABLE]
 	[BIOME:FOREST_TAIGA]
 	[BIOME:ANY_TEMPERATE]
@@ -18,7 +18,7 @@ creature_annelids
 	[POPULATION_NUMBER:250:500]
 	[PREFSTRING:wriggling]
 	[BODY:BODY_WITH_HEAD_FLAG:HEART:GUTS:BRAIN:MOUTH]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[REMOVE_MATERIAL:BONE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -51,13 +51,26 @@ creature_annelids
 	[COPY_TAGS_FROM:WORM]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON_LEGLESS]
 	[GO_TO_END]
+	[CASTE:MALE]{+    Revision: I dislike ungendered humanoids.}
+		[MALE]{+}
+		[CASTE_NAME:worm man:worm men:worm man]{+}
+		[DESCRIPTION:A small and unnerving worm-like horror with a gaunt, nude body of segmented rings and a wriggling, tube-like neck that ends in a gaping mouth.  His thighs merge into a slimy tail.]{+}
+	[CASTE:FEMALE]{+  Revision: I dislike ungendered humanoids.}
+		[FEMALE]{+}
+		[CASTE_NAME:worm woman:worm women:worm woman]{+}
+		[DESCRIPTION:A small and unnerving worm-like horror with a gaunt, nude body of segmented rings and a wriggling, tube-like neck that ends in a gaping mouth.  Her thighs merge into a slimy tail.]{+}
+	[SELECT_CASTE:ALL]{+}
+    	[SET_BP_GROUP:BY_CATEGORY:ARM_UPPER]{+  Revision: give worm people longer arms.}
+ 	     [PLUS_BP_GROUP:BY_CATEGORY:ARM_LOWER]{+
+        	[BP_APPEARANCE_MODIFIER:LENGTH:160:170:180:185:190:195:200]{+}
+        	[APP_MOD_NOUN:arms:PLURAL]{+}
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[GO_TO_START]
 	[NAME:worm man:worm men:worm man]
-	[CASTE_NAME:worm man:worm men:worm man]
+	{CASTE_NAME:worm man:worm men:worm man}
 	[DESCRIPTION:A worm-like creature with the torso of a man.]
 	[POPULATION_NUMBER:5:10]
 	[CLUSTER_NUMBER:1:5]
@@ -65,3 +78,5 @@ creature_annelids
 	[CREATURE_TILE:'w']
 	[COLOR:7:0:0]
 	[EXTRAVISION]
+	[NATURAL_SKILL:WRESTLING:3]{+  Revision: help worm people feel unique.}
+	[NATURAL_SKILL:DODGING:3]{}

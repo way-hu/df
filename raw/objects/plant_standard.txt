@@ -394,10 +394,10 @@ plant_standard
 [PLANT:BERRIES_STRAW]
 	[NAME:strawberry plant][NAME_PLURAL:strawberry plants][ADJ:strawberry plant]
 	[USE_MATERIAL_TEMPLATE:STRUCTURAL:STRUCTURAL_PLANT_TEMPLATE]
-		[MATERIAL_VALUE:2]
-		[EDIBLE_VERMIN]
-		[EDIBLE_RAW]
-		[EDIBLE_COOKED]
+		{MATERIAL_VALUE:2  Revision: strawberry plants aren't eaten whole, and don't need a material value when whole.}
+		{EDIBLE_VERMIN     Revision: strawberry plants aren't eaten whole by vermin.}
+		{EDIBLE_RAW        Revision: strawberry plants aren't eaten whole when raw.}
+		{EDIBLE_COOKED     Revision: strawberry plants aren't eaten whole when cooked, either.}
 	[BASIC_MAT:LOCAL_PLANT_MAT:STRUCTURAL]
 	[USE_MATERIAL_TEMPLATE:FRUIT:FRUIT_TEMPLATE]
 		[EDIBLE_VERMIN]
@@ -436,6 +436,7 @@ plant_standard
 		[GROWTH_TIMING:120000:200000]
 		[GROWTH_DROPS_OFF_NO_CLOUD]
 		[GROWTH_PRINT:'%':7:4:0:1:120000:200000:3]
+		[GROWTH_HAS_SEED]{+  Revision: strawberries give seeds.}
 
 [PLANT:GRASS_LONGLAND]
 	[NAME:Longland grass][NAME_PLURAL:Longland grass][ADJ:Longland grass]
@@ -893,6 +894,11 @@ Uristocrat did the density values.
 		[EDIBLE_COOKED]
 		[STOCKPILE_PLANT_GROWTH]
 	[TREE:LOCAL_PLANT_MAT:WOOD][TREE_TILE:198]
+	[USE_MATERIAL_TEMPLATE:SEED:SEED_TEMPLATE]{+                    Revision: saguaro trees have seeds.}
+		[MATERIAL_VALUE:1]
+		[EDIBLE_VERMIN]
+		[EDIBLE_COOKED]
+	[SEED:saguaro seed:saguaro seeds:0:0:1:LOCAL_PLANT_MAT:SEED]{+  Revision: saguaro trees have seeds.}
 	[TRUNK_PERIOD:10]
 	[HEAVY_BRANCH_DENSITY:50]
 	[BRANCH_DENSITY:0]
@@ -1200,6 +1206,11 @@ Uristocrat did the density values.
 		[MATERIAL_VALUE:1]
 		[EDIBLE_VERMIN]
 		[EDIBLE_COOKED]
+	[USE_MATERIAL_TEMPLATE:POD:STRUCTURAL_PLANT_TEMPLATE]{+  Revision: acacia seeds come in pods.}
+		[STATE_COLOR:ALL:BROWN]
+		[DISPLAY_COLOR:2:0:0]
+		[STOCKPILE_PLANT_GROWTH]
+		[MATERIAL_REACTION_PRODUCT:NUT:LOCAL_PLANT_MAT:SEED]
 	[SEED:acacia seed:acacia seeds:6:0:0:LOCAL_PLANT_MAT:SEED]
 	*** thorns
 	[TRUNK_PERIOD:10]
@@ -1237,7 +1248,7 @@ Uristocrat did the density values.
 		[GROWTH_PRINT:5:5:7:0:1:60000:119999:2]
 	[GROWTH:POD]
 		[GROWTH_NAME:acacia seed pod:STP]
-		[GROWTH_ITEM:PLANT_GROWTH:NONE:LOCAL_PLANT_MAT:STRUCTURAL]
+		[GROWTH_ITEM:PLANT_GROWTH:NONE:LOCAL_PLANT_MAT:POD]{+  Revision: acacia seeds come in pods.}
 		[GROWTH_DENSITY:1000]
 		[GROWTH_HOST_TILE:BRANCHES_AND_TWIGS]
 		[GROWTH_TIMING:120000:200000]
@@ -1740,14 +1751,16 @@ Uristocrat did the density values.
 		[DISPLAY_COLOR:7:0:1]
 		[SOLID_DENSITY:100]
 	[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
-		[STATE_COLOR:ALL:GREEN]
+		[STATE_COLOR:ALL:WHITE]{:GREEN}
 		[DISPLAY_COLOR:7:0:1]
-	[USE_MATERIAL_TEMPLATE:EGG:EGG_YOLK_TEMPLATE]
-		[STATE_COLOR:ALL:GREEN]
-		[DISPLAY_COLOR:4:0:1]
+	[USE_MATERIAL_TEMPLATE:EGG:STRUCTURAL_PLANT_TEMPLATE]{:EGG_YOLK_TEMPLATE  Revision: feather tree eggs should be plants, not actual egg.}
+		[STATE_NAME:ALL_SOLID:feather tree egg]{+}
+		[STATE_ADJ:ALL_SOLID:feather tree egg]{+}
+		[STATE_COLOR:ALL_SOLID:WHITE]{:GREEN}
+		[DISPLAY_COLOR:7:0:1]
 		[STOCKPILE_PLANT_GROWTH]
+		[EDIBLE_COOKED]{+  Revision: tasty.}
 		*** need to go w/ all egg mats when growths support it
-		*** template currently implies animal kill
 	[TREE:LOCAL_PLANT_MAT:WOOD][TREE_TILE:5]
 	[TRUNK_PERIOD:10]
 	[HEAVY_BRANCH_DENSITY:25]
@@ -1915,6 +1928,12 @@ Uristocrat did the density values.
 		[EDIBLE_VERMIN]
 		[EDIBLE_RAW]
 		[EDIBLE_COOKED]
+	[USE_MATERIAL_TEMPLATE:BURR:STRUCTURAL_PLANT_TEMPLATE]{+  Revision: chestnuts come in burrs.}
+		[MATERIAL_REACTION_PRODUCT:NUT:LOCAL_PLANT_MAT:SEED]
+		[STATE_COLOR:ALL_CHESTNUT]
+		[DISPLAY_COLOR:6:0:0]
+		[MATERIAL_VALUE:1]
+		[STOCKPILE_PLANT_GROWTH]
 	[SEED:chestnut:chestnuts:6:0:0:LOCAL_PLANT_MAT:SEED]
 	[TREE:LOCAL_PLANT_MAT:WOOD][TREE_TILE:6]
 	[TRUNK_PERIOD:10]
@@ -1964,7 +1983,7 @@ Uristocrat did the density values.
 		[GROWTH_PRINT:'*':'*':7:0:1:30000:99999:2]
 	[GROWTH:NUT]
 		[GROWTH_NAME:chestnut burr:STP]
-		[GROWTH_ITEM:PLANT_GROWTH:NONE:LOCAL_PLANT_MAT:STRUCTURAL]
+		[GROWTH_ITEM:PLANT_GROWTH:NONE:LOCAL_PLANT_MAT:BURR]{:LOCAL_PLANT_MAT:STRUCTURAL  Revision: chestnuts come in burrs.}
 		[GROWTH_DENSITY:1000]
 		[GROWTH_HOST_TILE:BRANCHES_AND_TWIGS]
 		[GROWTH_TIMING:100000:250000]
@@ -2272,6 +2291,7 @@ Uristocrat did the density values.
 	[USE_MATERIAL_TEMPLATE:SEED:SEED_TEMPLATE]
 		[MATERIAL_VALUE:1]
 		[EDIBLE_VERMIN]
+		[EDIBLE_COOKED]{+  Revision: made fruit seeds edible, to give them a use and to prevent them from stockpiling uselessly.}
 	[SEED:mango pit:mango pits:6:0:0:LOCAL_PLANT_MAT:SEED]
 	[TREE:LOCAL_PLANT_MAT:WOOD][TREE_TILE:226]
 	[TRUNK_PERIOD:10]
@@ -2378,6 +2398,11 @@ Uristocrat did the density values.
 		[DISPLAY_COLOR:6:0:0]
 		[MATERIAL_VALUE:1]
 		[EDIBLE_COOKED]
+	[USE_MATERIAL_TEMPLATE:POD:STRUCTURAL_PLANT_TEMPLATE]{+  Revision: cacao beans come in pods.}
+		[STATE_COLOR:ALL:BROWN]
+		[DISPLAY_COLOR:2:0:0]
+		[MATERIAL_REACTION_PRODUCT:NUT:LOCAL_PLANT_MAT:SEED]
+		[STOCKPILE_PLANT_GROWTH]
 	[SEED:cacao bean:cacao beans:6:0:0:LOCAL_PLANT_MAT:SEED]
 	[TREE:LOCAL_PLANT_MAT:WOOD][TREE_TILE:226]
 	[TRUNK_PERIOD:10]
@@ -2412,7 +2437,7 @@ Uristocrat did the density values.
 		[GROWTH_PRINT:5:5:7:0:1:50000:99999:2]
 	[GROWTH:FRUIT]
 		[GROWTH_NAME:cacao pod:STP]
-		[GROWTH_ITEM:PLANT_GROWTH:NONE:LOCAL_PLANT_MAT:STRUCTURAL]
+		[GROWTH_ITEM:PLANT_GROWTH:NONE:LOCAL_PLANT_MAT:POD]{:LOCAL_PLANT_MAT:STRUCTURAL  Revision: cacao beans come in pods.}
 		[GROWTH_DENSITY:1000]
 		[GROWTH_HOST_TILE:HEAVY_BRANCHES_AND_TRUNK]
 		[GROWTH_TIMING:100000:200000]
@@ -2423,6 +2448,10 @@ Uristocrat did the density values.
 [PLANT:PALM]
 	[NAME:coconut palm][NAME_PLURAL:coconut palms][ADJ:coconut palm]
 	[USE_MATERIAL_TEMPLATE:STRUCTURAL:STRUCTURAL_PLANT_TEMPLATE]
+	[USE_MATERIAL_TEMPLATE:SEED:SEED_TEMPLATE]{+  Revision: palm trees have seeds.}
+		[MATERIAL_VALUE:1]
+		[EDIBLE_VERMIN]
+		[EDIBLE_COOKED]
 	[BASIC_MAT:LOCAL_PLANT_MAT:STRUCTURAL]
 	[USE_MATERIAL_TEMPLATE:WOOD:WOOD_TEMPLATE]
 		[STATE_NAME:ALL_SOLID:coconut palm]
@@ -2458,6 +2487,7 @@ Uristocrat did the density values.
 	[DRY]
 	[BIOME:ANY_TROPICAL]
 	[SAPLING]
+	[SEED:coconut seed:coconut seeds:0:0:1:LOCAL_PLANT_MAT:SEED]{+  Revision: palm trees have seeds.}
 	[GROWTH:LEAVES]
 		[GROWTH_NAME:coconut palm frond blade:coconut palm frond blades]
 		[GROWTH_ITEM:PLANT_GROWTH:NONE:LOCAL_PLANT_MAT:LEAF]

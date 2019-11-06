@@ -4,7 +4,7 @@ creature_next_underground
 
 [CREATURE:FLOATING_GUTS]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A transparent and amorphous monster that lives underground.  It is small in size and is found crawling across the cavern floor.  Its organs appear to be floating inside of its body.]
+	[DESCRIPTION:A transparent and amorphous blob that crawls in the dark; it's organs can be seen floating in its oozing body.  It shifts around mysteriously, more liquid than creature.]{:A transparent and amorphous monster that lives underground.  It is small in size and is found crawling across the cavern floor.  Its organs appear to be floating inside of its body.}
 	[NAME:floating guts:floating guts:floating guts]
 	[CASTE_NAME:floating guts:floating guts:floating guts]
 	[CREATURE_TILE:'%'][COLOR:7:0:0]
@@ -105,6 +105,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:20:30]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -134,8 +135,10 @@ creature_next_underground
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, shaggy-furred woman that walks on all fours.  She has hands for feet and has a mane that circles her hairless, strangely human face.  She resembles a lion-like ape twisted into a bestial form and unable to stand.  She wanders dark caverns, scavenging and raiding supplies.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, shaggy-furred man that walks on all fours.  He has hands for feet and has a mane that circles his hairless, strangely human face.  He resembles a lion-like ape twisted into a bestial form and unable to stand.  He wanders dark caverns, scavenging and raiding supplies.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -150,7 +153,7 @@ creature_next_underground
 
 [CREATURE:CREEPING_EYE]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A small underground monster that crawls across the cavern wall with its four clawed hands.  It has a single large eye which can shine with its own light, otherwise its stony skin blends in with the rock.  It has no mouth and is said to feed on evil alone.]
+	[DESCRIPTION:A small crawling eyeball shining faintly in the dark.  It clings to cavern walls with four clawed hands: its stony skin blends in with the rock.  It has no mouth; stories say it feeds on evil alone.]{:A small underground monster that crawls across the cavern wall with its four clawed hands.  It has a single large eye which can shine with its own light, otherwise its stony skin blends in with the rock.  It has no mouth and is said to feed on evil alone.}
 	[NAME:creeping eye:creeping eyes:creeping eye]
 	[CASTE_NAME:creeping eye:creeping eyes:creeping eye]
 	[CREATURE_TILE:'e'][COLOR:7:0:1]
@@ -205,8 +208,8 @@ creature_next_underground
 [CREATURE:VORACIOUS_CAVE_CRAWLER]
 	[ARENA_RESTRICTED]
 	[DESCRIPTION:A huge cave monster with hundreds of feet moving along the bottom of its long body.  In place of a head, it has an enormous toothy maw.]
-	[NAME:voracious cave crawler:voracious cave crawlers:voracious cave crawler]
-	[CASTE_NAME:voracious cave crawler:voracious cave crawlers:voracious cave crawler]
+	[NAME:cave crawler:cave crawlers:cave crawler]{:voracious cave crawler:voracious cave crawlers:voracious cave crawler}
+	[CASTE_NAME:cave crawler:cave crawlers:cave crawler]{:voracious cave crawler:voracious cave crawlers:voracious cave crawler}
 	[CREATURE_TILE:'C'][COLOR:1:0:0]
 	[BIOME:SUBTERRANEAN_CHASM]
 	[UNDERGROUND_DEPTH:2:3]
@@ -221,6 +224,8 @@ creature_next_underground
 	[PREFSTRING:scary mouths]
 	[BUILDINGDESTROYER:2]
 	[NOBONES]
+	[SOUND:ALERT:100:10000:VOCALIZATION:chitter angrily:chitters angrily:angry chittering]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:100:2500:VOCALIZATION:chitter:chitters:chittering]{+}
 	[BODY:BASIC_1PARTBODY:BASIC_HEAD:TAIL:HEART:GUTS:BRAIN:MOUTH:GENERIC_TEETH]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:HAIR]
@@ -262,10 +267,14 @@ creature_next_underground
 	[HOMEOTHERM:10040]
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:2206:1692:1178:585:3400:4900] 15 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
+	[NATURAL_SKILL:DISCIPLINE:3]{+  Revision: make them fight longer.}
+	[NOFEAR]{+                      Revision: make them fear nothing.}
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A huge, wriggling insect with a ravenous appetite.  Hundreds of tiny, carapaced feet move along the bottom of her long body.  Her writhing, segmented body is covered in fleshy plates.  In place of a head she has an enormous, toothy maw.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A huge, wriggling insect with a ravenous appetite.  Hundreds of tiny, carapaced feet move along the bottom of his long body.  His writhing, segmented body is covered in fleshy plates.  In place of a head he has an enormous, toothy maw.]{+}
 	[NO_DIZZINESS]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -292,10 +301,15 @@ creature_next_underground
 	[BUILDINGDESTROYER:2]
 	[LARGE_PREDATOR][MEANDERER]
 	[CAN_LEARN][SLOW_LEARNER]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: giant cave ogres will steal and immediately drink alcohol in their path.}
 	[GRASSTRAMPLE:20]
 	[BONECARN]
 	[EXTRAVISION]
 	[PREFSTRING:echoing howls]
+	[SOUND:ALERT:100:10000:VOCALIZATION:howl:howls:a howl echoing across the caverns]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:50:2500:VOCALIZATION:grunt idly:grunts idly:an idle grunt]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:2500:VOCALIZATION:growl idly:growls idly:an idle growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a deep sniff]{+}
 	[BODY:HUMANOID_NECK:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:2FINGERS:2TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -325,6 +339,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:20:30]
 	[CHILD:10][BABY:1][MULTIPLE_LITTER_RARE]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -332,6 +347,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -340,6 +356,7 @@ creature_next_underground
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -349,6 +366,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[EQUIPS]
 	[CANOPENDOORS]
 	[ALL_ACTIVE]
@@ -357,12 +375,15 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:3]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, hairless, and monstrous woman with only two digits on each hand and foot.  She has no eyes yet somehow sees; she scarcely seems to have more than a gaping, toothy grin.  Barrel-chested, her neck seems to disappear into her broad shoulders.  She doesn't care that she's naked.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, hairless, and monstrous man with only two digits on each hand and foot.  He has no eyes yet somehow sees; he scarcely seems to have more than a gaping, toothy grin.  Barrel-chested, his neck seems to disappear into his broad shoulders.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -380,13 +401,16 @@ creature_next_underground
 	[VERMIN_GROUNDER][FREQUENCY:100]
 	[AMPHIBIOUS][SMALL_REMAINS][UNDERSWIM]
 	[NATURAL]
+	[CURIOUSBEAST_EATER]{+  Revision: cap hoppers will steal food.}
 	[NOT_BUTCHERABLE]
 	[BIOME:SUBTERRANEAN_WATER]
 	[UNDERGROUND_DEPTH:1:2]
 	[POPULATION_NUMBER:250:500]
 	[PREFSTRING:swinging antics]
+	[SOUND:ALERT:100:10000:VOCALIZATION:croak angrily:croaks angrily:angry croaking]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:50:10000:VOCALIZATION:ribbit:ribbits:the ribbiting of a strange amphibian]{+}
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[REMOVE_TISSUE:HAIR]
@@ -429,8 +453,10 @@ creature_next_underground
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny amphibian with a long, gripping tail.  She lives and feeds in dark underground swamp and tower-cap forest.  Playful and lively, she uses her tail for balance as she hops about energetically.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny amphibian with a long, gripping tail.  He lives and feeds in dark underground swamp and tower-cap forest.  Playful and lively, he uses his tail for balance as he hops about energetically.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:PALE_BLUE:1]
@@ -468,7 +494,9 @@ creature_next_underground
 	[MAGMA_VISION]
 	[NOBREATHE]
 	[NOBONES]
-	[BODY:BODY_WITH_HEAD_FLAG:BRAIN:MOUTH:2WINGS]
+	[SOUND:ALERT:100:10000:VOCALIZATION:chitter angrily:chitters angrily:angry chittering]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:100:2500:VOCALIZATION:chitter:chitters:chittering]{+}
+	[BODY:CRAB_BODY:2EYES:HEART:BRAIN:UPPERBODY_PINCERS:2WINGS]{:BODY_WITH_HEAD_FLAG:BRAIN:MOUTH:2WINGS  Revision: gave magma crabs actual crab bodies.}
 	[BODY_DETAIL_PLAN:CHITIN_MATERIALS]
 	[BODY_DETAIL_PLAN:CHITIN_TISSUES]
 	[BODY_DETAIL_PLAN:EXOSKELETON_TISSUE_LAYERS:CHITIN:FAT:MUSCLE]
@@ -490,8 +518,10 @@ creature_next_underground
 	[MAXAGE:50:70]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small, rock-eating crab that thrives in extreme heat.  She has clacking pincers and hardened carapace for protection.  She swims through liquid rock on sharp, flightless wings; the magma helps her digest rock.  She spits out the excess as a burning glob, sent with surpring force.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, rock-eating crab that thrives in extreme heat.  He has clacking pincers and hardened carapace for protection.  He swims through liquid rock on sharp, flightless wings; the magma helps him digest rock.  He spits out the excess as a burning glob, sent with surpring force.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:CHITIN]
 			[TL_COLOR_MODIFIER:BLACK:1]
@@ -508,10 +538,13 @@ creature_next_underground
 	[DESCRIPTION:A tiny underground monster with large claws and horns.  It walks on two legs and is dangerous when encountered in large numbers.]
 	[NAME:crundle:crundles:crundle]
 	[CASTE_NAME:crundle:crundles:crundle]
+	[CHILD:2][GENERAL_CHILD_NAME:crundle child:crundle children]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'c'][COLOR:4:0:0]
 	[PETVALUE:50]
 	[PET_EXOTIC]
 	[LARGE_ROAMING]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: crundles will steal and immediately drink alcohol in their path.}
+	[CURIOUSBEAST_EATER]{+    Revision: crundles will steal food.}
 	[BIOME:SUBTERRANEAN_WATER]
 	[BIOME:SUBTERRANEAN_CHASM]
 	[UNDERGROUND_DEPTH:2:3]
@@ -609,6 +642,7 @@ creature_next_underground
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A pint-sized, scaly imp with large claws and horns.  She walks on two legs and is an incredible climber.  While weak and cowardly, she roams the caverns with large numbers of her kind.  She doesn't care that she's naked.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -617,6 +651,7 @@ creature_next_underground
 			[CLUTCH_SIZE:5:20]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A pint-sized, scaly imp with large claws and horns.  He walks on two legs and is an incredible climber.  While weak and cowardly, he roams the caverns with large numbers of his kind.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:CRIMSON:1]
@@ -644,7 +679,7 @@ creature_next_underground
 	[CANNOT_JUMP]
 	[PREFSTRING:terrifying features]
 	[BODY:BODY_HEAD:2WINGS:2LUNGS:HEART:GUTS:ORGANS:BRAIN:SKULL:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -667,6 +702,7 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
 	[STANCE_CLIMBER][NATURAL_SKILL:CLIMBING:15]
+	[NATURAL_SKILL:DISCIPLINE:5]{+  Revision: make them fight longer.}
 	[BODY_SIZE:0:0:200]
 	[BODY_SIZE:1:0:2000]
 	[BODY_SIZE:2:0:5000]
@@ -687,8 +723,10 @@ creature_next_underground
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small, gaping, long-toothed mouth that flies in dark caverns on large, bat-like wings.  She lacks eyes, ears, and limbs.  She rests by clinging to rock with her strong wings.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, gaping, long-toothed mouth that flies in dark caverns on large, bat-like wings.  He lacks eyes, ears, and limbs.  He rests by clinging to rock with his strong wings.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
 			[TL_COLOR_MODIFIER:BLACK:1]
@@ -699,7 +737,7 @@ creature_next_underground
 
 [CREATURE:FLESH_BALL]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A large ball of skin found moving around the debris near underground ponds.  It is there that it absorbs dead matter for food.]
+	[DESCRIPTION:A large, featureless, skinless, and thoughtless mass of muscle and blood that oozes around debris near dark underground ponds.  It's there that it absorbs dead matter for food.]{A large ball of skin found moving around the debris near underground ponds.  It is there that it absorbs dead matter for food.}
 	[NAME:flesh ball:flesh balls:flesh ball]
 	[CASTE_NAME:flesh ball:flesh balls:flesh ball]
 	[CREATURE_TILE:'o'][COLOR:6:0:0]
@@ -756,6 +794,7 @@ creature_next_underground
 	[PETVALUE:400]
 	[PET_EXOTIC]
 	[MOUNT_EXOTIC]
+	[PACK_ANIMAL]{+  Revision: elk birds can be used as pack animals.}
 	[STANDARD_GRAZER]
 	[CHILD:1]
 	[ALL_ACTIVE]
@@ -768,6 +807,7 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
 	[SWIMS_INNATE]
 	[PREFSTRING:elegant horns]
+	[SOUND:ALERT:100:10000:VOCALIZATION:squawk angrily:squawks angrily angrily:angry squawking]{+  Revision: vocalizations help the world feel alive.}
 	[BODY:HUMANOID_ARMLESS_NECK:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BEAK:TONGUE:RIBCAGE:2HEAD_ANTLER]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:HAIR]
@@ -832,6 +872,7 @@ creature_next_underground
 		[ATTACK_FLAG_BAD_MULTIATTACK]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, flightless bird that walks on two legs and has great, velvety antlers on her head.  She roams in the dark deep underground and grazes on mushrooms as she walks.  While usually harmless, her natural curiosity can get the best of her sometimes.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -840,6 +881,7 @@ creature_next_underground
 			[CLUTCH_SIZE:2:10]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, flightless bird that walks on two legs and has great, velvety antlers on his head.  He roams in the dark deep underground and grazes on mushrooms as he walks.  While usually harmless, his natural curiosity can get the best of him sometimes.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -864,6 +906,7 @@ creature_next_underground
 	[PET_EXOTIC]
 	[FREQUENCY:30]
 	[NATURAL]
+	[GOBBLE_VERMIN_CLASS:MAMMAL]{+  Revision: too few creatures ate vermin.}
 	[CARNIVORE]
 	[LARGE_ROAMING]
 	[LARGE_PREDATOR]
@@ -873,6 +916,8 @@ creature_next_underground
 	[POPULATION_NUMBER:10:25]
 	[CLUSTER_NUMBER:1:1]
 	[PREFSTRING:impressive heads]
+	[SOUND:ALERT:100:2500:VOCALIZATION:hiss:hisses:hissing]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:1000:VOCALIZATION:snap:snaps:a hostile snapping]{+}
 	[BODY:BASIC_1PARTBODY:BASIC_HEAD_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:FORKED_TONGUE:GENERIC_TEETH_WITH_FANGS:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
@@ -948,6 +993,7 @@ creature_next_underground
 	[CANNOT_JUMP]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A medium-sized, aggressive, and poisonous snake with a dragon-like head covered in hardened plates.  She slithers in dark caverns and preys on anything smaller than herself.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -956,6 +1002,7 @@ creature_next_underground
 			[CLUTCH_SIZE:10:30]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A medium-sized, aggressive, and poisonous snake with a dragon-like head covered in hardened plates.  He slithers in dark caverns and preys on anything smaller than himself.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -969,9 +1016,9 @@ creature_next_underground
 [CREATURE:GREEN_DEVOURER]
 	[ARENA_RESTRICTED]
 	[DESCRIPTION:A medium-sized monster walking on two clawed legs.  It has two mouths on the ends of a pair of tentacles.  It uses its mouths to digest its victims with acid and rows of razor-like teeth.]
-	[NAME:green devourer:green devourers:green devourer]
-	[CASTE_NAME:green devourer:green devourers:green devourer]
-	[CREATURE_TILE:'G'][COLOR:2:0:1]
+	[NAME:devourer:devourers:devourer]{:green devourer:green devourers:green devourer}
+	[CASTE_NAME:devourer:devourers:devourer]{:green devourer:green devourers:green devourer}
+	[CREATURE_TILE:'D'][COLOR:2:0:1]{:'G'}
 	[PETVALUE:200]
 	[NATURAL]
 	[LARGE_ROAMING][FREQUENCY:10]
@@ -1009,6 +1056,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:30:50]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:TENTACLE:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -1024,11 +1072,14 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:2206:1692:1178:585:3400:4900] 15 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
+	[NATURAL_SKILL:DISCIPLINE:3]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A medium-sized, headless horror that wanders dark caverns on two clawed legs.  Instead of arms she has a pair of tentacles that end in mouths; she uses them to carve into the flesh of her victims with rows of razor-like teeth, then digests their flesh with acid.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A medium-sized, headless horror that wanders dark caverns on two clawed legs.  Instead of arms he has a pair of tentacles that end in mouths; he uses them to carve into the flesh of his victims with rows of razor-like teeth, then digests their flesh with acid.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:GREEN:1]
@@ -1083,6 +1134,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:40:60]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:FOOT_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1105,11 +1157,15 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:730:561:351:1900:2900] 25 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:3]{+  Revision: make them fight longer.}
+	[NOFEAR]{+                      Revision: make them fear nothing.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A huge, shaggy-furred monster with tall, pointy ears, a long snout, and an enormous, furry tail.  She makes for a fearsome sight but is actually benign.  She runs deep under the earth on four strong legs and large paws; she whipps her long tail about as she passes.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A huge, shaggy-furred monster with tall, pointy ears, a long snout, and an enormous, furry tail.  He makes for a fearsome sight but is actually benign.  He runs deep under the earth on four strong legs and large paws; he whips his long tail about as he passes.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1126,7 +1182,7 @@ creature_next_underground
 
 [CREATURE:CREEPY_CRAWLER]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A tiny underground creature made of a mass of appendages resembling human fingers.  It creeps across the ground like a starfish and eats with a mouth on the bottom of its body.]
+	[DESCRIPTION:A tiny mass of appendages shaped like fingers that creeps around dark caverns.  It eats with the mouth on the bottom of its strange, starfish-shaped body.  The fingers writhe as it moves; they sometimes pull the thing around and sometimes they pointlessly wriggle.]{:A tiny underground creature made of a mass of appendages resembling human fingers.  It creeps across the ground like a starfish and eats with amouth on the bottom of its body.}
 	[NAME:creepy crawler:creepy crawlers:creepy crawler]
 	[CASTE_NAME:creepy crawler:creepy crawlers:creepy crawler]
 	[CREATURE_TILE:'*'][COLOR:6:0:0]
@@ -1142,7 +1198,7 @@ creature_next_underground
 	[PREFSTRING:freakish wriggling]
 	[EXTRAVISION]
 	[BODY:BODY_WITH_HEAD_FLAG:HEART:GUTS:BRAIN:MOUTH]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[REMOVE_TISSUE:HAIR]
@@ -1216,6 +1272,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:20:30]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:FOOT_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1242,8 +1299,10 @@ creature_next_underground
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, long-bodied grazer with warm fur, a pointy, narrow snout, floppy ears, and a thick, horse-like mane.  Her long legs end in sharp hooves.  She grazes on what meager vegetation she can find in the dark; her long neck helps her feed on the tops of tower-cap mushrooms.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, long-bodied grazer with warm fur, a pointy, narrow snout, floppy ears, and a thick, horse-like mane.  His long legs end in sharp hooves.  He grazes on what meager vegetation he can find deep under the earth; his long neck helps him feed on the tops of tower-cap mushrooms.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1260,9 +1319,9 @@ creature_next_underground
 
 [CREATURE:GIANT_EARTHWORM]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A gigantic version of its tiny cousin, this long, slimy creature tunnels through the rocks deep underground.]
-	[NAME:giant earthworm:giant earthworms:giant earthworm]
-	[CASTE_NAME:giant earthworm:giant earthworms:giant earthworm]
+	[DESCRIPTION:A gigantic version of its tiny, wriggling cousin.  This slimy, segmented creature tunnels through rock deep underground.  Legless, long, and thin, it feels its way through soil and rock.]{:A gigantic version of its tiny cousin, this long, slimy creature tunnels through the rocks deep underground.}
+	[NAME:giant worm:giant worms:giant worm]{:giant earthworm:giant earthworms:giant earthworm}
+	[CASTE_NAME:giant worm:giant worms:giant worm]{:giant earthworm:giant earthworms:giant earthworm}
 	[CREATURE_TILE:'W'][COLOR:7:0:0]
 	[PETVALUE:500]
 	[FREQUENCY:20]
@@ -1286,6 +1345,8 @@ creature_next_underground
 	[HAS_NERVES]
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
+	[NATURAL_SKILL:DISCIPLINE:10]{+  Revision: make them fight longer.}
+	[NOFEAR]{+                       Revision: make them fear nothing.}
 	[USE_MATERIAL_TEMPLATE:ICHOR:ICHOR_TEMPLATE]
 	[BLOOD:LOCAL_CREATURE_MAT:ICHOR:LIQUID]
 	[CREATURE_CLASS:GENERAL_POISON]
@@ -1309,7 +1370,7 @@ creature_next_underground
 
 [CREATURE:BLOOD_MAN]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A man-shaped abomination made entirely of blood.  These cursed creatures are only found very near the underworld.]
+	[DESCRIPTION:A monstrous, medium-sized automaton made of blood.  It smells of decay and wanders the deepest caverns very near the underworld.  Some unknown force has animated it.]{:A man-shaped abomination made entirely of blood.  These cursed creatures are only found very near the underworld.}
 	[NAME:blood man:blood men:blood man]
 	[CASTE_NAME:blood man:blood men:blood man]
 	[EVIL]
@@ -1337,6 +1398,7 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[PREFSTRING:gruesomeness]
 	[BODY:HUMANOID_SIMPLE]
 	[NO_THOUGHT_CENTER_FOR_MOVEMENT]
@@ -1369,6 +1431,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1377,6 +1440,7 @@ creature_next_underground
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:LIQUID_MISC:NO_SUBTYPE:LOCAL_CREATURE_MAT:BLOOD]
 	[ALL_ACTIVE]
 
@@ -1390,6 +1454,7 @@ creature_next_underground
 	[FLIER]
 	[PETVALUE:20]
 	[PET_EXOTIC]
+	[CURIOUSBEAST_EATER]{+  Revision: bugbats will make off with food.}
 	[LARGE_ROAMING]
 	[POPULATION_NUMBER:20:40]
 	[CLUSTER_NUMBER:5:15]
@@ -1398,6 +1463,8 @@ creature_next_underground
 	[BENIGN]
 	[NATURAL]
 	[PREFSTRING:freakish insect heads]
+	[SOUND:ALERT:100:10000:VOCALIZATION:chitter angrily:chitters angrily:angry chittering]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:100:2500:VOCALIZATION:chitter:chitters:chittering]{+}
 	[BODY:HUMANOID_NECK_FLIER:TAIL:2EYES:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4FINGERS:4TOES:MOUTH:LARGE_MANDIBLES:RIBCAGE]
 	[BODYGLOSS:PAW]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
@@ -1451,8 +1518,10 @@ creature_next_underground
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small, bat-like creature with large wings and the carapaced head of an insect.  Her large mandibles clack together as she flies deep underground, and she chitters in an unsettling way.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, bat-like creature with large wings and the carapaced head of an insect.  His large mandibles clack together as he flies deep underground, and he chitters in an unsettling way.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
 			[TL_COLOR_MODIFIER:DARK_VIOLET:1]
@@ -1534,11 +1603,14 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[NATURAL_SKILL:CLIMBING:15]
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A strange, medium-sized creature that crawls along the cavern ceiling with four long, double-jointed arms.  Her body looks like an ape-like head with a mouth full of razer-sharp teeth.  She watches in the dark, waiting to drop from above to feast on flesh.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A strange, medium-sized creature that crawls along the cavern ceiling with four long, double-jointed arms.  His body looks like an ape-like head with a mouth full of razer-sharp teeth.  He watches in the dark, waiting to drop from above to feast on flesh.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -1549,7 +1621,7 @@ creature_next_underground
 
 [CREATURE:MOLEMARIAN]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A hideous monster that has the body of a giant mole-rat and the torso of a mole-rat man.   It is found deep underground.]
+	[DESCRIPTION:A hideous monster that has the body of a giant mole-rat and the torso of a mole-rat man.  It is found deep underground.]
 	[NAME:molemarian:molemarians:molemarian]
 	[CASTE_NAME:molemarian:molemarians:molemarian]
 	[CHILD:10][GENERAL_CHILD_NAME:molemarian puppy:molemarian puppies]
@@ -1565,6 +1637,9 @@ creature_next_underground
 	[UNDERGROUND_DEPTH:2:3]
 	[PREFSTRING:freakish appearance]
 	[NOPAIN]
+	[SOUND:ALERT:100:10000:VOCALIZATION:squeak in alarm:squeaks in alarm:panicked squeaking]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:50:10000:VOCALIZATION:squeak:squeaks:squeaking]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a sniff]{+}
 	[BODY:HAND_FOOT_CENTAUR_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4FINGERS:4TOES:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1598,6 +1673,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:20:30]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -1607,6 +1683,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -1615,6 +1692,7 @@ creature_next_underground
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ALL_ACTIVE]
 	[LOW_LIGHT_VISION:10000]
 	[HOMEOTHERM:10067]
@@ -1623,10 +1701,13 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[SWIMS_INNATE]
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tall, monstrous woman with the long body of a naked mole-rat and a woman's torso.  Savage and unintelligent, she's more beast than woman.  The wrinkles on her hairless skin smooth at her hips and chest.  She has a long, slender, pointy snout, small ears, and many sharp teeth, and her long tail whips about as she wanders the deep caverns.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tall, monstrous man with the long body of a naked mole-rat and a man's torso.  Savage and unintelligent, he's more beast than man.  The wrinkles on his hairless skin smooth at his hips and chest.  He has a long, slender, pointy snout, small ears, and many sharp teeth, and his long tail whips about as he wanders the deep caverns.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -1663,8 +1744,11 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_WALKING_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
+	[NOFEAR]{+                      Revision: make them fear nothing.}
 	[SWIMS_INNATE]
 	[PREFSTRING:frightening beaks]
+	[SOUND:ALERT:100:10000:VOCALIZATION:squawk angrily:squawks angrily angrily:angry squawking]{+  Revision: vocalizations help the world feel alive.}
 	[BODY:HUMANOID_ARMLESS_NECK:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BEAK:TONGUE:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:HAIR]
@@ -1723,6 +1807,7 @@ creature_next_underground
 		[ATTACK_FLAG_WITH]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A huge, flightless bird of prey with tall, featherless legs, a long neck, and a serrated beak almost as big as her patterned head.  She wanders underground caverns and plucks up unsuspecting victims in the dark.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -1731,6 +1816,7 @@ creature_next_underground
 			[CLUTCH_SIZE:1:2]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A huge, flightless bird of prey with tall, featherless legs, a long neck, and a serrated beak almost as big as his patterned head.  He wanders underground caverns and plucks up unsuspecting victims in the dark.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:PURPLE:1]
@@ -1746,7 +1832,7 @@ creature_next_underground
 
 [CREATURE:POND_GRABBER]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A small creature that lives in watery ditches deep underground.  It has a sharp beak and four tentacles with claws at the end.]
+	[DESCRIPTION:A small, strange squid-like thing that swims in the calm underground pools.  It has four clawed tentacles and a sharp beak larger than its small body.  It buries itself near the bottom, waiting for its opportunity to strangle and drown something.  It often feeds for weeks on each decaying carcass.]{:A small creature that lives in watery ditches deep underground.  It has a sharp beak and four tentacles with claws at the end.}
 	[NAME:pond grabber:pond grabbers:pond grabber]
 	[CASTE_NAME:pond grabber:pond grabbers:pond grabber]
 	[CREATURE_TILE:'p'][COLOR:1:0:1]
@@ -1826,6 +1912,7 @@ creature_next_underground
 	[PETVALUE:500]
 	[PET_EXOTIC]
 	[MOUNT_EXOTIC]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: bears will get into anything.}
 	[NATURAL]
 	[LARGE_ROAMING][FREQUENCY:10]
 	[POPULATION_NUMBER:15:30]
@@ -1836,6 +1923,11 @@ creature_next_underground
 	[MEANDERER]
 	[EXTRAVISION]  I wonder if they should still be called eye teeth...  eye socket teeth...
 	[PREFSTRING:drooping ears]
+	[SOUND:ALERT:100:10000:VOCALIZATION:roar:roars:a loud roar]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:1000:VOCALIZATION:growl:growls:a low growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:50:2500:VOCALIZATION:grunt idly:grunts idly:an idle grunt]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:2500:VOCALIZATION:growl idly:growls idly:an idle growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a sniff]{+}
 	[BODY:QUADRUPED_NECK:TAIL:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:5TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
@@ -1867,6 +1959,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:20:30]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -1889,11 +1982,14 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A huge, emaciated-looking bear with great drooping ears, patchy, matted fur, and many sharp teeth.  Her glassy, useless eyes stare forward.  She relies on other senses to hunt in the dark.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A huge, emaciated-looking bear with great drooping ears, patchy, matted fur, and many sharp teeth.  His glassy, useless eyes stare forward.  He relies on other senses to hunt in the dark.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -1910,6 +2006,7 @@ creature_next_underground
 	[CREATURE_TILE:'D'][COLOR:7:0:1]
 	[PETVALUE:10000]
 	[PET_EXOTIC]
+	[MOUNT_EXOTIC]{+  Revision: surface dragons are exotic mounts; cave dragons should be too.}
 	[TRAINABLE]
 	[EVIL]
 	[LARGE_ROAMING]
@@ -1926,7 +2023,11 @@ creature_next_underground
 	[BONECARN]
 	[PREFSTRING:impressive teeth]
 	[PREFSTRING:large eyes]
-	[BODY:QUADRUPED_NECK:TAIL:2WINGS:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:5TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
+	[SOUND:ALERT:100:15000:VOCALIZATION:roar:roars:the echoing roar of an ancient dragon]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:5000:VOCALIZATION:growl:lets out a deep, rumbling growl that shakes your bones:a deep, rumbling growl echoing through the caverns]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:5000:VOCALIZATION:growl idly:growls idly:an unsettling growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a deep sniff]{+}
+	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:5TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]{:TAIL:2WINGS:2EYES  Revision: removed its wings.  It's a cave adapted surface dragon, but surface dragons have no wings.}
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
 		[REMOVE_MATERIAL:LEATHER]
@@ -1990,9 +2091,11 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[SWIMS_INNATE]
+	[NATURAL_SKILL:DISCIPLINE:10]{+  Revision: make them fight longer.}
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A gigantic, pale monster, once a dragon, now adapted to and polluted by the underground.  Her maw is full of incredibly long teeth and her eyes are large enough to penetrate the darkness.  She can no longer breathe fire.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -2001,6 +2104,7 @@ creature_next_underground
 			[CLUTCH_SIZE:1:3]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A gigantic, pale monster, once a dragon, now adapted to and polluted by the underground.  His maw is full of incredibly long teeth, and his eyes are large enough to penetrate the darkness.  He can no longer breathe fire.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -2059,6 +2163,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:20:30]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -2066,6 +2171,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2074,6 +2180,7 @@ creature_next_underground
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -2082,6 +2189,7 @@ creature_next_underground
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2091,6 +2199,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:4]
 	[EQUIPS]
@@ -2100,12 +2209,15 @@ creature_next_underground
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A monstrous, medium-sized horror that lurks deep underground.  She has sharp features, expressionless eyes, leathery skin, and a toothy grin that never seems to go away.  Mindless and sinister, she strangles or drowns her prey with her unnaturally long arms.  She doesn't care that she's naked.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A monstrous, medium-sized horror that lurks deep underground.  He has sharp features, expressonless eyes, leathery skin, and a toothy grin that never seems to go away.  Mindless and sinister, he strangles or drowns his prey with his unnaturally long arms.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -2117,7 +2229,7 @@ creature_next_underground
 
 [CREATURE:ELEMENTMAN_GABBRO]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:Living gabbro in the shape of a man.  These strange creatures are found deep underground.]
+	[DESCRIPTION:Living gabbro stone in the shape of a medium-sized automaton.  Unfeeling and unceasing, it wanders without purpose deep underground.  Some unknown force has animated it.]{:Living gabbro in the shape of a man.  These strange creatures are found deep underground.}
 	[NAME:gabbro man:gabbro men:gabbro man]
 	[CASTE_NAME:gabbro man:gabbro men:gabbro man]
 	[CREATURE_TILE:'M'][COLOR:0:0:1]
@@ -2166,6 +2278,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2174,6 +2287,7 @@ creature_next_underground
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:BOULDER:NO_SUBTYPE:INORGANIC:GABBRO]
 	[ALL_ACTIVE]
 
@@ -2253,6 +2367,7 @@ creature_next_underground
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:110:150]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TUSK]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2262,6 +2377,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -2291,9 +2407,11 @@ creature_next_underground
 	[SWIMS_LEARNED]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small, strange woman with an almost round, heavy body.  She has no neck and no discernable head; a huge, tusked mouth covers most of her chest.  She wanders in the dark, deep underground and doesn't care that she's naked.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, strange man with an almost round, heavy body.  He has no neck and no discernable head; a huge, tusked mouth covers most of his chest.  He wanders in the dark, deep underground and doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -2306,7 +2424,7 @@ creature_next_underground
 
 [CREATURE:CAVE_FLOATER]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A floating pod with eye-stalks.  It can spray poison and it gives off poison gas when punctured.]
+	[DESCRIPTION:A floating pod that drifts in dark caverns.  It sprays sickening poison which leaks as a gas when punctured.  Its bumpy, rubbery skin quivers as it breathes.  Long eye-stalks trail below its round body, swaying back and forth.]{:A floating pod with eye-stalks.  It can spray poison and it gives off poison gas when punctured.}
 	[NAME:cave floater:cave floaters:cave floater]
 	[CASTE_NAME:cave floater:cave floaters:cave floater]
 	[CREATURE_TILE:'f'][COLOR:6:0:1]
@@ -2414,7 +2532,7 @@ creature_next_underground
 	[SMELL_TRIGGER:10000] cannot smell
 	[NOBONES]
 	[EXTRAVISION]
-	[BODY:HUMANOID_SIMPLE]
+	[BODY:HUMANOID]{:HUMANOID_SIMPLE  Revision: it makes more sense for them to have elbows; how do they wield weapons and walk?}
 	[NO_THOUGHT_CENTER_FOR_MOVEMENT]
 	[USE_MATERIAL_TEMPLATE:PH_TISSUE:STRUCTURAL_PLANT_TEMPLATE]
 		[STATE_NAME:ALL_SOLID:plump helmet man tissue]
@@ -2453,6 +2571,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2461,6 +2580,7 @@ creature_next_underground
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -2473,9 +2593,12 @@ creature_next_underground
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[CASTE_NAME:plump helmet woman:plump helmet women:plump helmet woman]{+}
+		[DESCRIPTION:A small, strange woman of tough fungal tissue.  A wide-brimmed, rounded mushroom caps her head and shades her blank, featureless face.  She lives in darkness far underground near water and soil.  She doesn't notice or care that she's naked.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, strange man of tough fungal tissue.  A wide-brimmed, rounded mushroom caps his head and shades his blank, featureless face.  He lives in darkness far underground near water and soil.  He doesn't notice or care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:MUSHROOM]
 			[TL_COLOR_MODIFIER:PURPLE:1]
@@ -2483,7 +2606,7 @@ creature_next_underground
 
 [CREATURE:CAVE_BLOB]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A strange shapeless life form with an orange leathery skin containing a liquid interior.  It can secrete its internal fluid.]
+	[DESCRIPTION:A strange and shapeless blob filled with blistering liquid; its leathery skin glistens with the painful ooze.  It quivers and pulses as it flops and oozes around the deeepest caverns.]{:A strange shapeless life form with an orange leathery skin containing a liquid interior.  It can secrete its internal fluid.}
 	[NAME:cave blob:cave blobs:cave blob]
 	[CASTE_NAME:cave blob:cave blobs:cave blob]
 	[CREATURE_TILE:'o'][COLOR:6:0:1]
@@ -2557,7 +2680,7 @@ creature_next_underground
 
 [CREATURE:ELEMENTMAN_AMETHYST]
 	[ARENA_RESTRICTED]
-	[DESCRIPTION:A strange crystalline creature the shape of a man.  It is found deep underground.]
+	[DESCRIPTION:Living amethyst gemstone in the shape of a medium-sized automaton.  Its crystalline body is composed of straight lines and smooth surfaces covered with small, six-sided prisms.  Tireless and mindless, it wanders without purpose deep underground.  Some unknown force has animated it.]{:A strange crystalline creature the shape of a man.  It is found deep underground.}
 	[NAME:amethyst man:amethyst men:amethyst man]
 	[CASTE_NAME:amethyst man:amethyst men:amethyst man]
 	[CREATURE_TILE:'M'][COLOR:5:0:1]
@@ -2606,6 +2729,7 @@ creature_next_underground
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2614,5 +2738,6 @@ creature_next_underground
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:ROUGH:NO_SUBTYPE:INORGANIC:AMETHYST]
 	[ALL_ACTIVE]

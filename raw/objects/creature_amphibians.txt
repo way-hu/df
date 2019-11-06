@@ -14,9 +14,10 @@ creature_amphibians
 	[NOT_BUTCHERABLE]
 	[BIOME:ANY_POOL]
 	[POPULATION_NUMBER:250:500]
+	[SOUND:ALERT:100:10000:VOCALIZATION:croak:croaks:loud croaking]{+  Revision: vocalizations help the world feel alive.}
 	[PREFSTRING:beauty]
 	[BODY:QUADRUPED_NECK:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[REMOVE_TISSUE:HAIR]
@@ -57,8 +58,10 @@ creature_amphibians
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A squat amphibian hopping about relatively dry areas in search of a meal.  Her leathery skin feels dry and pebbly.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A squat amphibian hopping about relatively dry areas in search of a meal.  His leathery skin feels dry and pebbly.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:DARK_GREEN:1]
@@ -73,12 +76,14 @@ creature_amphibians
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:toad man:toad men:toad man]
+		[DESCRIPTION:A small, squat amphibian with leathery, pebbly skin and the distinct head of a toad on slumped shoulders.  Ichor secretes from puffy glands behind his ear holes.  He watches with blank, glassy eyes; his long tongue flicks in and out.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:toad woman:toad women:toad woman]
+		[DESCRIPTION:A small, squat amphibian with leathery, pebbly skin and the distinct head of a toad on slumped shoulders.  Ichor secretes from puffy glands behind her ear holes.  She watches with blank, glassy eyes; her long tongue flicks in and out.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK]
+	[APPLY_CREATURE_VARIATION:KICK_HIGHVEL_ATTACK]{:KICK_ATTACK  Revision: toads ought to be good at kicking.}
+	{APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -91,18 +96,28 @@ creature_amphibians
 	[MAXAGE:60:80]
 	[CREATURE_TILE:'t']
 	[COLOR:2:0:0]
+	[SOUND:ALERT:100:10000:VOCALIZATION:croak:croaks:loud croaking]{+  Revision: vocalizations help the world feel alive.}
+	[NATURAL_SKILL:CLIMBING:3]{+  Revision: help toad people feel more unique.}
+	[NATURAL_SKILL:STANCE_STRIKE:3]{+}
+	[PHYS_ATT_RANGE:TOUGHNESS:450:950:1150:1250:1350:1550:2250]{+}
 
 [CREATURE:GIANT_TOAD]
 	[COPY_TAGS_FROM:TOAD]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A squat, toad-like monster with leathery, pebbly skin and puffy shoulder glands that secrete an unpleasant ichor.  She watches with glassy eyes; her enormous tongue flicks in and out.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A squat, toad-like monster with leathery, pebbly skin and puffy shoulder glands that secrete an unpleasant ichor.  He watches with glassy eyes; his enormous tongue flicks in and out.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:100700]
 	[GO_TO_START]
 	[NAME:giant toad:giant toads:giant toad]
 	[CASTE_NAME:giant toad:giant toads:giant toad]
+	[CHILD:1][GENERAL_CHILD_NAME:giant toadlet:giant toadlets]{+  Revision: taming requires a child tag (bug 7983).}
 	[DESCRIPTION:A huge monster in the shape of a toad.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -110,9 +125,15 @@ creature_amphibians
 	[COLOR:2:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC               Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[MAXAGE:6:9]{+                             Revision: let them live long enough to be worth taming.}
+	[GOBBLE_VERMIN_CLASS:EDIBLE_GROUND_BUG]{+  Revision: too few creatures ate vermin.}
+	[GOBBLE_VERMIN_CLASS:EDIBLE_FLYING_BUG]{+  Revision: too few creatures ate vermin.}
+	[LARGE_PREDATOR][AMBUSHPREDATOR]{+         Revision: best be cautious.}
 	[GO_TO_END]
+	[SOUND:ALERT:100:10000:VOCALIZATION:croak:croaks:loud croaking]{+  Revision: vocalizations help the world feel alive.}
 	[PREFSTRING:beauty]
+	[APPLY_CREATURE_VARIATION:KICK_HIGHVEL_ATTACK]{+  Revision: toads ought to be good at kicking.}
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:3512:2634:1756:878:4900:6900] 10 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph

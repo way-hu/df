@@ -8,8 +8,8 @@ Geckos were sponsored by the generous contributions of the Bay 12 community.
 
 [CREATURE:GECKO_LEOPARD]
 	[DESCRIPTION:A tiny, brightly-colored lizard with feet that can stick to branch and stone.]
-	[NAME:leopard gecko:leopard geckos:leopard gecko]
-	[CASTE_NAME:leopard gecko:leopard geckos:leopard gecko]
+	[NAME:gecko:geckos:gecko]{:leopard gecko:leopard geckos:leopard gecko}
+	[CASTE_NAME:gecko:geckos:gecko]{:leopard gecko:leopard geckos:leopard gecko}
 	[CREATURE_TILE:249][COLOR:6:0:1]
 	[PETVALUE:10]
 	[VERMIN_GROUNDER][FREQUENCY:100]
@@ -21,6 +21,8 @@ Geckos were sponsored by the generous contributions of the Bay 12 community.
 	[POPULATION_NUMBER:250:500]
 	[PREFSTRING:amazing sticky feet]
 	[PREFSTRING:coloration]
+	[SOUND:ALERT:100:2500:VOCALIZATION:hiss:hisses:hissing]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:1000:VOCALIZATION:snap:snaps:a hostile snapping]{+}
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:5TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
@@ -59,7 +61,7 @@ Geckos were sponsored by the generous contributions of the Bay 12 community.
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:6:20]
-	[ATTACK:BITE:BODYPART:BY_CATEGORY:MOUTH]
+	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]{:BITE:BODYPART:BY_CATEGORY:MOUTH  Revision: they have teeth, so they should bite with them.}
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
 		[ATTACK_CONTACT_PERC:100]
@@ -71,8 +73,10 @@ Geckos were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, brightly-colored lizard with bumpy, spotted skin and a thick tail.  Her feet stick to branch and stone.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, brightly-colored lizard with bumpy, spotted skin and a thick tail.  His feet stick to branch and stone.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:SPOTS_YELLOW_BLACK:1]
@@ -86,19 +90,21 @@ Geckos were sponsored by the generous contributions of the Bay 12 community.
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON]
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
-		[CASTE_NAME:leopard gecko man:leopard gecko men:leopard gecko man]
+		[CASTE_NAME:gecko man:gecko men:gecko man]{:leopard gecko man:leopard gecko men:leopard gecko man}
+		[DESCRIPTION:A small and scaly lizan with spotted, bumpy skin, a thick, ringed tail, and the head of a gecko; he has large, glassy eyes and an angular, grinning face.  He clings to rock with large, sticky hands and feet.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
-		[CASTE_NAME:leopard gecko woman:leopard gecko women:leopard gecko woman]
+		[CASTE_NAME:gecko woman:gecko women:gecko woman]{:leopard gecko woman:leopard gecko women:leopard gecko woman}
+		[DESCRIPTION:A small and scaly lizan with spotted, bumpy skin, a thick, ringed tail, and the head of a gecko; she has large, glassy eyes and an angular, grinning face.  She clings to rock with large, sticky hands and feet.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[GO_TO_START]
-	[NAME:leopard gecko man:leopard gecko men:leopard gecko man]
+	[NAME:gecko man:gecko men:gecko man]{:leopard gecko man:leopard gecko men:leopard gecko man}
 	[DESCRIPTION:A person with the head and fingers of a gecko.]
 	[POPULATION_NUMBER:5:10]
 	[CLUSTER_NUMBER:1:5]
@@ -112,11 +118,16 @@ Geckos were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A spotted scaly monster with large, glassy eyes, scales covered in wart-like bumps, and a thick, ringed tail.  Her large feet stick to rock, helping her scale walls and cliffs.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A spotted scaly monster with large, glassy eyes, scales covered in wart-like bumps, and a thick, ringed tail.  His large feet stick to rock, helping him scale walls and cliffs.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:400700]
 	[GO_TO_START]
-	[NAME:giant leopard gecko:giant leopard geckos:giant leopard gecko]
-	[CASTE_NAME:giant leopard gecko:giant leopard geckos:giant leopard gecko]
+	[NAME:giant gecko:giant geckos:giant gecko]{:giant leopard gecko:giant leopard geckos:giant leopard gecko}
+	[CASTE_NAME:giant gecko:giant geckos:giant gecko]{:giant leopard gecko:giant leopard geckos:giant leopard gecko}
+	[CHILD:1][GENERAL_CHILD_NAME:juvenile giant gecko:juvenile giant geckos]{+  Revision: taming requires a child tag (bug 7983).}
 	[DESCRIPTION:A large monster in the shape of a gecko.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -125,6 +136,7 @@ Geckos were sponsored by the generous contributions of the Bay 12 community.
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[LARGE_PREDATOR]{+  Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:amazing sticky feet]
 	[PREFSTRING:coloration]
@@ -208,6 +220,7 @@ Desert tortoises were sponsored by the generous contributions of the Bay 12 comm
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny shelled reptile that lives in the desert.  She'll (probably) live a long time and spends most of it in burrows and shelters.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -216,6 +229,7 @@ Desert tortoises were sponsored by the generous contributions of the Bay 12 comm
 			[CLUTCH_SIZE:3:5]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny shelled reptile that lives in the desert.  He'll (probably) live a long time and spends most of it in burrows and shelters.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -230,12 +244,14 @@ Desert tortoises were sponsored by the generous contributions of the Bay 12 comm
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:desert tortoise man:desert tortoise men:desert tortoise man]
+		[DESCRIPTION:A small and scaly reptilian with a great shell, wide, flat arms and legs, and the head of a desert tortoise; he has an angular face and his eyes are level with his tall, jutting nose.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:desert tortoise woman:desert tortoise women:desert tortoise woman]
+		[DESCRIPTION:A small and scaly reptilian with a great shell, wide, flat arms and legs, and the head of a desert tortoise; she has an angular face and her eyes are level with her tall, jutting nose.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -255,6 +271,10 @@ Desert tortoises were sponsored by the generous contributions of the Bay 12 comm
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A scaly, desert-dwelling monster with great flippers and an enormous shell.  She's slow-moving and will (probably) live a long time; she spends most of it in burrows and shelters.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A scaly, desert-dwelling monster with great flippers and an enormous shell.  He's slow-moving and will (probably) live a long time; he spends most of it in burrows and shelters.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:4339]
 	[GO_TO_START]
@@ -268,7 +288,7 @@ Desert tortoises were sponsored by the generous contributions of the Bay 12 comm
 	[COLOR:6:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[GO_TO_END]
 	[PREFSTRING:shells]
 	[PREFSTRING:longevity]
@@ -300,6 +320,8 @@ Gila monsters were sponsored by the generous contributions of the Bay 12 communi
 	[CANNOT_JUMP]
 	[PREFSTRING:venomous bite]
 	[PREFSTRING:coloration]
+	[SOUND:ALERT:100:2500:VOCALIZATION:hiss:hisses:hissing]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:1000:VOCALIZATION:snap:snaps:a hostile snapping]{+}
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:4TOES_RQ_REG:MOUTH:GENERIC_TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
@@ -373,6 +395,7 @@ Gila monsters were sponsored by the generous contributions of the Bay 12 communi
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small, slow-moving, and venomous lizard with bead-like, mottled scales and a long, heavy body.  She spends most of her time under rocks and in burrows and thickets; she avoids open spaces.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -381,6 +404,7 @@ Gila monsters were sponsored by the generous contributions of the Bay 12 communi
 			[CLUTCH_SIZE:2:12]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, slow-moving, and venomous lizard with bead-like, mottled scales and a long, heavy body.  He spends most of his time under rocks and in burrows and thickets; he avoids open spaces.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:PINK:1] black too
@@ -414,8 +438,10 @@ Gila monsters were sponsored by the generous contributions of the Bay 12 communi
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:gila monster man:gila monster men:gila monster man]
+		[DESCRIPTION:A small and scaly lizan with a venomous bite and mottled, bead-like scales on a heavy, long body.  He has the head of a gila monster; his neck is as wide as his jutting head.  He moves in laggard fashion.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:gila monster woman:gila monster women:gila monster woman]
+		[DESCRIPTION:A small and scaly lizan with a venomous bite and mottled, bead-like scales on a heavy, long body.  She has the head of a gila monster; her neck is as wide as her jutting head.  She moves in laggard fashion.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -456,6 +482,10 @@ Gila monsters were sponsored by the generous contributions of the Bay 12 communi
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A scaly, slow-moving monster with a long and heavy body covered in mottled, bead-like scales.  Her slow nature belies a deadly predator; beware her venom!.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A scaly, slow-moving monster with a long and heavy body covered in mottled, bead-like scales.  His slow nature belies a deadly predator; beware his venom!.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:10701]
 	[GO_TO_START]
@@ -470,9 +500,11 @@ Gila monsters were sponsored by the generous contributions of the Bay 12 communi
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[LARGE_PREDATOR]{+  Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:venomous bite]
 	[PREFSTRING:coloration]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:657:438:219:1900:2900] 40 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}

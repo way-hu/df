@@ -24,3 +24,4 @@ creature_equipment
 	[TRADE_CAPACITY:15000]
 	[MUNDANE]
 	[ODOR_LEVEL:0]
+	[SOUND:PEACEFUL_INTERMITTENT:100:5000:NONE:creak:creaks as it moves:a wagon creaking as it moves.]{+  Revision: vocalizations help the world feel alive.}

@@ -5,8 +5,8 @@ item_armor
 [ITEM_ARMOR:ITEM_ARMOR_BREASTPLATE]
 [NAME:breastplate:breastplates]
 [ARMORLEVEL:3]
-[UBSTEP:0]
-[LBSTEP:0]
+[UBSTEP:1]{:0        Revision: compensate for the (new) shoulders.}
+[LBSTEP:1]{:0        Revision: compensate for the (new) hips.}
 [SHAPED]
 [LAYER:ARMOR]
 [COVERAGE:100]
@@ -19,10 +19,10 @@ item_armor
 [ITEM_ARMOR:ITEM_ARMOR_MAIL_SHIRT]
 [NAME:mail shirt:mail shirts]
 [ARMORLEVEL:2]
-[UBSTEP:1]
-[LBSTEP:1]
+[UBSTEP:2]{:1           Revision: compensate for the (new) shoulders.}
+[LBSTEP:2]{:1           Revision: compensate for the (new) hips.}
 [LAYER:OVER]
-[COVERAGE:100]
+[COVERAGE:95]{:100      Revision: no perfect armor coverage.}
 [LAYER_SIZE:15]
 [LAYER_PERMIT:50]
 [MATERIAL_SIZE:6]
@@ -35,11 +35,11 @@ item_armor
 [PREPLURAL:suits of]
 [MATERIAL_PLACEHOLDER:leather]
 [ARMORLEVEL:1]
-[UBSTEP:1]
-[LBSTEP:1]
+[UBSTEP:2]{:1           Revision: compensate for the (new) shoulders.}
+[LBSTEP:2]{:1           Revision: compensate for the (new) hips.}
 [SHAPED]
 [LAYER:ARMOR]
-[COVERAGE:100]
+[COVERAGE:70]{:100      Revision: no perfect armor coverage.}
 [LAYER_SIZE:20]
 [LAYER_PERMIT:50]
 [MATERIAL_SIZE:6]
@@ -47,8 +47,8 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_COAT]
 [NAME:coat:coats]
-[UBSTEP:MAX]
-[LBSTEP:1]
+[UBSTEP:3]{:MAX         Revision: avoid bug 1821 by capping UBSTEP at 3.}
+[LBSTEP:2]{:1           Revision: compensate for the (new) hips.}
 [LAYER:OVER]
 [COVERAGE:100]
 [LAYER_SIZE:20]
@@ -60,8 +60,8 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_SHIRT]
 [NAME:shirt:shirts]
-[UBSTEP:MAX]
-[LBSTEP:0]
+[UBSTEP:3]{:MAX         Revision: avoid bug 1821 by capping UBSTEP at 3.}
+[LBSTEP:1]{:0           Revision: compensate for the (new) hips.}
 [LAYER:UNDER]
 [COVERAGE:100]
 [LAYER_SIZE:10]
@@ -73,10 +73,10 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_CLOAK]
 [NAME:cloak:cloaks]
-[UBSTEP:MAX]
-[LBSTEP:1]
+[UBSTEP:3]{:MAX         Revision: avoid bug 1821 by capping UBSTEP at 3.}
+[LBSTEP:2]{:1           Revision: compensate for the (new) hips.}
 [LAYER:COVER]
-[COVERAGE:100]
+[COVERAGE:50]{:100      Revision: no perfect armor coverage.}
 [LAYER_SIZE:15]
 [LAYER_PERMIT:150]
 [MATERIAL_SIZE:5]
@@ -86,10 +86,10 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_TUNIC]
 [NAME:tunic:tunics]
-[UBSTEP:0]
-[LBSTEP:1]
+[UBSTEP:1]{:0           Revision: compensate for the (new) shoulders.}
+[LBSTEP:2]{:1           Revision: compensate for the (new) hips, plus change.}
 [LAYER:UNDER]
-[COVERAGE:100]
+[COVERAGE:90]{:100      Revision: no perfect armor coverage.}
 [LAYER_SIZE:10]
 [LAYER_PERMIT:50]
 [MATERIAL_SIZE:3]
@@ -99,10 +99,10 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_TOGA]
 [NAME:toga:togas]
-[UBSTEP:1]
-[LBSTEP:1]
+[UBSTEP:2]{:1           Revision: compensate for the (new) shoulders.}
+[LBSTEP:3]{:1           Revision: compensate for the (new) hips, then make it even longer.}
 [LAYER:OVER]
-[COVERAGE:100]
+[COVERAGE:50]{:100      Revision: no perfect armor coverage.}
 [LAYER_SIZE:30]
 [LAYER_PERMIT:100]
 [MATERIAL_SIZE:5]
@@ -112,8 +112,8 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_CAPE]
 [NAME:cape:capes]
-[UBSTEP:0]
-[LBSTEP:0]
+[UBSTEP:1]{:0           Revision: compensate for the (new) shoulders.}
+[LBSTEP:2]{:0           Revision: compensate for the (new) hips, plus change.}
 [LAYER:COVER]
 [COVERAGE:50]
 [LAYER_SIZE:10]
@@ -125,8 +125,8 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_VEST]
 [NAME:vest:vests]
-[UBSTEP:0]
-[LBSTEP:0]
+[UBSTEP:1]{:0           Revision: compensate for the (new) shoulders.}
+[LBSTEP:1]{:0           Revision: compensate for the (new) hips.}
 [LAYER:OVER]
 [COVERAGE:50]
 [LAYER_SIZE:10]
@@ -138,7 +138,7 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_DRESS]
 [NAME:dress:dresses]
-[UBSTEP:MAX]
+[UBSTEP:3]{:MAX         Revision: avoid bug 1821 by capping UBSTEP at 3.}
 [LBSTEP:MAX]
 [LAYER:UNDER]
 [COVERAGE:100]
@@ -151,7 +151,7 @@ item_armor
 
 [ITEM_ARMOR:ITEM_ARMOR_ROBE]
 [NAME:robe:robes]
-[UBSTEP:MAX]
+[UBSTEP:3]{:MAX         Revision: avoid bug 1821 by capping UBSTEP at 3.}
 [LBSTEP:MAX]
 [LAYER:OVER]
 [COVERAGE:100]

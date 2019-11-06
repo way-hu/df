@@ -10,6 +10,7 @@ Hamsters were sponsored by the generous contributions of the Bay 12 community.
 	[DESCRIPTION:A tiny rodent that burrows by day and scurries about at night.]
 	[NAME:hamster:hamsters:hamster]
 	[CASTE_NAME:hamster:hamsters:hamster]
+	[CHILD:1][GENERAL_CHILD_NAME:hamster pup:hamster pups:hamster pup]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:249][COLOR:7:0:0]
 	[CREATURE_CLASS:MAMMAL]
 	[PETVALUE:10]
@@ -23,7 +24,7 @@ Hamsters were sponsored by the generous contributions of the Bay 12 community.
 	[PREFSTRING:puffy cheeks]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -77,8 +78,10 @@ Hamsters were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny rodent with a stout body and a short tail.  She burrows by day and scurries about at night, carrying food in her large cheek pouches.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny rodent with a stout body and a short tail.  He burrows by day and scurries about at night, carrying food in his large cheek pouches.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -97,13 +100,15 @@ Hamsters were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:hamster man:hamster men:hamster man]
+		[DESCRIPTION:A small and fluffy beastman with a short tail, a stout body, and round ears.  He carries food about in his large cheek pouches, chewing as he works.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:hamster woman:hamster women:hamster woman]
+		[DESCRIPTION:A small and fluffy beastwoman with a short tail, a stout body, and round ears.  She carries food about in her large cheek pouches, chewing as she works.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK  Revision: biting and scratching are daft ideas; remove them.}
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -121,15 +126,21 @@ Hamsters were sponsored by the generous contributions of the Bay 12 community.
 
 [CREATURE:GIANT_HAMSTER]
 	[COPY_TAGS_FROM:HAMSTER]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A stout, rodent-like monster with round ears and a short tail.  She scurries about at night, carrying food in her large cheek pouches.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A stout, rodent-like monster with round ears and a short tail.  He scurries about at night, carrying food in his large cheek pouches.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:134033]
 	[GO_TO_START]
 	[NAME:giant hamster:giant hamsters:giant hamster]
 	[CASTE_NAME:giant hamster:giant hamsters:giant hamster]
+	[GENERAL_CHILD_NAME:giant hamster pup:giant hamster pups:giant hamster pup]{+}
 	[DESCRIPTION:A large creature the shape of a hamster.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -138,6 +149,7 @@ Hamsters were sponsored by the generous contributions of the Bay 12 community.
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[MAXAGE:6:8]{+  Revision: let them live long enough to be worth taming.}
 	[GO_TO_END]
 	[PREFSTRING:puffy cheeks]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:657:438:219:1900:2900] 40 kph
@@ -152,6 +164,7 @@ Hedgehogs were sponsored by the generous contributions of the Bay 12 community.
 	[DESCRIPTION:A small round mammal whose back is covered in spines.  It is nocturnal and feeds on insects.  It curls into a ball when startled and is found in temperate regions.]
 	[NAME:hedgehog:hedgehogs:hedgehog]
 	[CASTE_NAME:hedgehog:hedgehogs:hedgehog]
+	[CHILD:1][GENERAL_CHILD_NAME:hedgehog hoglet:hedgehog hoglets:hedgehog hoglet]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:249][COLOR:6:0:0]
 	[CREATURE_CLASS:MAMMAL]
 	[PETVALUE:10]
@@ -166,7 +179,7 @@ Hedgehogs were sponsored by the generous contributions of the Bay 12 community.
 	[PREFSTRING:many spines]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[USE_MATERIAL_TEMPLATE:SPINE:NAIL_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:spine]
 			[STATE_ADJ:ALL_SOLID:spine]
@@ -227,8 +240,10 @@ Hedgehogs were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, round, bug-eating mammal with a back covered in hollow spines.  She curls into a spiny ball when startled, protecting her face and her soft belly.  She's a nocturnal creature that lives in temperate areas.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, round, bug-eating mammal with a back covered in hollow spines.  He curls into a spiny ball when startled, protecting face and his soft belly.  He's a nocturnal creature that lives in temperate areas.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -247,13 +262,15 @@ Hedgehogs were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:hedgehog man:hedgehog men:hedgehog man]
+		[DESCRIPTION:A small and furry beastman with a dark snout, a stout body, and a curved, spiny back.  He can curl into a ball to protect himself, hiding his face and his soft belly with the hollow spines covering his limbs and broad back.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:hedgehog woman:hedgehog women:hedgehog woman]
+		[DESCRIPTION:A small and furry beastwoman with a dark snout, a stout body, and a curved, spiny back.  She can curl into a ball to protect herself, hiding her face and her soft belly with the hollow spines covering her limbs and broad back.  She doesn't care that she's naked..]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK  Revision: biting and scratching are daft ideas; remove them.}
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -271,15 +288,21 @@ Hedgehogs were sponsored by the generous contributions of the Bay 12 community.
 
 [CREATURE:GIANT_HEDGEHOG]
 	[COPY_TAGS_FROM:HEDGEHOG]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A spiky and fuzzy hedgehog-like mosnter with a dark snout and a curved, spiny back.  She curls into a ball when startled, protecting her face and her soft belly.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A spiky and fuzzy hedgehog-like monster with a dark snout and a curved, spiny back.  He curls into a ball when startled, protecting his face and his soft belly.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:25700]
 	[GO_TO_START]
 	[NAME:giant hedgehog:giant hedgehogs:giant hedgehog]
 	[CASTE_NAME:giant hedgehog:giant hedgehogs:giant hedgehog]
+	[GENERAL_CHILD_NAME:giant hedgehog hoglet:giant hedgehog hoglets]{+}
 	[DESCRIPTION:A large monster with the shape of a hedgehog.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -287,7 +310,8 @@ Hedgehogs were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:6:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: mounts that curl up are dangerous; allowed war training instead.}
+	[MAXAGE:6:9]{+  Revision: let them live long enough to be worth taming.}
 	[GO_TO_END]
 	[PREFSTRING:many spines]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:657:438:219:1900:2900] 40 kph
@@ -302,6 +326,7 @@ Flying squirrels were sponsored by the generous contributions of the Bay 12 comm
 	[DESCRIPTION:A tiny grey rodent that is only active at night.  It can sail between trees on wings stretching between its front and hind legs.]
 	[NAME:flying squirrel:flying squirrels:flying squirrel]
 	[CASTE_NAME:flying squirrel:flying squirrels:flying squirrel]
+	[CHILD:1][GENERAL_CHILD_NAME:flying squirrel kit:flying squirrel kits:flying squirrel kit]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:249][COLOR:6:0:0]
 	[CREATURE_CLASS:MAMMAL]
 	[PETVALUE:10]
@@ -315,7 +340,7 @@ Flying squirrels were sponsored by the generous contributions of the Bay 12 comm
 	[VISION_ARC:50:310]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -371,8 +396,10 @@ Flying squirrels were sponsored by the generous contributions of the Bay 12 comm
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny rodent with a bushy tail and sturdy claws good for climbing.  Active only at night, she sails between trees on furry wings stretching between her front and hind legs.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny rodent with a bushy tail and sturdy claws good for climbing.  Active only at night, he sails between trees on furry wings stretching between his front and hind legs.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -391,13 +418,15 @@ Flying squirrels were sponsored by the generous contributions of the Bay 12 comm
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:flying squirrel man:flying squirrel men:flying squirrel man]
+		[DESCRIPTION:A small and furry beastman with a long bushy tail and sturdy claws good for climbing.  He glides short distances on furry wings stretching between his arms and legs.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:flying squirrel woman:flying squirrel women:flying squirrel woman]
+		[DESCRIPTION:A small and furry beastwoman with a long bushy tail and sturdy claws good for climbing.  She glides short distances on furry wings stretching between her arms and legs.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK  Revision: biting and scratching are daft ideas; remove them.}
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -419,11 +448,16 @@ Flying squirrels were sponsored by the generous contributions of the Bay 12 comm
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A fluffy, squirrel-like monster with a long, bushy tail and sturdy claws good for climbing.  She glides short distances on the furry wings stretching between her front and hind legs.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A fluffy, squirrel-like monster with a long, bushy tail and sturdy claws good for climbing.  He glides short distances on the furry wings stretching between his front and hind legs.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:100700]
 	[GO_TO_START]
 	[NAME:giant flying squirrel:giant flying squirrels:giant flying squirrel]
 	[CASTE_NAME:giant flying squirrel:giant flying squirrels:giant flying squirrel]
+	[GENERAL_CHILD_NAME:giant flying squirrel kit:giant flying squirrel kits:giant flying squirrel kit]{+}
 	[DESCRIPTION:A large monster taking the shape of a flying squirrel.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:3:5]

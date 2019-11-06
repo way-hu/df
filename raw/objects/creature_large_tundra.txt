@@ -57,6 +57,7 @@ creature_large_tundra
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:10:20]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:HOOF_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -82,6 +83,8 @@ creature_large_tundra
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+	[APPLY_CREATURE_VARIATION:HORN_BUTT_ATTACK]{+  Revision: muskox have horns, why not use them?}
+	[APPLY_CREATURE_VARIATION:HORN_GORE_ATTACK]{+  Revision: muskox have horns, why not use them?}
 	[CHILD:1]
 	[DIURNAL]
 	[HOMEOTHERM:10067]
@@ -93,9 +96,11 @@ creature_large_tundra
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, stocky herbivore with curved horns, long, hooved legs, and a strong odor.  Her thick fur makes her look larger than she is.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, stocky herbivore with curved horns, long, hooved legs, and a strong odor.  His thick fur makes him look larger than he is.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -116,12 +121,16 @@ creature_large_tundra
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:muskox man:muskox men:muskox man]
+		[DESCRIPTION:A tall, furry beastman with curved horns, long, hooved legs, a stocky body, and a strong odor.  His thick, shaggy fur makes him look larger than he is.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:muskox woman:muskox women:muskox woman]
+		[DESCRIPTION:A tall, furry beastwoman with curved horns, long, hooved legs, a stocky body, and a strong odor.  Her thick, shaggy fur makes her look larger than she is.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:HOOF_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK              Revision: biting's a daft idea.}
+	[APPLY_CREATURE_VARIATION:HORN_GORE_SECONDARY_ATTACK]{+  Revision: let muskox people use their horns sometimes.}
+	[APPLY_CREATURE_VARIATION:HORN_BUTT_SECONDARY_ATTACK]{+  Revision: let muskox people use their horns sometimes.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -141,6 +150,10 @@ creature_large_tundra
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A shaggy, hooved monster with curved horns and a strong odor.  Her thick fur makes her look even larger than she is.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A shaggy, hooved monster with curved horns and a strong odor.  His thick fur makes him look even larger than he is.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:829]
 	[GO_TO_START]
@@ -182,10 +195,12 @@ creature_large_tundra
 	[NATURAL]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, skittish herbivore that roams wild in forest and tundra, gathering in herds for protection.  She has a large body, long, hooved legs, cloven hooves, and a short tail.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[BODY:QUADRUPED_NECK_HOOF:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:GENERIC_TEETH:RIBCAGE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, skittish herbivore that roams wild in forest and tundra, gathering in herds for protection.  He has a large body, long legs, cloven hooves, and a short tail.  His long, velvety antlers grow back yearly.]{+}
 	[BODY:QUADRUPED_NECK_HOOF:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:GENERIC_TEETH:2HEAD_ANTLER:RIBCAGE]
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
@@ -250,6 +265,9 @@ creature_large_tundra
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+	[SELECT_CASTE:MALE]{+                                  Revision: let elk males use their horns.}
+		[APPLY_CREATURE_VARIATION:HORN_GORE_ATTACK]{+  Revision: let elk males use their horns.}
+	[SELECT_CASTE:ALL]{+  Revision: let elk males use their horns.}
 	[CHILD:1][GENERAL_CHILD_NAME:elk fawn:elk fawns]
 	[DIURNAL]
 	[HOMEOTHERM:10067]
@@ -276,12 +294,15 @@ creature_large_tundra
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:elk man:elk men:elk man]
+		[DESCRIPTION:A tall, furry beastman with long, slender arms, long, hooved legs, and a short tail.  His long, velvety antlers grow back yearly.  He has a quiet voice and a graceful way of carrying himself.  He doesn't care that he's naked.]{+}
+		[APPLY_CREATURE_VARIATION:HORN_GORE_SECONDARY_ATTACK]{+  Revision: let elk men use their horns.}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:elk woman:elk women:elk woman]
+		[DESCRIPTION:A tall, furry beastwoman with long, slender arms, long, hooved legs, and a short tail.  She has a quiet voice and a graceful way of carrying herself.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:HOOF_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK              Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -301,6 +322,10 @@ creature_large_tundra
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A skittish, elk-like monster with a short tail and a gentle look.  Graceful and tall with long, hooved legs, she wanders far from home with long, fast strides.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A skittish, elk-like monster with a short tail and a gentle look.  Graceful and tall with long, hooved legs, he wanders far from home with long, fast strides.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:826]
 	[GO_TO_START]
@@ -345,6 +370,11 @@ creature_large_tundra
 	[BIOME:TUNDRA]
 	[GRASSTRAMPLE:0]
 	[BONECARN]
+	[SOUND:ALERT:100:10000:VOCALIZATION:roar:roars:a loud roar]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:1000:VOCALIZATION:growl:growls:a low growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:50:2500:VOCALIZATION:grunt idly:grunts idly:an idle grunt]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:2500:VOCALIZATION:growl idly:growls idly:an idle growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a sniff]{+}
 	[PREFSTRING:strength]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:5TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
@@ -380,6 +410,7 @@ creature_large_tundra
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:20:30]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -407,8 +438,10 @@ creature_large_tundra
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, stocky mammal with non-retractable claws, a short tail, and shaggy fur.  She hunts and fishes in tundra and glacier, her heavy body keeping her warm.  She can swim long distances in the cold waters, searching for food.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, stocky mammal with non-retractable claws, a short tail, and shaggy fur.  He hunts and fishes in tundra and glacier, his heavy body keeping him warm.  He can swim long distances in the cold waters, searching for food.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -429,8 +462,10 @@ creature_large_tundra
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:polar bear man:polar bear men:polar bear man]
+		[DESCRIPTION:A tall, furry beastman with a pointy snout, shaggy fur, and non-retractable claws.  He swims, fishes, and bathes in the frigid waters of tundras and glaciers.  He hunts alone along the shore.  His heavy body keeps him warm.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:polar bear woman:polar bear women:polar bear woman]
+		[DESCRIPTION:A tall, furry beastwoman with a pointy snout, shaggy fur, and non-retractable claws.  She swims, fishes, and bathes in the frigid waters of tundras and glaciers.  She hunts alone along the shore.  Her heavy body keeps her warm.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -450,6 +485,8 @@ creature_large_tundra
 	[COLOR:7:0:1]
 	[GO_TO_TAG:USE_TISSUE_TEMPLATE:NAIL:NAIL_TEMPLATE]
 	[TISSUE_LAYER:BY_CATEGORY:FINGER:NAIL:FRONT]
+	[NATURAL_SKILL:FISH:3]{+  Revision: help polar bear people feel unique.}
+	[PHYS_ATT_RANGE:STRENGTH:450:950:1150:1250:1350:1550:2250]+{+}
 
 [CREATURE:GIANT_BEAR_POLAR]
 	[COPY_TAGS_FROM:BEAR_POLAR]
@@ -457,6 +494,10 @@ creature_large_tundra
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A stocky, bear-like monster with a heavy, muscular body that keeps warm in tundra and glacier.  She has a large appetite, tirelessly fishing and hunting with large, non-retractable claws and a crushing bite.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A stocky, bear-like monster with a heavy, muscular body that keeps warm in tundra and glacier.  He has a large appetite, tirelessly fishing and hunting with large, non-retractable claws and a crushing bite.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:817]
 	[GO_TO_START]

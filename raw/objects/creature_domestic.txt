@@ -70,12 +70,15 @@ creature_domestic
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:447:298:149:1900:2900] 59 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph, NO DATA
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph, NO DATA
+	[NATURAL_SKILL:DISCIPLINE:2]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A canine companion with pack instincts and a keen sense of smell.  Highly social and loyal to a fault, she can be trained to obey commands.  Her tail wags when she's happy.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A canine companion with pack instincts and a keen sense of smell.  Highly social and loyal to a fault, he can be trained to obey commands.  His tail wags when he's happy.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:BODY_UPPER:HAIR]
@@ -139,7 +142,7 @@ creature_domestic
 	[PREFSTRING:aloofness]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:5TOES_FQ_REG:4TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -200,8 +203,10 @@ creature_domestic
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small and aloof feline that hunts vermin and makes for a pleasant companion.  Territorial and curious, she won't stop exploring until she's visited everywhere she can.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small and aloof feline that hunts vermin and makes for a pleasant companion.  Territorial and curious, he won't stop exploring until he's visited everywhere he can.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:BODY_UPPER:HAIR]
@@ -273,14 +278,14 @@ creature_domestic
 		[CDI:WAIT_PERIOD:20]
 
 [CREATURE:MULE]
-	[DESCRIPTION:A compact offspring of horse and donkey, bred to be a beast of burden.]
+	[DESCRIPTION:The compact offspring of horse and donkey, bred to be a beast of burden.  He's hardier than most horses but less stubborn than most donkeys.]{:A compact offspring of horse and donkey, bred to be a beast of burden.}
 	[NAME:mule:mules:mule]
 	[CASTE_NAME:mule:mules:mule]
 	[CHILD:1][GENERAL_CHILD_NAME:mule foal:mule foals]
 	[CREATURE_TILE:'M'][COLOR:7:0:0]
 	[CREATURE_CLASS:MAMMAL]
 	[PETVALUE:200]
-	[PREFSTRING:stubborness]
+	[PREFSTRING:stubbornness]{:stubborness}
 	[LARGE_ROAMING]
 	[COMMON_DOMESTIC][PACK_ANIMAL]
 	[BENIGN][MEANDERER][PET]
@@ -370,7 +375,7 @@ creature_domestic
 	[CREATURE_TILE:'D'][COLOR:6:0:0]
 	[CREATURE_CLASS:MAMMAL]
 	[PETVALUE:200]
-	[PREFSTRING:stubborness]
+	[PREFSTRING:stubbornness]{:stubborness}
 	[LARGE_ROAMING]
 	[COMMON_DOMESTIC][PACK_ANIMAL]
 	[BENIGN][MEANDERER][PET]
@@ -442,6 +447,7 @@ creature_domestic
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A medium-sized, hooved pack animal with a reputation for stubbornness.  She's often used as a beast of burden.  She has long ears, a tufted tail, and a noisy, braying attitude.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen donkey's milk]
@@ -464,6 +470,7 @@ creature_domestic
 			[PREFIX:NONE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A medium-sized, hooved pack animal with a reputation for stubbornness.  He's often used as a beast of burden.  He has long ears, a tufted tail, and a noisy, braying attitude.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -560,6 +567,7 @@ creature_domestic
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, hooved, maned herbivore, often domesticated as a steed for her stamina and great speed.  A skittish creature, she sleeps standing up so she can escape more quickly.  She's quick to run from danger unless trained for war.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen horse's milk]
@@ -582,6 +590,7 @@ creature_domestic
 			[PREFIX:NONE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, hooved, maned herbivore, often domesticated as a steed for his stamina and great speed.  A skittish creature, he sleeps standing up so he can escape more quickly.  He's quick to run from danger unless trained for war.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -677,6 +686,7 @@ creature_domestic
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[CHILD:1][GENERAL_CHILD_NAME:cow calf:cow calves]
 	[DIURNAL]
 	[HOMEOTHERM:10070]
@@ -687,6 +697,7 @@ creature_domestic
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large grazing pack animal kept for milk and meat.  She has large horns, a tufted tail, and a heavy body.  She can be ill-tempered.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen cow's milk]
@@ -709,6 +720,7 @@ creature_domestic
 			[PREFIX:NONE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large grazing pack animal kept for meat.  He has large horns, a tufted tail, and a heavy body.  He can be ill-tempered.]{+}
 		[CASTE_NAME:bull:bulls:bull]
 		[CHILDNAME:bull calf:bull calves]
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
@@ -782,6 +794,7 @@ creature_domestic
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:10:20]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:HOOF_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -808,13 +821,13 @@ creature_domestic
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
 	[SELECT_CASTE:MALE]
-	[ATTACK:HGORE:BODYPART:BY_CATEGORY:HORN]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:gore:gores]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_FLAG_WITH]
-		[ATTACK_PRIORITY:MAIN]
+	[APPLY_CREATURE_VARIATION:HORN_BUTT_ATTACK]{ATTACK:HGORE:BODYPART:BY_CATEGORY:HORN  Revision: replaced horn gore attack with a horn butt attack.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:gore:gores}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_FLAG_WITH}
+		{ATTACK_PRIORITY:MAIN}
 	[SELECT_CASTE:ALL]
 	[DIURNAL]
 	[HOMEOTHERM:10070]
@@ -826,6 +839,7 @@ creature_domestic
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:ewe:ewes:ewe]
 		[FEMALE]
+		[DESCRIPTION:A medium-sized herding animal prized for her thick wool coat.  She has a bulky body and a short tail.  She flocks with her kind for protection.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen sheep's milk]
@@ -849,6 +863,7 @@ creature_domestic
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:ram:rams:ram]
 		[MALE]
+		[DESCRIPTION:A medium-sized herding animal prized for his thick wool coat.  He has lateral spiral horns, a bulky body, and a short tail.  He flocks with his kind for protection.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -946,6 +961,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:sow:sows:sow]
 		[FEMALE]
+		[DESCRIPTION:A medium-sized domestic mammal that lives in filth but keeps herself clean (given the circumstances).  She has a corkscrew tail and a flat snout.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen pig's milk]
@@ -968,6 +984,7 @@ creature_domestic
 			[PREFIX:NONE]
 	[CASTE:MALE]
 		[CASTE_NAME:boar:boars:boar]
+		[DESCRIPTION:A medium-sized domestic mammal that lives in filth but keeps himself clean (given the circumstances).  He has a corkscrew tail and a flat snout.]{+}
 		[MALE]
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
@@ -1063,6 +1080,8 @@ creature_domestic
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+       Revision: horn attacks are too deadly, so reduce the velocity.}
+	[APPLY_CREATURE_VARIATION:HORN_BUTT_ATTACK]{+  Revision: added a horn butt attack.}
 	[DIURNAL]
 	[HOMEOTHERM:10070]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:1161:938:716:462:2200:3300] 19 kph
@@ -1073,6 +1092,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:nanny goat:nanny goats:nanny goat]
 		[FEMALE]
+		[DESCRIPTION:A medium-sized, hooved grazer with coarse fur, short horns and a scraggly beard.  She lives in herds with her kind and is kept for milk and meat.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen goat's milk]
@@ -1096,6 +1116,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:billy goat:billy goats:billy goat]
 		[MALE]
+		[DESCRIPTION:A medium-sized, hooved grazer with coarse fur, short horns and a scraggly beard.  He lives in herds with his kind and is kept for milk and meat.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1132,7 +1153,7 @@ creature_domestic
 	[PREFSTRING:clucking]
 	[PREFSTRING:scratching]
 	[BODY:HUMANOID_ARMLESS_NECK:2WINGS:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BEAK:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1191,6 +1212,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:hen:hens:hen]
 		[FEMALE]
+		[DESCRIPTION:A small domestic bird with a red crest on her head.  Noisy by nature and ill suited for long flights, she's prized for her tasty eggs and meat.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -1200,6 +1222,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:rooster:roosters:rooster]
 		[MALE]
+		[DESCRIPTION:A small domestic bird with a red crest on his head.  Noisy by nature and ill suited for long flights, he's prized for being tasty.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -1235,7 +1258,7 @@ creature_domestic
 	[BODY:QUADRUPED_NECK:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:3TOES_RQ_REG:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
 	[GRASSTRAMPLE:0]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -1292,9 +1315,11 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:cavy sow:cavy sows:cavy sow]
 		[FEMALE]
+		[DESCRIPTION:A tiny, stocky rodent with small ears, short legs, and no tail.  She roams the grasslands with her herd and watches for danger.]{+}
 	[CASTE:MALE]
 		[CASTE_NAME:cavy boar:cavy boars:cavy boar]
 		[MALE]
+		[DESCRIPTION:A tiny, stocky rodent with small ears, short legs, and no tail.  He roams the grasslands with his herd and watches for danger.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1333,7 +1358,7 @@ creature_domestic
 	[SWIMS_INNATE]
 	[PREFSTRING:quacks]
 	[BODY:HUMANOID_ARMLESS_NECK:2WINGS:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BILL:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1379,6 +1404,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:duck:ducks:duck]
 		[FEMALE]
+		[DESCRIPTION:A small water bird with a long neck and powerful legs for swimming and diving.  She strains the water with her beak to fish.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -1388,6 +1414,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:drake:drakes:drake]
 		[MALE]
+		[DESCRIPTION:A small water bird with a long neck and powerful legs for swimming and diving.  He strains the water with his beak to fish.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -1401,8 +1428,8 @@ creature_domestic
 
 [CREATURE:WATER_BUFFALO]
 	[DESCRIPTION:A large mammalian herbivore.  It is powerfully built and has long curved horns.]
-	[NAME:water buffalo:water buffalos:water buffalo]
-	[CHILD:1][GENERAL_CHILD_NAME:water buffalo calf:water buffalo calves]
+	[NAME:buffalo:buffalos:buffalo]{:water buffalo:water buffalos:water buffalo}
+	[CHILD:1][GENERAL_CHILD_NAME:buffalo calf:buffalo calves]{:water buffalo calf:water buffalo calves}
 	[CREATURE_TILE:'W'][COLOR:0:0:1]
 	[CREATURE_CLASS:MAMMAL]
 	[BIOME:ANY_TROPICAL_WETLAND]
@@ -1413,6 +1440,7 @@ creature_domestic
 	[LARGE_ROAMING]
 	[COMMON_DOMESTIC][PACK_ANIMAL][WAGON_PULLER]
 	[BENIGN][MEANDERER][PET]
+	[MOUNT]{+  Revision: buffalo can be used as mounts.}
 	[VISION_ARC:50:310]
 	[STANDARD_GRAZER]
 	[BODY:QUADRUPED_NECK_HOOF:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:GENERIC_TEETH:RIBCAGE:2HEAD_HORN]
@@ -1455,6 +1483,7 @@ creature_domestic
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:HOOF_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1485,35 +1514,38 @@ creature_domestic
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:549:366:183:1900:2900] 48 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph, NO DATA
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph, NO DATA
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[TRADE_CAPACITY:1500]
 	[MUNDANE]
 	[CASTE:FEMALE]
-		[CASTE_NAME:water buffalo cow:water buffalo cows:water buffalo cow]
+		[CASTE_NAME:buffalo cow:buffalo cows:buffalo cow]{:water buffalo cow:water buffalo cows:water buffalo cow}
 		[FEMALE]
+		[DESCRIPTION:A large hooved herbivore, powerfully built with long, curved horns.  She spends much of her time in the water.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
-			[STATE_NAME:ALL_SOLID:frozen water buffalo's milk]
-			[STATE_ADJ:ALL_SOLID:frozen water buffalo's milk]
-			[STATE_NAME:LIQUID:water buffalo's milk]
-			[STATE_ADJ:LIQUID:water buffalo's milk]
-			[STATE_NAME:GAS:boiling water buffalo's milk]
-			[STATE_ADJ:GAS:boiling water buffalo's milk]
+			[STATE_NAME:ALL_SOLID:frozen buffalo's milk]{:frozen water buffalo's milk}
+			[STATE_ADJ:ALL_SOLID:frozen buffalo's milk]{:frozen water buffalo's milk}
+			[STATE_NAME:LIQUID:buffalo's milk]{:water buffalo's milk}
+			[STATE_ADJ:LIQUID:buffalo's milk]{:water buffalo's milk}
+			[STATE_NAME:GAS:boiling buffalo's milk]{:boiling water buffalo's milk}
+			[STATE_ADJ:GAS:boiling buffalo's milk]{:boiling water buffalo's milk}
 			[PREFIX:NONE]
 		[MILKABLE:LOCAL_CREATURE_MAT:MILK:20000]
 		[USE_MATERIAL_TEMPLATE:CHEESE:CREATURE_CHEESE_TEMPLATE]
-			[STATE_NAME:SOLID:water buffalo cheese]
-			[STATE_ADJ:SOLID:water buffalo cheese]
-			[STATE_NAME:SOLID_POWDER:water buffalo cheese powder]
-			[STATE_ADJ:SOLID_POWDER:water buffalo cheese powder]
-			[STATE_NAME:LIQUID:melted water buffalo cheese]
-			[STATE_ADJ:LIQUID:melted water buffalo cheese]
-			[STATE_NAME:GAS:boiling water buffalo cheese]
-			[STATE_ADJ:GAS:boiling water buffalo cheese]
+			[STATE_NAME:SOLID:buffalo cheese]{:water buffalo cheese}
+			[STATE_ADJ:SOLID:buffalo cheese]{:water buffalo cheese}
+			[STATE_NAME:SOLID_POWDER:buffalo cheese powder]{:water buffalo cheese powder}
+			[STATE_ADJ:SOLID_POWDER:buffalo cheese powder]{:water buffalo cheese powder}
+			[STATE_NAME:LIQUID:melted buffalo cheese]{:melted water buffalo cheese}
+			[STATE_ADJ:LIQUID:melted buffalo cheese]{:melted water buffalo cheese}
+			[STATE_NAME:GAS:boiling buffalo cheese]{:boiling water buffalo cheese}
+			[STATE_ADJ:GAS:boiling buffalo cheese]{:boiling water buffalo cheese}
 			[PREFIX:NONE]
 	[CASTE:MALE]
-		[CASTE_NAME:water buffalo bull:water buffalo bulls:water buffalo bull]
+		[CASTE_NAME:buffalo bull:buffalo bulls:buffalo bull]{:water buffalo bull:water buffalo bulls:water buffalo bull}
 		[MALE]
+		[DESCRIPTION:A large hooved herbivore, powerfully built with long, curved horns.  He spends much of his time in the water.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1541,6 +1573,7 @@ creature_domestic
 	[LARGE_ROAMING]
 	[COMMON_DOMESTIC]
 	[BENIGN][MEANDERER][PET]
+	[PACK_ANIMAL][WAGON_PULLER]{+  Revision: reindeer can be used as pack animals and wagon pullers.}
 	[VISION_ARC:50:310]
 	[STANDARD_GRAZER]
 	[BODY:QUADRUPED_NECK_HOOF:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:GENERIC_TEETH:RIBCAGE:2HEAD_ANTLER]
@@ -1611,6 +1644,7 @@ creature_domestic
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[DIURNAL]
 	[HOMEOTHERM:10068]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:375:250:125:1900:2900] 70 kph
@@ -1622,6 +1656,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:reindeer cow:reindeer cows:reindeer cow]
 		[FEMALE]
+		[DESCRIPTION:A large hooved herbivore that lives in cold climates.  Skittish by nature, she roams with her kind and bolts at the first sign of danger.  She has large antlers and sought-after fur.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen reindeer's milk]
@@ -1645,6 +1680,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:reindeer bull:reindeer bulls:reindeer bull]
 		[MALE]
+		[DESCRIPTION:A large hooved herbivore that lives in cold climates.  Skittish by nature, he roams with his kind and bolts at the first sign of danger.  He has large antlers and sought-after fur.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1683,7 +1719,7 @@ creature_domestic
 	[PREFSTRING:formation flying]
 	[FLIER]
 	[BODY:HUMANOID_ARMLESS_NECK:2WINGS:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BILL:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1729,6 +1765,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:goose:geese:goose]
 		[FEMALE]
+		[DESCRIPTION:A small migratory water bird with a long neck, webbed feet, and a wide, flat bill.  She travels long distances to where food is plentiful.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -1738,6 +1775,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:gander:ganders:gander]
 		[MALE]
+		[DESCRIPTION:A small migratory water bird with a long neck, webbed feet, and a wide, flat bill.  He travels long distances to where food is plentiful.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -1798,6 +1836,7 @@ creature_domestic
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:10:25]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:HOOF_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1830,6 +1869,7 @@ creature_domestic
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[DIURNAL]
 	[HOMEOTHERM:10068]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:711:521:293:1900:2900] 30 kph, NO DATA
@@ -1841,6 +1881,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:yak cow:yak cows:yak cow]
 		[FEMALE]
+		[DESCRIPTION:A large mammalian herbivore that lives in the mountains.  She has long, shaggy fur and curved horns.  Her large lungs help keep her healthy at high altitudes.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen yak's milk]
@@ -1864,6 +1905,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:yak bull:yak bulls:yak bull]
 		[MALE]
+		[DESCRIPTION:A large mammalian herbivore that lives in the mountains.  He has long, shaggy fur and curved horns.  His large lungs help keep him healthy at high altitudes.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1890,6 +1932,7 @@ creature_domestic
 	[LARGE_ROAMING]
 	[COMMON_DOMESTIC]
 	[BENIGN][MEANDERER][PET]
+	[PACK_ANIMAL]{+  Revision: llamas can be used as pack animals.}
 	[VISION_ARC:50:310]
 	[STANDARD_GRAZER]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:GENERIC_TEETH:RIBCAGE]
@@ -1929,6 +1972,7 @@ creature_domestic
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:15:30]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:FOOT_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1965,6 +2009,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:llama:llamas:llama]
 		[FEMALE]
+		[DESCRIPTION:A large, woolly-haired pack animal with curved ears and a tall neck, prize for her coarse fur.  She's curious and friendly, but can be aggressive if over-socialized.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen llama's milk]
@@ -1988,6 +2033,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:llama:llamas:llama]
 		[MALE]
+		[DESCRIPTION:A large, woolly-haired pack animal with curved ears and a tall neck, prize for his coarse fur.  He's curious and friendly, but can be aggressive if over-socialized.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -2059,6 +2105,7 @@ creature_domestic
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:10:20]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:FOOT_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2093,6 +2140,7 @@ creature_domestic
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, silky-haired pack animal with a long neck and short, pointy ears, bred for her valuable fur.  She lives in a herd and brays in warning when predators arrive.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[USE_MATERIAL_TEMPLATE:MILK:MILK_TEMPLATE]
 			[STATE_NAME:ALL_SOLID:frozen alpaca's milk]
@@ -2115,6 +2163,7 @@ creature_domestic
 			[PREFIX:NONE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, silky-haired pack animal with a long neck and short, pointy ears, bred for his valuable fur.  He lives in a herd and brays in warning when predators arrive.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -2140,6 +2189,10 @@ creature_domestic
 	[NATURAL]
 	[LARGE_ROAMING]
 	[COMMON_DOMESTIC]
+	[BIOME:SAVANNA_TROPICAL]{+    Revision: allow guineafowls to spawn naturally.}
+	[BIOME:SHRUBLAND_TROPICAL]{+  Revision: allow guineafowls to spawn naturally.}
+	[BIOME:DESERT_ROCK]{+         Revision: allow guineafowls to spawn naturally.}
+	[BIOME:GRASSLAND_TROPICAL]{+  Revision: allow guineafowls to spawn naturally.}
 	[PETVALUE:10]
 	[VISION_ARC:50:310]
 	[BENIGN][MEANDERER][PET]
@@ -2152,7 +2205,7 @@ creature_domestic
 	[SWIMS_INNATE]
 	[PREFSTRING:social nature]
 	[BODY:HUMANOID_ARMLESS_NECK:2WINGS:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BEAK:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -2211,6 +2264,7 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:guineahen:guineahens:guineahen]
 		[FEMALE]
+		[DESCRIPTION:A small, ground-dwelling bird that eats seeds and insects and flocks with her kind.  She has a black crest and a colorful, featherless head.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -2220,6 +2274,7 @@ creature_domestic
 	[CASTE:MALE]
 		[CASTE_NAME:guineacock:guineacocks:guineacock]
 		[MALE]
+		[DESCRIPTION:A small, ground-dwelling bird that eats seeds and insects and flocks with his kind.  He has a black crest and a colorful, featherless head.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -2233,8 +2288,8 @@ creature_domestic
 
 [CREATURE:BIRD_PEAFOWL_BLUE]
 	[DESCRIPTION:A small forest bird.  The male's tail creates an extravagant display for females.  At night, they roost in the trees.]
-	[NAME:blue peafowl:blue peafowls:blue peafowl]
-	[CHILD:1][GENERAL_CHILD_NAME:blue peachick:blue peachicks]
+	[NAME:peafowl:peafowls:peafowl]{:blue peafowl:blue peafowls:blue peafowl}
+	[CHILD:1][GENERAL_CHILD_NAME:peachick:peachicks]{:blue peachick:blue peachicks}
 	[CREATURE_TILE:'p'][COLOR:1:0:1]
 	[BIOME:FOREST_TROPICAL_DRY_BROADLEAF]
 	[BIOME:FOREST_TROPICAL_MOIST_BROADLEAF]
@@ -2256,7 +2311,7 @@ creature_domestic
 	[PREFSTRING:coloration]
 	[PREFSTRING:enormous fan tails]
 	[BODY:HUMANOID_ARMLESS_NECK:2WINGS:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BEAK:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -2313,7 +2368,8 @@ creature_domestic
 	[ROOT_AROUND:BY_CATEGORY:BEAK:root around in:roots around in]
 	[MUNDANE]
 	[CASTE:FEMALE]
-		[CASTE_NAME:blue peahen:blue peahens:blue peahen]
+		[CASTE_NAME:peahen:peahens:peahen]{:blue peahen:blue peahens:blue peahen}
+		[DESCRIPTION:A small and colorful forest bird with extravagent coloring, a fan-shaped crest on her head, and white stripes above her eyes.  At night, she roosts in the trees.]{+}
 		[FEMALE]
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
@@ -2326,7 +2382,8 @@ creature_domestic
 				[TLCM_NOUN:feathers:PLURAL]
 		[CASTE_COLOR:6:0:0]
 	[CASTE:MALE]
-		[CASTE_NAME:blue peacock:blue peacocks:blue peacock]
+		[CASTE_NAME:peacock:peacocks:peacock]{:blue peacock:blue peacocks:blue peacock}
+		[DESCRIPTION:A small and colorful forest bird with extravagent coloring, a fan-shaped crest on his head, and white stripes above his eyes.  He has a magnificent fan-shaped tail for impressing females.  At night, he roosts in the trees.]{+}
 		[MALE]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BLUE:1]
@@ -2367,7 +2424,7 @@ creature_domestic
 	[PREFSTRING:snood]
 	[PREFSTRING:gobble]
 	[BODY:HUMANOID_ARMLESS_NECK:2WINGS:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BEAK:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -2425,6 +2482,7 @@ creature_domestic
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[CASTE_NAME:turkey hen:turkey hens:turkey hen]
+		[DESCRIPTION:A small domesticated bird with distinctive flaps of skin hanging from her face and a fan-shaped tail.  She's prized for her tasty meat.]{+}
 		[FEMALE]
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
@@ -2434,6 +2492,7 @@ creature_domestic
 			[CLUTCH_SIZE:10:14]
 	[CASTE:MALE]
 		[CASTE_NAME:turkey gobbler:turkey gobblers:turkey gobbler]
+		[DESCRIPTION:A small domesticated bird with distinctive flaps of skin hanging from his face.  He's prized for his tasty meat.  When attracting mates, he puffs up his feathers, flares his tail into a fan, and makes gobbling sounds while he struts.]{+}
 		[MALE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
@@ -2468,7 +2527,7 @@ creature_domestic
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
 	[GRASSTRAMPLE:0]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[SELECT_TISSUE:HAIR]
 			[INSULATION:200]
@@ -2527,9 +2586,11 @@ creature_domestic
 	[CASTE:FEMALE]
 		[CASTE_NAME:doe rabbit:doe rabbits:doe rabbit]
 		[FEMALE]
+		[DESCRIPTION:A small and skittish critter with long ears and a small bobtail.  She outruns predators on long hind legs.  She seems to live everywhere, from forest to desert.]{+}
 	[CASTE:MALE]
 		[CASTE_NAME:buck rabbit:buck rabbits:buck rabbit]
 		[MALE]
+		[DESCRIPTION:A small and skittih critter with long ears and a small bobtail.  He outruns predators on long hind legs.  He seems to live everywhere, from forest to desert.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]

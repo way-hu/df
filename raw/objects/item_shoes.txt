@@ -9,6 +9,7 @@ item_shoes
 [LAYER_SIZE:20]
 [LAYER_PERMIT:15]
 [MATERIAL_SIZE:1]
+[SHAPED]{+             Revision: shoes aren't usually worn over other shoes.}
 [SOFT]
 [LEATHER]
 [STRUCTURAL_ELASTICITY_WOVEN_THREAD]
@@ -23,6 +24,7 @@ item_shoes
 [LAYER_SIZE:25]
 [LAYER_PERMIT:15]
 [MATERIAL_SIZE:2]
+[SHAPED]{+             Revision: boots aren't usually worn over other boots.}
 [METAL]
 [LEATHER]
 [HARD]
@@ -43,10 +45,11 @@ item_shoes
 [ITEM_SHOES:ITEM_SHOES_SANDAL]
 [NAME:sandal:sandals]
 [LAYER:OVER]
-[COVERAGE:100]
+[COVERAGE:70]{:100     Revision: no perfect armor coverage.}
 [LAYER_SIZE:25]
 [LAYER_PERMIT:15]
 [MATERIAL_SIZE:1]
+[SHAPED]{+             Revision: sandals aren't usually worn over sandals or boots.}
 [SOFT]
 [LEATHER]
 [STRUCTURAL_ELASTICITY_WOVEN_THREAD]

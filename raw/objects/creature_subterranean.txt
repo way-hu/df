@@ -10,17 +10,21 @@ creature_subterranean
 	[CREATURE_TILE:'C'][COLOR:7:0:0]
 	[PETVALUE:750]
 	[PET_EXOTIC]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC    Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[AMPHIBIOUS]
+	[GOBBLE_VERMIN_CLASS:MAMMAL]{+  Revision: too few creatures ate vermin.}
 	[BIOME:SUBTERRANEAN_WATER]
 	[UNDERGROUND_DEPTH:1:2]
 	[LARGE_ROAMING][DIFFICULTY:2]
 	[POPULATION_NUMBER:10:20]
 	[CARNIVORE][NATURAL]
-	[LARGE_PREDATOR]
+	[LARGE_PREDATOR][AMBUSHPREDATOR]{+  Revision: as their description indicates, they prefer to ambush their prey.}
 	[GRASSTRAMPLE:20]
 	[PREFSTRING:strength]
 	[BUILDINGDESTROYER:1]
+	[SOUND:ALERT:100:2500:VOCALIZATION:hiss:hisses:hissing]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:1000:VOCALIZATION:snap:snaps:a hostile snapping]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:100:1000:VOCALIZATION:sniff:sniffs:a sniff]{+}
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:THROAT:NECK:SPINE:BRAIN:SKULL:5TOES_FQ_REG:4TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
@@ -78,10 +82,12 @@ creature_subterranean
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:3512:2634:1756:878:4900:6900] 10 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2206:1692:1178:585:3400:4900] 15 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CANNOT_JUMP]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A huge, low-slung reptile with a thick tail and a crushing bite.  Her scales are pale and colorless from lack of light; she waits in the darkness to ambush prey.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -90,6 +96,7 @@ creature_subterranean
 			[CLUTCH_SIZE:20:60]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A huge, low-slung reptile with a thick tail and a crushing bite.  His scales are pale and colorless from lack of light; he waits in the darkness to ambush prey.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:GRAY:1]
@@ -104,10 +111,13 @@ creature_subterranean
 	[DESCRIPTION:A giant amphibian predator found underground.]
 	[NAME:giant cave toad:giant cave toads:giant cave toad]
 	[CASTE_NAME:giant cave toad:giant cave toads:giant cave toad]
+	[CHILD:1][GENERAL_CHILD_NAME:giant cave toadlet:giant cave toadlet]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'T'][COLOR:7:0:0]
 	[PETVALUE:750]
+	[GOBBLE_VERMIN_CLASS:EDIBLE_GROUND_BUG]{+  Revision: too few creatures ate vermin.}
+	[GOBBLE_VERMIN_CLASS:EDIBLE_FLYING_BUG]{+  Revision: too few creatures ate vermin.}
 	[PET_EXOTIC]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[AMPHIBIOUS][UNDERSWIM]
 	[LARGE_PREDATOR]
 	[CARNIVORE]
@@ -119,6 +129,8 @@ creature_subterranean
 	[LARGE_ROAMING][DIFFICULTY:2]
 	[POPULATION_NUMBER:10:20]
 	[PREFSTRING:strength]
+	[SOUND:ALERT:100:10000:VOCALIZATION:croak angrily:croaks angrily:angry croaking]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:50:10000:VOCALIZATION:croak:croaks:loud croaking]{+}
 	[BODY:QUADRUPED_NECK:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:HAIR]
@@ -164,8 +176,10 @@ creature_subterranean
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A giant, pot-bellied amphibian that lives deep underground.  Her bumpy, mottled skin is pale from lack of light.  Her long tongue is ready to lash out and snatch her next meal.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A giant, pot-bellied amphibian that lives deep underground.  His bumpy, mottled skin is pale from lack of light.  His long tongue is ready to lash out and snatch his next meal.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:TAUPE_GRAY:1]
@@ -180,10 +194,11 @@ creature_subterranean
 	[DESCRIPTION:A giant amphibian predator found underground near water.]
 	[NAME:giant olm:giant olms:giant olm]
 	[CASTE_NAME:giant olm:giant olms:giant olm]
+	[CHILD:1][GENERAL_CHILD_NAME:olm tadpole:olm tadpoles]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'O'][COLOR:7:0:1]
 	[PETVALUE:750]
 	[PET_EXOTIC]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[AMPHIBIOUS][UNDERSWIM]
 	[LARGE_PREDATOR]
 	[CARNIVORE]
@@ -240,9 +255,11 @@ creature_subterranean
 	[SWIMS_INNATE]
 	[CANNOT_JUMP]
 	[CASTE:FEMALE]
-		[FEMALE]
+		[FEMALE]i
+		[DESCRIPTION:A giant, serpentine amphibian with red, feathery gills and small, thin legs.  She keeps to herself in underground lakes; she lives and breathes underwater.  Her skin is pale from lack of light; her eyesight is faded from disuse.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A giant, serpentine amphibian with red, feathery gills and small, thin legs.  He keeps to himself in underground lakes, he lives and breathes underwater.  His skin is pale from lack of light; his eyesight is faded from disuse.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -261,6 +278,8 @@ creature_subterranean
 	[CREATURE_TILE:'B'][COLOR:0:0:1]
 	[CREATURE_CLASS:MAMMAL]
 	[FLIER]
+	[GOBBLE_VERMIN_CLASS:EDIBLE_GROUND_BUG]{+  Revision: too few creatures ate vermin.}
+	[GOBBLE_VERMIN_CLASS:EDIBLE_FLYING_BUG]{+  Revision: too few creatures ate vermin.}
 	[PETVALUE:750]
 	[PET_EXOTIC]
 	[MOUNT_EXOTIC]
@@ -272,6 +291,8 @@ creature_subterranean
 	[LARGE_PREDATOR]
 	[NATURAL]
 	[PREFSTRING:terrifying features]
+	[SOUND:ALERT:100:10000:VOCALIZATION:screech angrily:screeches angrily:angry screeching]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:50:10000:VOCALIZATION:screech:screeches:the screeching of a massive bat]{+}
 	[BODY:HUMANOID_NECK_FLIER:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4FINGERS:4TOES:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
@@ -323,11 +344,14 @@ creature_subterranean
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:3512:2634:1756:878:4900:6900] 10 kph
 	[NATURAL_SKILL:CLIMBING:15]
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A giant winged critter with large ears, a thin tail, and broad wings stretching from her hands to her feet.  She clings to rock with long, sickle-like fingers and toes.  She hunts at night and makes sounds in the darkness to help her see.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A giant winged critter with large ears, a thin tail, and broad wings stretching from his hands to his feet.  He clings to rock with long, sickle-like fingers and toes.  He hunts at night and makes sounds in the darkness to help him see.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -418,11 +442,14 @@ creature_subterranean
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[STANCE_CLIMBER][NATURAL_SKILL:CLIMBING:15]
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A gigantic, ragged-looking pest with a long, naked tail, sharp teeth, and a mean, hungry look.  She scurries in the dark, searching for food and, sometimes, infecting supplies.  If any are left over.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A gigantic, ragged-looking pest with a long, naked tail, sharp teeth, and a mean, hungry look.  He scurries in the dark, searching for food and, sometimes, infecting supplies.  If any are left over.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -515,8 +542,10 @@ creature_subterranean
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A huge, ragged-looking pest that searches for food in the caverns, stealing food and infecting supplies.  She has a long, naked tail and a hungry look.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A huge, ragged-looking pest that searches for food in the caverns, stealing food and infecting supplies.  He has a long, naked tail and a hungry look.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -531,9 +560,9 @@ creature_subterranean
 
 [CREATURE:MOLE_DOG_NAKED]
 	[DESCRIPTION:A large, pale rodent with loose, hanging, hairless skin.  It has long teeth and an incredibly powerful bite.  It is found underground.]
-	[NAME:naked mole dog:naked mole dogs:naked mole dog]
-	[CASTE_NAME:naked mole dog:naked mole dogs:naked mole dog]
-	[CHILD:1][GENERAL_CHILD_NAME:naked mole puppy:naked mole puppies]
+	[NAME:moledog:moledogs:moledog]{:naked mole dog:naked mole dogs:naked mole dog}
+	[CASTE_NAME:moledog:moledogs:moledog]{:naked mole dog:naked mole dogs:naked mole dog}
+	[CHILD:1][GENERAL_CHILD_NAME:molepuppy:molepuppies]{:naked mole puppy:naked mole puppies}
 	[CREATURE_TILE:'n'][COLOR:4:0:1]
 	[CREATURE_CLASS:MAMMAL]
 	[PETVALUE:350]
@@ -606,8 +635,10 @@ creature_subterranean
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, nearly blind rodent with long teeth and loose, hairless skin pale from lack of light.  She scurries away in the darkness, hiding and waiting.  She has a dangerous bite, when cornered.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, nearly blind rodent with long teeth and loose, hairless skin pale from lack of light.  He scurries away in the darkness, hiding and waiting.  He has a dangerous bite, when cornered.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -631,6 +662,8 @@ creature_subterranean
 	[CLUSTER_NUMBER:5:10]
 	[LARGE_PREDATOR]
 	[CAN_LEARN][SLOW_LEARNER]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: cave wandering is thirsty work.}
+	[CURIOUSBEAST_EATER]{+    Revision: cave wandering is hungry work.}
 	[PREFSTRING:grunts]
 	[BODY:HUMANOID_NECK:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
@@ -725,6 +758,7 @@ creature_subterranean
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[MAXAGE:45:90]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -732,6 +766,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -740,6 +775,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -748,6 +784,7 @@ creature_subterranean
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -757,6 +794,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[EQUIPS]
 	[CANOPENDOORS]
 	[DIURNAL]
@@ -770,9 +808,11 @@ creature_subterranean
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[DESCRIPTION:A short and hairy brute with a searching expression and a primitive, almost simian appearance.  Stooped and long-limbed, she searches for food and comfort in the darkness.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
+		[DESCRIPTION:A short and hairy brute with a searching expression and a primitive, almost simian appearance.  Stooped and long-limbed, he searches for food and comfort in the darkness.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
 	[TL_COLOR_MODIFIER:AMBER:1:AUBURN:1:BLACK:1:BROWN:1:BUFF:1:BURNT_SIENNA:1:BURNT_UMBER:1:CHARCOAL:1:CHESTNUT:1:CHOCOLATE:1:CINNAMON:1:COPPER:1:DARK_BROWN:1:DARK_CHESTNUT:1:DARK_TAN:1:ECRU:1:FLAX:1:GOLD:1:GOLDEN_YELLOW:1:GOLDENROD:1:LIGHT_BROWN:1:MAHOGANY:1:OCHRE:1:PALE_BROWN:1:PALE_CHESTNUT:1:PUMPKIN:1:RAW_UMBER:1:RUSSET:1:SAFFRON:1:SEPIA:1:TAN:1:TAUPE_DARK:1:TAUPE_GRAY:1:TAUPE_MEDIUM:1:TAUPE_PALE:1:TAUPE_SANDY:1]
@@ -860,8 +900,10 @@ creature_subterranean
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A gigantic, earless beast with tiny eyes, velvet fur, and a strange, star-shaped nose.  She has a gentle nature.  She digs in the darkness, shifting dirt and stone.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A gigantic, earless beast with tiny eyes, velvet fur, and a strange, star-shaped nose.  He has a gentle nature.  He digs in the darkness, shifting dirt and stone.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -882,6 +924,7 @@ creature_subterranean
 	[CASTE_NAME:fire imp:fire imps:fire imp]
 	[CREATURE_TILE:'i'][COLOR:6:0:1]
 	[LARGE_ROAMING][FREQUENCY:20]
+	[CHILD:10]{+  Revision: imp fire babies!}
 	[BIOME:SUBTERRANEAN_LAVA]
 	[UNDERGROUND_DEPTH:0:4]
 	[POPULATION_NUMBER:15:30]
@@ -913,7 +956,7 @@ creature_subterranean
 	[ODOR_STRING:smoke]
 	[ODOR_LEVEL:90]
 	[BODY:HUMANOID_NECK:TAIL:2EYES:2EARS:NOSE:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:4FINGERS:4TOES:FACIAL_FEATURES:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[USE_MATERIAL_TEMPLATE:NAIL:NAIL_TEMPLATE]
@@ -937,6 +980,7 @@ creature_subterranean
 	[BODY_SIZE:0:0:6000]
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
+	[MAXAGE:30:40]{+  Revision: nobody lives forever.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -946,6 +990,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -953,6 +998,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -961,6 +1007,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -969,6 +1016,7 @@ creature_subterranean
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[EQUIPS]
 	[ALL_ACTIVE]
 	[NO_FEVERS]
@@ -979,6 +1027,14 @@ creature_subterranean
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[NATURAL_SKILL:CLIMBING:15]
 	[SWIMS_INNATE]
+	[CASTE:FEMALE]{+  Revision: I dislike monogendered humanoids.}
+		[FEMALE]
+		[DESCRIPTION:A naked, pocket-sized imp with sharp, angular features, large eyes, hair of fire, and long fingers.  Her arms and legs are wreathed in flame, which she can hurl at her enemies.]{:A small humanoid surrounded by fire which they can hurl at their enemies.}
+		[MULTIPLE_LITTER_RARE]
+	[CASTE:MALE]{+    Revision: I dislike monogendered humanoids.}
+		[MALE]
+		[DESCRIPTION:A naked, pocket-sized imp with sharp, angular features, large eyes, hair of fire, and long fingers.  His arms and legs are wreathed in flame, which he can hurl at his enemies.]{:A small humanoid surrounded by fire which they can hurl at their enemies.}
+	[SELECT_CASTE:ALL]{+}
 	[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 		[TL_COLOR_MODIFIER:RED:1]
 			[TLCM_NOUN:skin:SINGULAR]
@@ -1000,9 +1056,12 @@ creature_subterranean
 	[DESCRIPTION:A large underground monster with eight legs and sharp, venomous fangs.]
 	[NAME:giant cave spider:giant cave spiders:giant cave spider]
 	[CASTE_NAME:giant cave spider:giant cave spiders:giant cave spider]
+	[CHILD:2][GENERAL_CHILD_NAME:giant cave spiderling:giant cave spiderlings]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'S'][COLOR:7:0:0]
 	[CREATURE_CLASS:POISONOUS]
 	[PETVALUE:2500]
+	[GOBBLE_VERMIN_CLASS:EDIBLE_GROUND_BUG]{+  Revision: too few creatures ate vermin.}
+	[GOBBLE_VERMIN_CLASS:EDIBLE_FLYING_BUG]{+  Revision: too few creatures ate vermin.}
 	[PET_EXOTIC]
 	[BIOME:SUBTERRANEAN_CHASM]
 	[UNDERGROUND_DEPTH:1:2]
@@ -1029,9 +1088,12 @@ creature_subterranean
 	[APPLY_CREATURE_VARIATION:STANDARD_WALKING_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:900:711:521:293:1900:2900] 30 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[STANCE_CLIMBER][NATURAL_SKILL:CLIMBING:15]
 	[GRASSTRAMPLE:10]
 	[PREFSTRING:mystery]
+	[SOUND:ALERT:100:10000:VOCALIZATION:chitter angrily:chitters angrily:angry chittering]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:100:2500:VOCALIZATION:chitter:chitters:chittering]{+}
 	[NOBONES]
 	[BODY:SPIDER:2EYES:HEART:GUTS:BRAIN:MOUTH]
 	[BODY_DETAIL_PLAN:CHITIN_MATERIALS]
@@ -1087,8 +1149,10 @@ creature_subterranean
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large and deadly underground spider with sharp, venomous fangs.  She shoots web to ensnare prey; the silk is prized, but hard to collect.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large and deadly underground spider with sharp, venomous fangs.  He shoots web to ensnare prey; the silk is prized, but hard to collect.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:CHITIN]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -1168,8 +1232,10 @@ creature_subterranean
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny underground spider, sought for her thread.  Her bite causes an unpleasant dizziness which never goes away.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny underground spider, sought for his thread.  His bite causes an unpleasant dizziness which never goes away.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:CHITIN]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -1180,8 +1246,8 @@ creature_subterranean
 
 [CREATURE:FISH_CAVE]
 	[DESCRIPTION:A small pale creature found in underground streams and ponds.]
-	[NAME:cave fish:cave fish:cave fish]
-	[CASTE_NAME:cave fish:cave fish:cave fish]
+	[NAME:cavefish:cavefish:cavefish]{:cave fish:cave fish:cave fish}
+	[CASTE_NAME:cavefish:cavefish:cavefish]{:cave fish:cave fish:cave fish}
 	[CREATURE_TILE:224][COLOR:7:0:1]
 	[VERMIN_FISH][VERMIN_GROUNDER][FISHITEM][IMMOBILE_LAND][VERMIN_NOTRAP]
 	[AQUATIC][SMALL_REMAINS][UNDERSWIM]
@@ -1192,7 +1258,7 @@ creature_subterranean
 	[POPULATION_NUMBER:250:500]
 	[PREFSTRING:beauty]
 	[BODY:BASIC_2PARTBODY:BASIC_HEAD:SIDE_FINS:DORSAL_FIN:TAIL:HEART:GUTS:ORGANS:SPINE:BRAIN:SKULL:MOUTH:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[REMOVE_MATERIAL:EYE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1236,8 +1302,10 @@ creature_subterranean
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small, blind, and pale fish that swims in underground streams and ponds.  Her scales shimmer as she swims.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, blind, and pale fish that swims in underground streams and ponds.  His scales shimmer as he swims.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -1245,29 +1313,29 @@ creature_subterranean
 
 [CREATURE:CAVE_FISH_MAN]
 	[COPY_TAGS_FROM:FISH_CAVE]
-	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON]
-	[CV_REMOVE_TAG:AQUATIC]
-	[CV_ADD_TAG:AMPHIBIOUS]
+	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON_LEGLESS]{:ANIMAL_PERSON  Revision: cave fish people make more sense without legs.}
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_TAG:BODY]
 		[CV_REMOVE_TAG:BODY]
 		[APPLY_CURRENT_CREATURE_VARIATION]
-		[BODY:HUMANOID:SIDE_FINS:DORSAL_FIN:TAIL:HEART:GUTS:ORGANS:SPINE:BRAIN:SKULL:MOUTH:RIBCAGE]
+		[BODY:HUMANOID_LEGLESS:SIDE_FINS:DORSAL_FIN:TAIL:HEART:GUTS:ORGANS:SPINE:BRAIN:SKULL:MOUTH:RIBCAGE]{:HUMANOID  Revision: cave fish people make more sense without legs.}
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
-		[CASTE_NAME:cave fish man:cave fish men:cave fish man]
+		[CASTE_NAME:cavefish man:cavefish men:cavefish man]{:cave fish man:cave fish men:cave fish man}
+		[DESCRIPTION:A small and slimy horror that lives in watery colonies far underground.  He has the wide, rounded head of a cave fish; it's so close to his broad shoulders that his neck disappears.  He lacks eyes yet somehow sees.  His fin-like thighs merge into a finned tail; two fins on his sides help him swim.  He doesn't care that he's naked.  What use is clothing in the water?]{+}
 	[SELECT_CASTE:FEMALE]
-		[CASTE_NAME:cave fish woman:cave fish women:cave fish woman]
+		[CASTE_NAME:cavefish woman:cavefish women:cavefish woman]{:cave fish woman:cave fish women:cave fish woman}
+		[DESCRIPTION:A small and slimy horror that live sin watery colonies far underground.  She has the wide, rounded head of a cave fish; it's so close to her broad shoulders that her neck disappears.  She lacks eyes yet somehow sees.  Her fin-like thighs merge into a finned tail; two fins on her sides help her swim.  She doesn't care that she's naked.  What use is clothing in the water?]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:KICK_ATTACK        Revision: if they don't have legs, they can't kick.}
+	{APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[GO_TO_START]
-	[NAME:cave fish man:cave fish men:cave fish man]
+	[NAME:cavefish man:cavefish men:cavefish man]{:cave fish man:cave fish men:cave fish man}
 	[DESCRIPTION:A humanoid creature with the head of a blind cave fish.  They live in colonies in watery regions far underground.]
 	[POPULATION_NUMBER:5:10]
 	[CLUSTER_NUMBER:5:10]
@@ -1319,8 +1387,10 @@ creature_subterranean
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small, pale critter with a hardened carapace, long antennae, large pincers, and a muscular tail.  She walks along the bottom of underground streams and ponds, searching for food.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, pale critter with a hardened carapace, long antennae, large pincers, and a muscular tail.  He walks along the bottom of underground streams and ponds, searching for food.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:CHITIN]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -1330,7 +1400,7 @@ creature_subterranean
 				[TLCM_NOUN:eyes:PLURAL]
 
 [CREATURE:SNAKE_FIRE]
-	[DESCRIPTION:A serpent made of pure fire which can inject liquid fire as venom.]
+	[DESCRIPTION:A tiny serpent of fire that winds its way among the rocks deep underground, lighting the gloomy caverns.  Its deadly bite burns its victim even before it injects liquid fire as venom.]{:A snake made of pure fire which can inject liquid fire as venom.}
 	[NAME:fire snake:fire snakes:fire snake]
 	[CASTE_NAME:fire snake:fire snakes:fire snake]
 	[CREATURE_TILE:249][COLOR:6:0:1]
@@ -1352,7 +1422,7 @@ creature_subterranean
 	[NO_THOUGHT_CENTER_FOR_MOVEMENT]
 	[USE_MATERIAL_TEMPLATE:FLAME:FLAME_TEMPLATE]
 	[USE_TISSUE_TEMPLATE:FLAME:FLAME_TEMPLATE]
-	[TISSUE_LAYER:BY_CATEGORY:ALL:FLAME]	
+	[TISSUE_LAYER:BY_CATEGORY:ALL:FLAME]
 	[USE_MATERIAL_TEMPLATE:VENOM:FLAME_TEMPLATE]
 		[STATE_NAME:ALL:liquid fire]
 		[STATE_ADJ:ALL:liquid fire]
@@ -1392,7 +1462,7 @@ creature_subterranean
 	[POPULATION_NUMBER:250:500]
 	[PREFSTRING:gills]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[REMOVE_TISSUE:HAIR]
@@ -1435,8 +1505,10 @@ creature_subterranean
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, snake-like, nearly blind amphibian that swims in underground streams and sleeps and eats underwater.  She has feathery, red gills and small, thin legs.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, snake-like, nearly blind amphibian that swims in underground streams and sleeps and eats underwater.  He has feathery, red gills and small, thin legs.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -1451,12 +1523,14 @@ creature_subterranean
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:olm man:olm men:olm man]
+		[DESCRIPTION:A small and slimy horror with feathery red gills, reedy arms, and the head of an olm.  He breathes and lives underwater, keeping to himself and eating rarely.  His fin-tipped tail curls and unfolds as he swims.  He doesn't care that he's naked.  What use is clothing in the water?]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:olm woman:olm women:olm woman]
+		[DESCRIPTION:A small and slimy horror with feathery red gills, reedy arms, and the head of an olm.  She breathes and lives underwater, keeping to herself and eating rarely.  Her fin-tipped tail curls and unfolds as she swims.  She doesn't care that she's naked.  What use is clothing in the water?]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:900:711:521:293:1900:2900] 30 kph
@@ -1493,7 +1567,7 @@ creature_subterranean
 	[PREFSTRING:haunting cries]
 	[BODY:HUMANOID_NECK_FLIER:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4FINGERS:4TOES:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -1552,8 +1626,10 @@ creature_subterranean
 	[LOW_LIGHT_VISION:10000]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny winged mammal that rests in caves during the day and makes sounds to help her hunt at night.  She has long fingers, a thin tail, and large ears.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny winged mammal that rests in caves during the day and makes sounds to help him hunt at night.  He has long fingers, a thin tail, and large ears.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1575,13 +1651,15 @@ creature_subterranean
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:bat man:bat men:bat man]
+		[DESCRIPTION:A small, furry beastman with long fingers, a thin tail, tall ears, and the head of a bat.  Broad wings stretch from his wrist to his ankle.  He makes sounds to help him hunt in the dark.  His body is unusually light.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:bat woman:bat women:bat woman]
+		[DESCRIPTION:A small, furry beastwoman with long fingers, a thin tail, tall ears, and  the head of a bat.  Broad wings stretch from her wrist to her ankle.  She makes sounds to help her hunt in the dark.  Her body is unusually light.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK  Revision: biting and scratching are daft ideas; remove them.}
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_FLYING_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -1597,7 +1675,7 @@ creature_subterranean
 	[COLOR:0:0:1]
 
 [CREATURE:MAGGOT_PURRING]
-	[DESCRIPTION:A tiny larva which is prized for its milk.]
+	[DESCRIPTION:A tiny larva that purrs when it's happy and is prized for its milk.  It has a long, ringed, fat body and a tiny round mouth.]{:A tiny larva which is prized for its milk.}
 	[NAME:purring maggot:purring maggots:purring maggot]
 	[CASTE_NAME:purring maggot:purring maggots:purring maggot]
 	[CREATURE_TILE:'{'][COLOR:7:0:1][ALTTILE:'}']
@@ -1612,7 +1690,7 @@ creature_subterranean
 	[PREFSTRING:comforting whirs]
 	[NOBONES]
 	[BODY:BODY_WITH_HEAD_FLAG:HEART:GUTS:BRAIN:MOUTH]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[REMOVE_MATERIAL:BONE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1656,7 +1734,7 @@ creature_subterranean
 		[MULTIPLY_VALUE:2]
 
 [CREATURE:ELEMENTMAN_FIRE]
-	[DESCRIPTION:Fire in the shape of a human that can hurl fireballs.]
+	[DESCRIPTION:A midsized, faceless automaton of fire that wanders the gloomy deep, lighting the gloomy depths.  Flames dance across its strange, shifting body.  It can throw fire when it needs to.]{:Fire in the shape of a human that can hurl fireballs.}
 	[NAME:fire man:fire men:fire man]
 	[CASTE_NAME:fire man:fire men:fire man]
 	[CREATURE_TILE:'M'][COLOR:4:0:1]
@@ -1704,7 +1782,7 @@ creature_subterranean
 	[USE_MATERIAL_TEMPLATE:FLAME:FLAME_TEMPLATE]
 		[MAT_FIXED_TEMP:10800]
 	[USE_TISSUE_TEMPLATE:FLAME:FLAME_TEMPLATE]
-	[TISSUE_LAYER:BY_CATEGORY:ALL:FLAME]	
+	[TISSUE_LAYER:BY_CATEGORY:ALL:FLAME]
 	[BODY_SIZE:0:0:70000]
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
@@ -1715,6 +1793,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1723,16 +1802,18 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:BAR:NO_SUBTYPE:ASH:NO_MATGLOSS]
 	[ALL_ACTIVE]
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 
 [CREATURE:ELEMENTMAN_MAGMA]
-	[DESCRIPTION:Magma moving in the shape of a man.  It has a cracked black crust.]
+	[DESCRIPTION:A midsized, faceless automaton of moving magma with a cracked black crust, mindless and tireless.  Its molten feet seem to flow as it moves.]{:Magma moving in the shape of a man.  It has a cracked black crust.}
 	[NAME:magma man:magma men:magma man]
 	[CASTE_NAME:magma man:magma men:magma man]
 	[CREATURE_TILE:'M'][COLOR:4:0:1]
@@ -1790,6 +1871,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1798,6 +1880,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:STONE:NO_SUBTYPE:STONE:USE_LAVA_STONE]
 	[ODOR_LEVEL:0]
 	[SMELL_TRIGGER:10000] cannot smell
@@ -1806,10 +1889,11 @@ creature_subterranean
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 
 [CREATURE:ELEMENTMAN_IRON]
-	[DESCRIPTION:A man-shaped creature made of iron.]
+	[DESCRIPTION:A midsized automaton of iron, mindless, tough, and impervious to pain.  Its strangely hollow, filled with a strange yellow vapor that escapes from its eyes as it moves.]{:A man-shaped creature made of iron.}
 	[NAME:iron man:iron men:iron man]
 	[CASTE_NAME:iron man:iron men:iron man]
 	[CREATURE_TILE:'M'][COLOR:0:0:1]
@@ -1879,6 +1963,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1887,6 +1972,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:STATUE:NO_SUBTYPE:INORGANIC:IRON]
 	[ITEMCORPSE_QUALITY:5]
 	[ALL_ACTIVE]
@@ -1894,10 +1980,11 @@ creature_subterranean
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_LEARNED]
 
 [CREATURE:ELEMENTMAN_MUD]
-	[DESCRIPTION:A humanoid made of mud which lives near water underground.]
+	[DESCRIPTION:A midsized, faceless, sweet-smelling automaton of packed mud.  It wanders near water deep underground, tireless and cryptic.]{:A humanoid made of mud which lives near water underground.}
 	[NAME:mud man:mud men:mud man]
 	[CASTE_NAME:mud man:mud men:mud man]
 	[CREATURE_TILE:'M'][COLOR:6:0:0]
@@ -1944,6 +2031,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1952,12 +2040,14 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:GLOB:NO_SUBTYPE:MUD:NONE]
 	[ALL_ACTIVE]
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_LEARNED]
 
 [CREATURE:BIRD_SWALLOW_CAVE]
@@ -1987,7 +2077,7 @@ creature_subterranean
 	[NOT_BUTCHERABLE]
 	[PREFSTRING:coloration]
 	[BODY:HUMANOID_ARMLESS_NECK:2WINGS:2EYES:2LUNGS:HEART:GUTS:ORGANS:GIZZARD:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES:BEAK:TONGUE:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[USE_MATERIAL_TEMPLATE:FEATHER:FEATHER_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -2041,6 +2131,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small blue and orange songbird with a pale throat.  She spends her time foraging in the dark and plasters her cup-like nest against the cavern wall.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -2049,6 +2140,7 @@ creature_subterranean
 			[CLUTCH_SIZE:4:5]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small blue and orange songbird with a pale throat.  He spends his time foraging in the dark and plasters his cup-like nest against the cavern wall.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -2066,12 +2158,14 @@ creature_subterranean
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:cave swallow man:cave swallow men:cave swallow man]
+		[DESCRIPTION:A small, keen-eyed harpy with the head of a cave swallow and broad winged arms folded for warmth in the dark.  The pale feathers on his throat are ruffled and scarf-like.  His body is unusually light.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:cave swallow woman:cave swallow women:cave swallow woman]
+		[DESCRIPTION:A small, keen-eyed harpy with the head of a cave swallow and broad winged arms folded for warmth in the dark.  The pale feathers on his throat are ruffled and scarf-like.  Her body is unusually light.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:TALON_SCRATCH_ATTACK]
+	[APPLY_CREATURE_VARIATION:TALON_KICK_ATTACK]{:KICK_ATTACK  Revision: combined the talon scratch and kick attacks.}
+	{APPLY_CREATURE_VARIATION:TALON_SCRATCH_ATTACK}
 	[APPLY_CREATURE_VARIATION:BEAK_BITE_ATTACK]
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_FLYING_GAITS:900:711:521:293:1900:2900] 30 kph
@@ -2170,6 +2264,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A blue and orange bird-like monster with a pale throat and long wings.  She forages in the depths, wandering and waiting.  She plasters her cup-like nest against the cavern wall.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -2178,6 +2273,7 @@ creature_subterranean
 			[CLUTCH_SIZE:2:3]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A blue and orange bird-like monster with a pale throat and long wings.  He forages in the depths, wandering and waiting.  He plasters his cup-like nest against the cavern wall.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:BROWN:1]
@@ -2238,6 +2334,7 @@ creature_subterranean
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:60:80]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -2245,6 +2342,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2253,6 +2351,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:BODYPART:BY_CATEGORY:MOUTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2260,6 +2359,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -2274,10 +2374,12 @@ creature_subterranean
 	[CASTE:FEMALE]
 		[CASTE_NAME:amphibian woman:amphibian women:amphibian woman]
 		[FEMALE]
+		[DESCRIPTION:A pint-sized, slimy horror with bulging eyes on a wide head, spindly limbs, and a long, gripping tongue.  She wanders the darkness, hunched and squat.  She doesn't care that she's naked.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[CASTE_NAME:amphibian man:amphibian men:amphibian man]
 		[MALE]
+		[DESCRIPTION:A pint-sized, slimy horror with bulging eyes on a wide head, spindly limbs, and a long, gripping tongue.  He wanders the darkness, hunched and squat.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:GREEN:1]
@@ -2351,6 +2453,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2359,6 +2462,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -2367,6 +2471,7 @@ creature_subterranean
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2376,6 +2481,7 @@ creature_subterranean
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -2390,6 +2496,7 @@ creature_subterranean
 	[CASTE:FEMALE]
 		[CASTE_NAME:reptile woman:reptile women:reptile woman]
 		[FEMALE]
+		[DESCRIPTION:A small and scaly reptilian with a long tail, a strong body, and rows of sharp teeth.  Her scales are rough and hardened.  Her eyes gleam in the darkness as she watches and waits.  She doesn't care that she's naked.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -2399,6 +2506,7 @@ creature_subterranean
 	[CASTE:MALE]
 		[CASTE_NAME:reptile man:reptile men:reptile man]
 		[MALE]
+		[DESCRIPTION:A small and scaly reptilian with a long tail, a strong body, and rows of sharp teeth.  His scales are rough and hardened.  His eyes gleam in the darkness as he watches and waits.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:GREEN:1]
@@ -2488,6 +2596,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:lash:lashes]
@@ -2496,6 +2605,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -2504,6 +2614,7 @@ creature_subterranean
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2514,6 +2625,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_CANLATCH]
 		[SPECIALATTACK_INJECT_EXTRACT:LOCAL_CREATURE_MAT:VENOM:LIQUID:100:100]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -2529,6 +2641,7 @@ creature_subterranean
 	[CASTE:FEMALE]
 		[CASTE_NAME:serpent woman:serpent women:serpent woman]
 		[FEMALE]
+		[DESCRIPTION:A small and scaly snakewoman with a gaunt, twisting body, pale scales, and a wide, thin snout at the end of a long neck.  Her thighs merge into a tail; she slithers in the dark on hands and tail.  She doesn't care that she's naked.]{+}
 		[MULTIPLE_LITTER_RARE]
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
@@ -2539,6 +2652,7 @@ creature_subterranean
 	[CASTE:MALE]
 		[CASTE_NAME:serpent man:serpent men:serpent man]
 		[MALE]
+		[DESCRIPTION:A small and scaly snakeman with a gaunt, twisting body, pale scales, and serpent's head at the end of a long, curved neck.  His thighs merge into a tail; he slithers in the dark on hands and tail.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -2582,19 +2696,23 @@ creature_subterranean
 	[NOBONES]
 	[CASTE:WORKER]
 		[CASTE_NAME:worker ant woman:worker ant women:worker ant woman]
+		[DESCRIPTION:A pintsized, carapaced horror with four arms, sharp, clicking mandibles, and large compound eyes set wide on her equally wide ant-head.  Tough and loyal to her queen, she works hard for the good of her colony.  She doesn't care that she's naked.]{+}
 		Female, but non-breeding.
 		[POP_RATIO:10000]
 	[CASTE:SOLDIER]
 		[CASTE_NAME:soldier ant woman:soldier ant women:soldier ant woman]
+		[DESCRIPTION:A small, carapaced horror with four arms, sharp, clicking mandibles, and large compound eyes set wide on her equally wide ant-head.  Tough, aggressive, and completely loyal to her queen, she's always ready to die for the good of her colony.  She doesn't care that she's naked.]{+}
 		Female, but non-breeding.
 		[POP_RATIO:1000]
 	[CASTE:DRONE]
 		[MALE]
 		[CASTE_NAME:drone ant man:drone ant men:drone ant man]
+		[DESCRIPTION:A pintsized, carapaced horror with four arms, sharp, clicking mandibles, and large compound eyes set wide on his equally wide ant-head.  Tough, hardworking, and loyal to his queen, he serves her as part of her harem.  His body is unusually light.  He doesn't care that he's naked.]{+}
 		[POP_RATIO:5]
 	[CASTE:QUEEN]
 		[FEMALE]
 		[CASTE_NAME:queen ant woman:queen ant women:queen ant woman]
+		[DESCRIPTION:A heavy, carapaced horror with four arms, sharp, clicking mandibles, large wings on her back, and large compound eyes set wide on her equally wide ant-head.  She commands her loyal colony and lives in comfort, mating with her harem of drones for the good of the colony.  She doesn't care that she's naked.]{+}
 		[POP_RATIO:1]
 	[SELECT_CASTE:WORKER]
 	 [SELECT_ADDITIONAL_CASTE:SOLDIER]
@@ -2624,6 +2742,7 @@ creature_subterranean
 			[ATTACK_PREPARE_AND_RECOVER:3:3]
 			[ATTACK_FLAG_WITH]
 			[ATTACK_PRIORITY:MAIN]
+			[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 		[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 			[ATTACK_SKILL:STANCE_STRIKE]
 			[ATTACK_VERB:kick:kicks]
@@ -2632,6 +2751,7 @@ creature_subterranean
 			[ATTACK_FLAG_WITH]
 			[ATTACK_PRIORITY:SECOND]
 			[ATTACK_FLAG_BAD_MULTIATTACK]
+			[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 		[ATTACK:BITE:BODYPART:BY_CATEGORY:MOUTH]
 			[ATTACK_SKILL:BITE]
 			[ATTACK_VERB:bite:bites]
@@ -2641,6 +2761,7 @@ creature_subterranean
 			[ATTACK_PREPARE_AND_RECOVER:3:3]
 			[ATTACK_PRIORITY:MAIN]
 			[ATTACK_FLAG_CANLATCH]
+			[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 		[SET_TL_GROUP:BY_CATEGORY:ALL:CHITIN]
 			[TL_COLOR_MODIFIER:BLACK:1]
 				[TLCM_NOUN:chitin:SINGULAR]
@@ -2714,6 +2835,7 @@ creature_subterranean
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:60:80]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -2721,6 +2843,7 @@ creature_subterranean
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2729,6 +2852,7 @@ creature_subterranean
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -2737,6 +2861,7 @@ creature_subterranean
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2746,6 +2871,7 @@ creature_subterranean
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -2760,9 +2886,11 @@ creature_subterranean
 	[CASTE:FEMALE]
 		[CASTE_NAME:rodent woman:rodent women:rodent woman]
 		[FEMALE]
+		[DESCRIPTION:A small, spiky-furred beastwoman with a long, naked tail and the head of a rat; she has a twitching nose with long whiskers.  She lives deep underground and has a cruel, devious nature.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[CASTE_NAME:rodent man:rodent men:rodent man]
 		[MALE]
+		[DESCRIPTION:A small, spiky-furred beastman with a long, naked tail and the head of a rat; he has a a twitching nose with long whiskers.  He lives deep underground and has a cruel, devious nature.  He doesn't care that she's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]

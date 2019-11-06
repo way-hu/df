@@ -12,6 +12,7 @@ Octopuses were sponsored by the generous contributions of the Bay 12 community.
 	[DESCRIPTION:A medium-sized underwater mollusk with eight arms.  It is the most clever of its kind.]
 	[NAME:octopus:octopuses:octopus]
 	[CASTE_NAME:octopus:octopuses:octopus]
+	[CHILD:1][GENERAL_CHILD_NAME:octopus fry:octopus fry:octopus fry]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'o'][COLOR:7:0:0]
 	[PETVALUE:10]
 	[LARGE_ROAMING]
@@ -25,11 +26,11 @@ Octopuses were sponsored by the generous contributions of the Bay 12 community.
 	[PREFSTRING:intelligence]
 	[PREFSTRING:many arms]
 	[BODY:BASIC_1PARTBODY:BASIC_HEAD:2EYES:BEAK:8_SIMPLE_HEAD_ARMS:BRAIN]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS                Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[REMOVE_MATERIAL:BONE]
 		[REMOVE_MATERIAL:CARTILAGE]
-		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_TEMPLATE]
+		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_SMALL_TEMPLATE]{:CHITIN_TEMPLATE  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[REMOVE_TISSUE:HAIR]
 		[REMOVE_TISSUE:BONE]
@@ -80,8 +81,10 @@ Octopuses were sponsored by the generous contributions of the Bay 12 community.
 	[NO_DIZZINESS]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small mollusk with eight arms and a bulbous head.  She swims the oceans and squirts ink in self defense.  She has no skeleton, letting her squeeze through tight spaces.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small mollusk with eight arms and a bulbous head.  He swims the oceans and squirts ink in self defense.  He has no skeleton, letting him squeeze through tight spaces.]{+}
 	[SELECT_CASTE:ALL]
 	[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 		[TL_COLOR_MODIFIER:ECRU:1] should be able to change its color
@@ -90,10 +93,13 @@ Octopuses were sponsored by the generous contributions of the Bay 12 community.
 [CREATURE:OCTOPUS_MAN]
 	[COPY_TAGS_FROM:OCTOPUS]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON]
+	[APPLY_CREATURE_VARIATION:AQUATIC_HUMANOID]{+  Revision: turn aquatic humanoids into amphibians.}
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:octopus man:octopus men:octopus man]
+		[DESCRIPTION:A small, tentacled horror with wide, expressionless eyes and eight flowing arms.  His head extends at the back into a bulging growth that flops about as he swims and almost looks like hair if you squint a bit.  He has no skeleton, letting him squeeze through tight spaces.  He can't survive on land.  He doesn't care that he's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A small, tentacled horror with wide, expressionless eyes and eight flowing arms.  Her head extends at the back into a bulging growth that flops about as she swims and almost looks like hair if you squint a bit.  She has no skeleton, letting her squeeze through tight spaces.  She can't survive on land.  She doesn't care that she's naked.  What use is clothing in the sea?]{+}
 		[CASTE_NAME:octopus woman:octopus women:octopus woman]
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
@@ -114,15 +120,21 @@ Octopuses were sponsored by the generous contributions of the Bay 12 community.
 
 [CREATURE:GIANT_OCTOPUS]
 	[COPY_TAGS_FROM:OCTOPUS]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A dangerous and clever mollusk-like monster that drags ships into the deep with her eight arms.  She squirts large amounts of ink to confuse attackers.  She has no skeleton, letting her squeeze through tight spaces.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A dangerous and clever mollusk-like monster that drags ships into the deep with his eight arms.  He squirts large amounts of ink to confuse attackers.  He has no skeleton, letting him squeeze through tight spaces.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:4702]
 	[GO_TO_START]
 	[NAME:giant octopus:giant octopuses:giant octopus]
 	[CASTE_NAME:giant octopus:giant octopuses:giant octopus]
+	[GENERAL_CHILD_NAME:giant octopus fry:giant octopus fry:giant octopus fry]{+}
 	[DESCRIPTION:A dangerous water monster known for attacking ships at sea.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -130,7 +142,9 @@ Octopuses were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:7:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[MAXAGE:6:9]{+                Revision: let them live long enough to be worth taming.}
+	[LARGE_PREDATOR]{+            Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:intelligence]
 	[PREFSTRING:many arms]
@@ -144,6 +158,7 @@ Crabs were sponsored by the generous contributions of the Bay 12 community.
 	[DESCRIPTION:A tiny shelled ocean creature with many long legs.  It has two large pincers on its front limbs.]
 	[NAME:crab:crabs:crab]
 	[CASTE_NAME:crab:crabs:crab]
+	[CHILD:1][GENERAL_CHILD_NAME:crabling:crablings:crabling]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'c'][COLOR:4:0:1]
 	[NATURAL]
 	[BIOME:ANY_OCEAN]
@@ -163,7 +178,7 @@ Crabs were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[NOBONES]
 	[BODY:CRAB_BODY:2EYES:HEART:BRAIN:UPPERBODY_PINCERS]
-	[BODY_DETAIL_PLAN:CHITIN_MATERIALS]
+	[BODY_DETAIL_PLAN:CHITIN_SMALL_MATERIALS]{:CHITIN_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:CHITIN_TISSUES]
 	[BODY_DETAIL_PLAN:EXOSKELETON_TISSUE_LAYERS:CHITIN:FAT:MUSCLE]
 	[BODY_DETAIL_PLAN:STANDARD_HEAD_POSITIONS]
@@ -185,8 +200,10 @@ Crabs were sponsored by the generous contributions of the Bay 12 community.
 	[MAXAGE:10:20]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small shelled crustacean with many long legs, eyestalks, and two large pincers.  She scuttles sideways along the ocean floor, looking for food to latch onto.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small shelled crustacean with many long legs, eyestalks, and two large pincers.  He scuttles sideways along the ocean floor, looking for food to latch onto.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:CHITIN]
 			[TL_COLOR_MODIFIER:RED:1]
@@ -205,8 +222,10 @@ Crabs were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:crab man:crab men:crab man]
+		[DESCRIPTION:A small, carapaced horror with a wide head, a wide body, and bowed legs with spiny knees.  His thick arms end in large pincers adapted for gripping and holding.  His eyestalks peer this way and that.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:crab woman:crab women:crab woman]
+		[DESCRIPTION:A small, carapaced horror with a wide head, a wide body, and bowed legs with spiny knees.  Her thick arms end in large pincers adapted for gripping and holding.  Her eyestalks peer this way and that.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PINCER_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -228,11 +247,16 @@ Crabs were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A shelled crustacean-like monster with eyestalks that peer this way and that, watching for her next meal.  She scuttles sideways on many legs, her large pincers clacking in warning.  She can be stubborn sometimes, gripping tightly to things long after she should have released them.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A shelled crustacean-like monster with eyestalks that peer this way and that, watching for his next meal.  He scuttles sideways on many legs, his large pincers clacking in warning.  He can be stubborn sometimes, gripping tightly to things long after he should have released them.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:3204]
 	[GO_TO_START]
 	[NAME:giant crab:giant crabs:giant crab]
 	[CASTE_NAME:giant crab:giant crabs:giant crab]
+	[GENERAL_CHILD_NAME:giant crabling:giant crablings:giant crabling]{+}
 	[DESCRIPTION:A large monster in the shape of a crab.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -240,13 +264,16 @@ Crabs were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:4:0:1]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC    Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[LARGE_PREDATOR]{+              Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:pincers]
 	[PREFSTRING:sideways walk]
 	[APPLY_CREATURE_VARIATION:STANDARD_WALKING_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
+	[NOFEAR]{+                      Revision: make them fear nothing.}
 
 Leopard seals were sponsored by the generous contributions of the Bay 12 community.
 
@@ -314,8 +341,10 @@ Leopard seals were sponsored by the generous contributions of the Bay 12 communi
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, predatory, amphibious mammal with a thick, streamlined body.  Her spotted, hairless skin is mottled white on her front and gray elsewhere, with each side dotted with contrasting spots.  She hunts in frigid waters and swims quickly enough to catch most prey.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, predatory, amphibious mammal with a thick, streamlined body.  His spotted, hairless skin is mottled white on his front and gray elsewhere, with each side dotted with contrasting spots.  He hunts in frigid waters and swims quickly enough to catch most prey.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -336,11 +365,13 @@ Leopard seals were sponsored by the generous contributions of the Bay 12 communi
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:leopard seal man:leopard seal men:leopard seal man]
+		[DESCRIPTION:A heavy, spotted beastman with wide eyes, a thick, streamlined body, and a sleek head with a pointy, freckled snout.  His thighs merge into powerful back flippers.  His spotted, hairless skin is mottled white on his neck, chest, and belly, with mottled gray elsewhere.  He's covered in a chaos of freckles and spots, with gray dotting the white and white dotting the gray.  Few can match his speed in the water.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:leopard seal woman:leopard seal women:leopard seal woman]
+		[DESCRIPTION:A heavy, spotted beastwoman with wide eyes, a thick, streamlined body, and a sleek head with a pointy, freckled snout.  Her thighs merge into powerful back flippers.  Her spotted, hairless skin is mottled white on her neck, chest, and belly, with mottled gray elsewhere.  She's covered in a chaos of freckles and spots, with gray dotting the white and white dotting the gray.  Few can match her speed in the water.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:900:734:568:366:1900:2900] 24 kph
@@ -360,6 +391,10 @@ Leopard seals were sponsored by the generous contributions of the Bay 12 communi
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A predatory seal-like monster with a thick, streamlined body and a sleek muzzle.  Her spotted, hairless skin is mottled white on her front and gray elsewhere, with each side dotted with contrasting spots.  Her loud bark carries far.  She hunts in frigid waters and can swim faster than most of her prey.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A predatory seal-like monster with a thick, streamlined body and a sleek muzzle.  His spotted, hairless skin is mottled white on his front and gray elsewhere, with each side dotted with contrasting spots.  His loud bark carries far.  He hunts in frigid waters and can swim faster than most of his prey.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:817]
 	[GO_TO_START]
@@ -373,7 +408,8 @@ Leopard seals were sponsored by the generous contributions of the Bay 12 communi
 	[COLOR:0:0:1]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[LARGE_PREDATOR]{+            Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:fierce nature]
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
@@ -407,11 +443,11 @@ Cuttlefish were sponsored by the generous contributions of the Bay 12 community.
 	[PREFSTRING:ability to change color]
 	[PREFSTRING:distinctive pupils]
 	[BODY:BASIC_1PARTBODY:BASIC_HEAD:2EYES:BEAK:2_HEAD_CLUBBED_TENTACLES:8_SIMPLE_HEAD_ARMS]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS                Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[REMOVE_MATERIAL:BONE]
 		[REMOVE_MATERIAL:CARTILAGE]
-		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_TEMPLATE]
+		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_SMALL_TEMPLATE]{:CHITIN_TEMPLATE  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[REMOVE_TISSUE:HAIR]
 		[REMOVE_TISSUE:BONE]
@@ -458,8 +494,10 @@ Cuttlefish were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny sea mollusk with large eyes with W-shaped pupils, two clubbed tentacles, and eight tentacle arms.  She has a shell-shaped bone that helps keep her buoyant.  She can talk by changing her color and skin pattern.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny sea mollusk with large eyes with W-shaped pupils, two clubbed tentacles, and eight tentacle arms.  He has a shell-shaped bone that helps keep him buoyant.  He can talk by changing his color and skin pattern.]{+}
 	[SELECT_CASTE:ALL]
 	[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 		[TL_COLOR_MODIFIER:BROWN:1] or pretty much anything
@@ -468,11 +506,14 @@ Cuttlefish were sponsored by the generous contributions of the Bay 12 community.
 [CREATURE:CUTTLEFISH_MAN]
 	[COPY_TAGS_FROM:CUTTLEFISH]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON]
+	[APPLY_CREATURE_VARIATION:AQUATIC_HUMANOID]{+  Revision: turn aquatic humanoids into amphibians.}
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:cuttlefish man:cuttlefish men:cuttlefish man]
+		[DESCRIPTION:A small and squid-like horror with a beak and a strange, long head from which emerges two clubbed tentacles and eight tentacle arms.  His eyes are large, with W-shaped pupils.  He doesn't care that he's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:cuttlefish woman:cuttlefish women:cuttlefish woman]
+		[DESCRIPTION:A small, squid-like horror with a beak and a strange, long head from which emerges two clubbed tentacles and eight tentacle arms.  Her eyes are large, with W-shaped pupils.  She doesn't care that she's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -492,15 +533,21 @@ Cuttlefish were sponsored by the generous contributions of the Bay 12 community.
 
 [CREATURE:GIANT_CUTTLEFISH]
 	[COPY_TAGS_FROM:CUTTLEFISH]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A beaked mollusk-like monster with a unique internal shell, large eyes with W-shaped pupils, two clubbed tentacles, and eight tentacle arms.  She changes color and her skin pattern for communication.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A beaked mollusk-like monster with a unique internal shell, large eyes with W-shaped pupils, two clubbed tentacles, and eight tentacle arms.  He changes color and his skin pattern for communication.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:20701]
 	[GO_TO_START]
 	[NAME:giant cuttlefish:giant cuttlefish:giant cuttlefish]
 	[CASTE_NAME:giant cuttlefish:giant cuttlefish:giant cuttlefish]
+	[CHILD:1][GENERAL_CHILD_NAME:giant cuttlefish fry:giant cuttlefish fry:giant cuttlefish fry]{+  Revision: taming requires a child tag (bug 7983).}
 	[DESCRIPTION:A huge sea monster in the shape of a cuttlefish.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -508,7 +555,9 @@ Cuttlefish were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:6:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[MAXAGE:6:9]{+                Revision: let them live long enough to be worth taming.}
+	[LARGE_PREDATOR]{+            Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:ability to change color]
 	[PREFSTRING:distinctive pupils]
@@ -526,7 +575,7 @@ Orcas were sponsored by the generous contributions of the Bay 12 community.
 	[CREATURE_CLASS:MAMMAL]
 	[LARGE_ROAMING]
 	[AQUATIC][UNDERSWIM][IMMOBILE_LAND][BEACH_FREQUENCY:10]
-	[BENIGN][NATURAL]
+	[LARGE_PREDATOR][NATURAL]{BENIGN  Revision: as their description indicates, they're not benign.  They're large predators.}
 	[PETVALUE:750]
 	[BIOME:ANY_OCEAN]
 	[POPULATION_NUMBER:15:30]
@@ -588,8 +637,10 @@ Orcas were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:An immense ocean mammal with a long, rounded body and a large dorsal fin.  Her black body has white patches on the underside and near her eyes.  A vicious predator that can hunt in groups, she sometimes torments her prey.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:An immense ocean mammal with a long, rounded body and a large dorsal fin.  His black body has white patches on the underside and near his eyes.  A vicious predator that can hunt in groups, he sometimes torments his prey.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:MOTTLED_BLACK_WHITE:1] should break up by part
@@ -601,11 +652,14 @@ Orcas were sponsored by the generous contributions of the Bay 12 community.
 [CREATURE:ORCA_MAN]
 	[COPY_TAGS_FROM:ORCA]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON_LEGLESS]
+	[APPLY_CREATURE_VARIATION:AQUATIC_HUMANOID]{+  Revision: turn aquatic humanoids into amphibians.}
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:orca man:orca men:orca man]
+		[DESCRIPTION:A giant, vicious whaleman with a long, rotund body, a large dorsal fin, and thighs that merge into large, powerful back flippers.  He has a black body with white patches on his stomach and near his eyes.  He can be vicious and cruel by nature, tormenting his prey.  He doesn't care that he's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:orca woman:orca women:orca woman]
+		[DESCRIPTION:A giant, vicious whalewoman with a long, rotund body, a large dorsal fin, and thighs that merge into large, powerful back flippers.  She has a black body with white patches on her stomach and near her eyes.  She can be vicious and cruel by nature, tormenting her prey.  She doesn't care that she's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:TAIL_ATTACK]
@@ -629,6 +683,10 @@ Orcas were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A gigantic whale-like monster with a long, rounded body and a large dorsal fin.  Her black body is marked with white patches near her eyes and on her belly.  She's a vicious predator, sometimes tormenting her prey.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A gigantic whale-like monster with a long, rounded body and a large dorsal fin.  His black body is marked with white patches near his eyes and on his belly.  He's a vicious predator, sometimes tormenting his prey.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:800]
 	[GO_TO_START]
@@ -642,7 +700,7 @@ Orcas were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:0:0:1]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[GO_TO_END]
 	[PREFSTRING:coloration]
 	[PREFSTRING:great jumps]
@@ -651,7 +709,7 @@ Orcas were sponsored by the generous contributions of the Bay 12 community.
 Sponges were sponsored by the generous contributions of the Bay 12 community.
 
 [CREATURE:SPONGE]
-	[DESCRIPTION:A tiny sea creature which dwells on the ocean floor, devoid of senses or motion.]
+	[DESCRIPTION:A tiny, colorful sea creature which dwells on the ocean floor attached to something, devoid of senses or motion.  Water seeps through its porous body and is filtered for food.]{:A tiny sea creature which dwells on the ocean floor, devoid of senses or motion.}
 	[NAME:sponge:sponges:sponge]
 	[CASTE_NAME:sponge:sponges:sponge]
 	[CREATURE_TILE:'s'][COLOR:4:0:1]
@@ -692,12 +750,13 @@ Sponges were sponsored by the generous contributions of the Bay 12 community.
 [CREATURE:SPONGE_MAN]
 	[COPY_TAGS_FROM:SPONGE]
 	[GO_TO_TAG:BODY:BASIC_1PARTBODY]
-	[BODY:HUMANOID_SIMPLE]
+	[BODY:HUMANOID]{:HUMANOID_SIMPLE  Revision: it makes more sense for them to have elbows; how do they wield weapons and walk?}
 	[CV_REMOVE_TAG:BODY:BASIC_1PARTBODY_THOUGHT]
 	[CV_REMOVE_TAG:NOTHOUGHT]
 	[CV_REMOVE_TAG:IMMOBILE]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON]
+	[APPLY_CREATURE_VARIATION:AQUATIC_HUMANOID]{+  Revision: turn aquatic humanoids into amphibians.}
 	[GO_TO_END]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -707,7 +766,7 @@ Sponges were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_START]
 	[NAME:sponge man:sponge men:sponge man]
 	[CASTE_NAME:sponge man:sponge men:sponge man]
-	[DESCRIPTION:A person in the form of a sponge with arms and legs.]
+	[DESCRIPTION:A short, strange, sexless humanoid lacking eyes, ears, and nose.  It filter-feeds through its colorful, porous skin.  It walks with a curious, see-saw gait.]{:A person in the form of a sponge with arms and legs.}
 	[POPULATION_NUMBER:5:10]
 	[CLUSTER_NUMBER:1:3]
 	[MAXAGE:60:80]
@@ -725,13 +784,13 @@ Sponges were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_START]
 	[NAME:giant sponge:giant sponges:giant sponge]
 	[CASTE_NAME:giant sponge:giant sponges:giant sponge]
-	[DESCRIPTION:A huge immobile sponge.]
+	[DESCRIPTION:A strange and colorful monster which dwells on the ocean floor attached to something, devoid of senses or motion.  Water seeps through its porous body, which it filters to eat.]{:A huge immobile sponge.}
 	[POPULATION_NUMBER:250:500]
 	[CREATURE_TILE:'S']
 	[COLOR:4:0:1]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	{MOUNT_EXOTIC  Revision: removed MOUNT_EXOTIC because of bugs 926 and 5688.  Amphibious mounts will drown any invaders or traders that ride on them.  Also, giant sea sponges shouldn't be trainable to begin with.}
 	[GO_TO_END]
 	[PREFSTRING:squishy texture]
 
@@ -743,6 +802,7 @@ Horseshoe crabs were sponsored by the generous contributions of the Bay 12 commu
 	[DESCRIPTION:A tiny sea animal that lives in the sand just offshore.  It has a flat body with legs underneath.]
 	[NAME:horseshoe crab:horseshoe crabs:horseshoe crab]
 	[CASTE_NAME:horseshoe crab:horseshoe crabs:horseshoe crab]
+	[CHILD:1][GENERAL_CHILD_NAME:horseshoe crabling:horseshoe crablings:horseshoe crabling]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'c'][COLOR:6:0:0]
 	[NATURAL]
 	[BIOME:ANY_OCEAN]
@@ -759,7 +819,7 @@ Horseshoe crabs were sponsored by the generous contributions of the Bay 12 commu
 	[NOBONES]
 	[EXTRAVISION]
 	[BODY:BODY_WITH_HEAD_FLAG:HEART:BRAIN:TAIL]
-	[BODY_DETAIL_PLAN:CHITIN_MATERIALS]
+	[BODY_DETAIL_PLAN:CHITIN_SMALL_MATERIALS]{:CHITIN_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:CHITIN_TISSUES]
 	[BODY_DETAIL_PLAN:EXOSKELETON_TISSUE_LAYERS:CHITIN:FAT:MUSCLE]
 	[BODY_DETAIL_PLAN:STANDARD_HEAD_POSITIONS]
@@ -779,8 +839,10 @@ Horseshoe crabs were sponsored by the generous contributions of the Bay 12 commu
 	[MAXAGE:20:40]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A small sea animal with a long, rigid tail and a flat body protected by a large shell.  She lives in the sand just offshore, crawling about on many legs.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small sea animal with a long, rigid tail and a flat body protected by a large shell.  He lives in the sand just offshore, crawling about on many legs.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:CHITIN]
 			[TL_COLOR_MODIFIER:MAROON:1]
@@ -796,8 +858,10 @@ Horseshoe crabs were sponsored by the generous contributions of the Bay 12 commu
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:horseshoe crab man:horseshoe crab men:horseshoe crab man]
+		[DESCRIPTION:A small, carapaced horror with bowed legs, small eyes set wide on his head, and a round, flat body protected in the back by a large shell.  His long, rigid tail can drag behind him as he walks.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:horseshoe crab woman:horseshoe crab women:horseshoe crab woman]
+		[DESCRIPTION:A small, carapaced horror with bowed legs, small eyes set wide on her head, and a round, flat body protected in the back by a large shell.  Her long, rigid tail can drag behind her as she walks.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -819,11 +883,16 @@ Horseshoe crabs were sponsored by the generous contributions of the Bay 12 commu
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A carapaced, crustacean monster with a a long, rigid tail and a flat body protected by a large shell.  She lives and hides in the sand just offshore, crawling about on many legs.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A carapaced, crustacean monster with a a long, rigid tail and a flat body protected by a large shell.  He lives and hides in the sand just offshore, crawling about on many legs.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:10701]
 	[GO_TO_START]
 	[NAME:giant horseshoe crab:giant horseshoe crabs:giant horseshoe crab]
 	[CASTE_NAME:giant horseshoe crab:giant horseshoe crabs:giant horseshoe crab]
+	[GENERAL_CHILD_NAME:giant horseshoe crabling:giant horseshoe crablings:giant horseshoe crabling]{+}
 	[DESCRIPTION:A huge monster in the form of a horseshoe crab.]
 	[POPULATION_NUMBER:250:500]
 	[CLUSTER_NUMBER:1:1]
@@ -831,7 +900,7 @@ Horseshoe crabs were sponsored by the generous contributions of the Bay 12 commu
 	[COLOR:6:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[GO_TO_END]
 	[PREFSTRING:ability to hide in sand]
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
@@ -843,9 +912,9 @@ Sperm whales were sponsored by the generous contributions of the Bay 12 communit
 
 [CREATURE:SPERM_WHALE]
 	[DESCRIPTION:A giant marine mammal with a toothy jaw.]
-	[NAME:sperm whale:sperm whales:sperm whale]
-	[CASTE_NAME:sperm whale:sperm whales:sperm whale]
-	[CHILD:1][GENERAL_CHILD_NAME:sperm whale calf:sperm whale calves]
+	[NAME:whale:whales:whale]{:sperm whale:sperm whales:sperm whale}
+	[CASTE_NAME:whale:whales:whale]{:sperm whale:sperm whales:sperm whale}
+	[CHILD:1][GENERAL_CHILD_NAME:whale calf:whale calves]{:sperm whale calf:sperm whale calves}
 	[CREATURE_TILE:'W'][COLOR:7:0:0]
 	[CREATURE_CLASS:MAMMAL]
 	[LARGE_ROAMING]
@@ -913,8 +982,10 @@ Sperm whales were sponsored by the generous contributions of the Bay 12 communit
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:An immeasurable marine mammal with a toothy jaw and a massive head with a prominent, rounded forehead.  She clicks to speak and to echolocate.  She sustains her bulk on a diet of fish and squid.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:An immeasurable marine mammal with a toothy jaw and a massive head with a prominent, rounded forehead.  He clicks to speak and to echolocate.  He sustains his bulk on a diet of fish and squid.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:GRAY:100:WHITE:1]
@@ -926,11 +997,14 @@ Sperm whales were sponsored by the generous contributions of the Bay 12 communit
 [CREATURE:SPERM_WHALE_MAN]
 	[COPY_TAGS_FROM:SPERM_WHALE]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON_LEGLESS]
+	[APPLY_CREATURE_VARIATION:AQUATIC_HUMANOID]{+  Revision: turn aquatic humanoids into amphibians.}
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
-		[CASTE_NAME:sperm whale man:sperm whale men:sperm whale man]
+		[CASTE_NAME:whale man:whale men:whale man]{:sperm whale man:sperm whale men:sperm whale man}
+		[DESCRIPTION:A giant, bulky whaleman with a wide, toothy grin, a large head with a prominent, rounded forehead, and thighs that merge into large, powerful back flippers.  He has a large appetite to match his large size.  He doesn't care that he's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:FEMALE]
-		[CASTE_NAME:sperm whale woman:sperm whale women:sperm whale woman]
+		[CASTE_NAME:whale woman:whale women:whale woman]{:sperm whale woman:sperm whale women:sperm whale woman}
+		[DESCRIPTION:A giant, bulky whalewoman with a wide, toothy grin, a large head with a prominent, rounded forehead, and thighs that merge into large, powerful back flippers.  She has a large appetite to match her large size.  She doesn't care that she's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:TAIL_ATTACK]
@@ -940,7 +1014,7 @@ Sperm whales were sponsored by the generous contributions of the Bay 12 communit
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[GO_TO_START]
-	[NAME:sperm whale man:sperm whale men:sperm whale man]
+	[NAME:whale man:sperm whale men:whale man]{:sperm whale man:sperm whale men:sperm whale man}
 	[DESCRIPTION:A huge person with the head and flippers of a sperm whale.]
 	[POPULATION_NUMBER:5:10]
 	[CLUSTER_NUMBER:1:5]
@@ -954,12 +1028,16 @@ Sperm whales were sponsored by the generous contributions of the Bay 12 communit
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A gigantic whale-like monster of breathtaking, nearly impossible size.  She has a toothy jaw and a massive head with a prominent, rounded forehead.  She speaks with loud clicking sounds and eats an incredible amount of fish and squid]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A gigantic whale-like monster of breathtaking, nearly impossible size.  He has a toothy jaw and a massive head with a prominent, rounded forehead.  He speaks with loud clicking sounds and eats an incredible amount of fish and squid]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:800]
 	[GO_TO_START]
-	[NAME:giant sperm whale:giant sperm whales:giant sperm whale]
-	[CASTE_NAME:giant sperm whale:giant sperm whales:giant sperm whale]
-	[GENERAL_CHILD_NAME:giant sperm whale calf:giant sperm whale calves]
+	[NAME:giant whale:giant whales:giant whale]{:giant sperm whale:giant sperm whales:giant sperm whale}
+	[CASTE_NAME:giant whale:giant whales:giant whale]{:giant sperm whale:giant sperm whales:giant sperm whale}
+	[GENERAL_CHILD_NAME:giant whale calf:giant whale calves]{:giant sperm whale calf:giant sperm whale calves}
 	[DESCRIPTION:A gigantic monster in the shape of a sperm whale.]
 	[POPULATION_NUMBER:15:30]
 	[CLUSTER_NUMBER:1:1]
@@ -967,7 +1045,7 @@ Sperm whales were sponsored by the generous contributions of the Bay 12 communit
 	[COLOR:7:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[GO_TO_END]
 	[PREFSTRING:teeth]
 	[PREFSTRING:vengeful nature]
@@ -1037,11 +1115,13 @@ Elephant seals were sponsored by the generous contributions of the Bay 12 commun
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A huge, earless, predatory marine mammal with a blubbery body and thick skin.  Much smaller than males of her kind, she's fought over by males with large, flabby noses.  She spends much of her time in the water and can hold her breath for a long time.]{+}
 	[BODY_SIZE:0:0:91000]
 	[BODY_SIZE:2:0:455000]
 	[BODY_SIZE:5:0:910000]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:An immense , earless, predatory marine mammal with a blubbery body and thick skin.  Much larger than females of his kind, he fights for dominance during the mating season with his large, flabby nose.  He spends much of his time in the water and can hold his breath for a long time.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[BODY_SIZE:0:0:300000]
 	[BODY_SIZE:2:0:1500000]
@@ -1065,11 +1145,13 @@ Elephant seals were sponsored by the generous contributions of the Bay 12 commun
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:elephant seal man:elephant seal men:elephant seal man]
+		[DESCRIPTION:A giant, earless beastman of immense bulk, much larger than females of his kind.  He has a large, floppy nose, thick arms, and thighs that merge into large, powerful flippers.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:elephant seal woman:elephant seal women:elephant seal woman]
+		[DESCRIPTION:A heavy, earless beastwoman of immense bulk, much smaller than males of her kind.  She has a sleek, pointy snout, thick arms, and thighs that merge into large, powerful flippers.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:1945:1504:1062:548:3100:4500] 16 kph
@@ -1089,6 +1171,10 @@ Elephant seals were sponsored by the generous contributions of the Bay 12 commun
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:An earless, predatory, seal-like monster with a thick, blubbery body and thick skin.  She can be vicious, defending her territory by slamming into her victims with her immense bulk.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:An earless, predatory, seal-like monster with a thick, blubbery body and thick skin.  He can be vicious, defending his territory by slamming into his victims with his immense bulk.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:804]
 	[GO_TO_START]
@@ -1102,7 +1188,8 @@ Elephant seals were sponsored by the generous contributions of the Bay 12 commun
 	[COLOR:6:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[LARGE_PREDATOR]{+            Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:large floppy noses]
 	[PREFSTRING:great size]
@@ -1174,8 +1261,10 @@ Harp seals were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, earless marine mammal with large eyes and a sleek, blubbery body.  She's very social and lives in a large colony.  Her young are prized for their white fur.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, earless marine mammal with large eyes and a sleek, blubbery body.  He's very social and lives in a large colony.  His young are prized for their white fur.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -1196,11 +1285,13 @@ Harp seals were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:harp seal man:harp seal men:harp seal man]
+		[DESCRIPTION:A heavy, earless beastman of immense bulk.  He has a sleek, pointy snout, large eyes, thick arms, and thighs that merge into large, powerful flippers.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:harp seal woman:harp seal women:harp seal woman]
+		[DESCRIPTION:A large, earless beastwoman of immense bulk.  She has a sleek, pointy snout, large eyes, thick arms, and thighs that merge into large, powerful flippers.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:900:703:505:274:1900:2900] 32 kph
@@ -1220,6 +1311,10 @@ Harp seals were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:An earless, seal-like monster with large eyes, a sleek, blubbery body and powerful flippers.  She spends much of her time in the water.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:An earless, seal-like monster with large eyes, a sleek, blubbery body and powerful flippers.  He spends much of his time in the water.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:866]
 	[GO_TO_START]
@@ -1233,7 +1328,8 @@ Harp seals were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:7:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[LARGE_PREDATOR]{+  Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:adorable pups]
 	[APPLY_CREATURE_VARIATION:STANDARD_WALK_CRAWL_GAITS:9000:8900:8825:8775:9500:9900] 1 kph
@@ -1248,6 +1344,7 @@ Nautiluses were sponsored by the generous contributions of the Bay 12 community.
 	[DESCRIPTION:A tiny, mollusk with a large shell and many tentacles.]
 	[NAME:nautilus:nautiluses:nautilus]
 	[CASTE_NAME:nautilus:nautiluses:nautilus]
+	[CHILD:1][GENERAL_CHILD_NAME:nautilus fry:nautilus fry:nautilus fry]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:11][COLOR:4:0:1]
 	[PETVALUE:10]
 	[VERMIN_FISH]
@@ -1264,11 +1361,11 @@ Nautiluses were sponsored by the generous contributions of the Bay 12 community.
 	[PREFSTRING:shells]
 	[PREFSTRING:many tentacles]
 	[BODY:BASIC_1PARTBODY:BASIC_HEAD:2EYES:SHELL:BEAK] 90 tentacles
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS                Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[REMOVE_MATERIAL:BONE]
 		[REMOVE_MATERIAL:CARTILAGE]
-		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_TEMPLATE]
+		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_SMALL_TEMPLATE]{:CHITIN_TEMPLATE  Revision: too small to yield leather.}
 		[USE_MATERIAL_TEMPLATE:SHELL:SHELL_TEMPLATE]
 			[STATE_COLOR:ALL:STRIPES_BROWN_WHITE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1305,8 +1402,10 @@ Nautiluses were sponsored by the generous contributions of the Bay 12 community.
 	[NO_DIZZINESS]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, beaked mollusk that lives in a large, patterned spiral shell.  She has many tentacles and large, primitive eyes.  She takes in and filters water as she swims, then propels herself by expelling it.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, beaked mollusk that lives in a large, patterned spiral shell.  He has many tentacles and large, primitive eyes.  He takes in and filters water as he swims, then propels himself by expelling it.]{+}
 	[SELECT_CASTE:ALL]
 	[SET_TL_GROUP:BY_CATEGORY:ALL:SHELL]
 		[TL_COLOR_MODIFIER:STRIPES_WHITE_CHESTNUT:1]
@@ -1318,11 +1417,14 @@ Nautiluses were sponsored by the generous contributions of the Bay 12 community.
 [CREATURE:NAUTILUS_MAN]
 	[COPY_TAGS_FROM:NAUTILUS]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON]
+	[APPLY_CREATURE_VARIATION:AQUATIC_HUMANOID]{+  Revision: turn aquatic humanoids into amphibians.}
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:nautilus man:nautilus men:nautilus man]
+		[DESCRIPTION:A small, squid-like horror protected by a large, spiral shell.  His head slopes forward with the shell and ends with many thin tentacles and a sharp beak.  His legs are bowed, emerging from his shell at a strange angle.  He doesn't care that he's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:nautilus woman:nautilus women:nautilus woman]
+		[DESCRIPTION:A small, squid-like horror protected by a large, spiral shell.  Her head slopes forward with the shell and ends with many thin tentacles and a sharp beak.  Her legs are bowed, emerging from her shell at a strange angle.  She doesn't care that she's naked.  What use is clothing in the sea?]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -1346,11 +1448,16 @@ Nautiluses were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A beaked mollusk-like monster that lives in a large, patterned spiral shell.  She has many tentacles and large, primitive eyes.  She takes in and filters water as she swims, then propels herself by expelling it.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A beaked mollusk-like monster that lives in a large, patterned spiral shell.  He has many tentacles and large, primitive eyes.  He takes in and filters water as he swims, then propels himself by expelling it.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:40700]
 	[GO_TO_START]
 	[NAME:giant nautilus:giant nautiluses:giant nautilus]
 	[CASTE_NAME:giant nautilus:giant nautiluses:giant nautilus]
+	[GENERAL_CHILD_NAME:giant nautilus fry:giant nautilus fry:giant nautilus fry]{+}
 	[DESCRIPTION:A huge monster in the shape of a nautilus.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -1358,7 +1465,8 @@ Nautiluses were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:4:0:1]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[LARGE_PREDATOR]{+            Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:shells]
 	[PREFSTRING:many tentacles]

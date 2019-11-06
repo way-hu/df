@@ -24,9 +24,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 
 [BODY:BASIC_3PARTARMS]
-	[BP:RUA:right upper arm:STP][CONTYPE:UPPERBODY][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CONTYPE:UPPERBODY}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CONTYPE:UPPERBODY][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CONTYPE:UPPERBODY}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -38,9 +42,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 
 [BODY:BASIC_3PARTLEGS]
-	[BP:RUL:right upper leg:STP][CONTYPE:LOWERBODY][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CONTYPE:LOWERBODY}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CONTYPE:LOWERBODY][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CONTYPE:LOWERBODY}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -140,9 +148,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -152,9 +164,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -172,9 +188,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -184,9 +204,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -206,9 +230,13 @@ body_default
 		[DEFAULT_RELSIZE:150]
 	[BP:HD:head:STP][CON:NK][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -218,9 +246,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -240,9 +272,13 @@ body_default
 		[DEFAULT_RELSIZE:150]
 	[BP:HD:head:STP][CON:NK][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -252,9 +288,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -274,9 +314,13 @@ body_default
 		[DEFAULT_RELSIZE:150]
 	[BP:HD:head:STP][CON:NK][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -294,21 +338,37 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][FLIER][CATEGORY:ARM_UPPER]
+	[BP:RWING_J1:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:70]{:40  Revision: made joints stronger.}
+	[BP:LWING_J1:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:70]{:40  Revision: made joints stronger.}
+	[BP:RWING_J2:right keel:STP][CON:RWING_J1][LIMB][RIGHT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:LWING_J2:left keel:STP][CON:LWING_J1][LIMB][LEFT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:RWING_J3:right wing tendon:STP][CON:RWING_J2][LIMB][RIGHT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:LWING_J3:left wing tendon:STP][CON:LWING_J2][LIMB][LEFT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:RUA:right upper winged arm:STP][CON:RWING_J3][LIMB][RIGHT][CATEGORY:ARM_UPPER]{:right upper arm}{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][FLIER][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper winged arm:STP][CON:LWING_J3][LIMB][LEFT][CATEGORY:ARM_UPPER]{:left upper arm}{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
+	[BP:RLA:right lower winged arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]{:right lower arm}
 		[DEFAULT_RELSIZE:200]
-	[BP:LLA:left lower arm:STP][CON:LUA][LIMB][LEFT][CATEGORY:ARM_LOWER]
+	[BP:LLA:left lower winged arm:STP][CON:LUA][LIMB][LEFT][CATEGORY:ARM_LOWER]{:left lower arm}
 		[DEFAULT_RELSIZE:200]
 	[BP:RH:right hand:STP][CON:RLA][GRASP][RIGHT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -328,21 +388,37 @@ body_default
 		[DEFAULT_RELSIZE:150]
 	[BP:HD:head:STP][CON:NK][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][FLIER][CATEGORY:ARM_UPPER]
+	[BP:RWING_J1:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:70]{:40  Revision: made joints stronger.}
+	[BP:LWING_J1:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:70]{:40  Revision: made joints stronger.}
+	[BP:RWING_J2:right keel:STP][CON:RWING_J1][LIMB][RIGHT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:LWING_J2:left keel:STP][CON:LWING_J1][LIMB][LEFT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:RWING_J3:right wing tendon:STP][CON:RWING_J2][LIMB][RIGHT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:LWING_J3:left wing tendon:STP][CON:LWING_J2][LIMB][LEFT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:RUA:right upper winged arm:STP][CON:RWING_J3][LIMB][RIGHT][CATEGORY:ARM_UPPER]{:right upper arm}{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][FLIER][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper winged arm:STP][CON:LWING_J3][LIMB][LEFT][CATEGORY:ARM_UPPER]{:left upper arm}{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
+	[BP:RLA:right lower winged arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]{:right lower arm}
 		[DEFAULT_RELSIZE:200]
-	[BP:LLA:left lower arm:STP][CON:LUA][LIMB][LEFT][CATEGORY:ARM_LOWER]
+	[BP:LLA:left lower winged arm:STP][CON:LUA][LIMB][LEFT][CATEGORY:ARM_LOWER]{:left lower arm}
 		[DEFAULT_RELSIZE:200]
 	[BP:RH:right hand:STP][CON:RLA][GRASP][RIGHT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -354,9 +430,21 @@ body_default
 		[DEFAULT_RELSIZE:120]
 
 [BODY:2WINGS]
-	[BP:RWING:right wing:STP][CONTYPE:UPPERBODY][LIMB][RIGHT][FLIER][CATEGORY:WING]
+	[BP:RWING_J1:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:70]{:40  Revision: made joints stronger.}
+	[BP:LWING_J1:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:70]{:40  Revision: made joints stronger.}
+	[BP:RWING_J2:right keel:STP][CON:RWING_J1][LIMB][RIGHT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:LWING_J2:left keel:STP][CON:LWING_J1][LIMB][LEFT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:RWING_J3:right wing tendon:STP][CON:RWING_J2][LIMB][RIGHT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:LWING_J3:left wing tendon:STP][CON:LWING_J2][LIMB][LEFT][INTERNAL][SMALL][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:50]{:30  Revision: made joints stronger.}
+	[BP:RWING:right wing:STP][CON:RWING_J3][LIMB][RIGHT][FLIER][CATEGORY:WING]{CONTYPE:UPPERBODY}
 		[DEFAULT_RELSIZE:500]
-	[BP:LWING:left wing:STP][CONTYPE:UPPERBODY][LIMB][LEFT][FLIER][CATEGORY:WING]
+	[BP:LWING:left wing:STP][CON:LWING_J3][LIMB][LEFT][FLIER][CATEGORY:WING]{CONTYPE:UPPERBODY}
 		[DEFAULT_RELSIZE:500]
 
 [BODY:HUMANOID_ARMLESS]
@@ -366,9 +454,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -386,9 +478,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -406,9 +502,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA1:first right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA1_J:first right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA1_J:first left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA1:first right upper arm:STP][CON:RUA1_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA1:first left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA1:first left upper arm:STP][CON:LUA1_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA1:first right lower arm:STP][CON:RUA1][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -418,9 +518,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH1:first left hand:STP][CON:LLA1][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUA2:second right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA2_J:second right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA2_J:second left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA2:second right upper arm:STP][CON:RUA2_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA2:second left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA2:second left upper arm:STP][CON:LUA2_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA2:second right lower arm:STP][CON:RUA2][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -430,9 +534,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH2:second left hand:STP][CON:LLA2][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -450,9 +558,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA1:first right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA1_J:first right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA1_J:first left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA1:first right upper arm:STP][CON:RUA1_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA1:first left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA1:first left upper arm:STP][CON:LUA1_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA1:first right lower arm:STP][CON:RUA1][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -462,9 +574,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH1:first left hand:STP][CON:LLA1][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUA2:second right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA2_J:second right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA2_J:second left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA2:second right upper arm:STP][CON:RUA2_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA2:second left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA2:second left upper arm:STP][CON:LUA2_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA2:second right lower arm:STP][CON:RUA2][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -474,9 +590,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH2:second left hand:STP][CON:LLA2][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUA3:third right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA3_J:third right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA3_J:third left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA3:third right upper arm:STP][CON:RUA3_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA3:third left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA3:third left upper arm:STP][CON:LUA3_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA3:third right lower arm:STP][CON:RUA3][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -486,9 +606,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH3:third left hand:STP][CON:LLA3][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -506,9 +630,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA1:first right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA1_J:first right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA1_J:first left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA1:first right upper arm:STP][CON:RUA1_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA1:first left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA1:first left upper arm:STP][CON:LUA1_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA1:first right lower arm:STP][CON:RUA1][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -518,9 +646,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH1:first left hand:STP][CON:LLA1][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUA2:second right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA2_J:second right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA2_J:second left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA2:second right upper arm:STP][CON:RUA2_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA2:second left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA2:second left upper arm:STP][CON:LUA2_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA2:second right lower arm:STP][CON:RUA2][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -538,9 +670,13 @@ body_default
 		[DEFAULT_RELSIZE:1000]
 	[BP:HD:head:STP][CON:UB][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA1:first right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA1_J:first right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA1_J:first left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA1:first right upper arm:STP][CON:RUA1_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA1:first left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA1:first left upper arm:STP][CON:LUA1_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA1:first right lower arm:STP][CON:RUA1][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -550,9 +686,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH1:first left hand:STP][CON:LLA1][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUA2:second right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA2_J:second right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA2_J:second left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA2:second right upper arm:STP][CON:RUA2_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA2:second left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA2:second left upper arm:STP][CON:LUA2_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA2:second right lower arm:STP][CON:RUA2][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -562,9 +702,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH2:second left hand:STP][CON:LLA2][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUA3:third right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA3_J:third right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA3_J:third left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA3:third right upper arm:STP][CON:RUA3_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA3:third left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA3:third left upper arm:STP][CON:LUA3_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA3:third right lower arm:STP][CON:RUA3][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -584,9 +728,13 @@ body_default
 		[DEFAULT_RELSIZE:150]
 	[BP:HD:head:STP][CON:NK][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA1:first right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA1_J:first right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA1_J:first left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA1:first right upper arm:STP][CON:RUA1_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA1:first left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA1:first left upper arm:STP][CON:LUA1_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA1:first right lower arm:STP][CON:RUA1][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -596,9 +744,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH1:first left hand:STP][CON:LLA1][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUA2:second right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA2_J:second right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA2_J:second left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA2:second right upper arm:STP][CON:RUA2_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA2:second left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA2:second left upper arm:STP][CON:LUA2_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA2:second right lower arm:STP][CON:RUA2][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -608,9 +760,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH2:second left hand:STP][CON:LLA2][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -656,9 +812,13 @@ body_default
 		[DEFAULT_RELSIZE:300]
 	[BP:LHD:left head:STP][CON:UB][HEAD][LEFT][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -668,9 +828,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -694,9 +858,13 @@ body_default
 		[DEFAULT_RELSIZE:300]
 	[BP:LHD:left head:STP][CON:LNK][HEAD][LEFT][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -706,9 +874,13 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RUL:right upper leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_UPPER]
+	[BP:RUL_J:right hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUL_J:left hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUL:right upper leg:STP][CON:RUL_J][LIMB][RIGHT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
-	[BP:LUL:left upper leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_UPPER]
+	[BP:LUL:left upper leg:STP][CON:LUL_J][LIMB][LEFT][CATEGORY:LEG_UPPER]{CON:LB}
 		[DEFAULT_RELSIZE:500]
 	[BP:RLL:right lower leg:STP][CON:RUL][LIMB][RIGHT][CATEGORY:LEG_LOWER]
 		[DEFAULT_RELSIZE:400]
@@ -1231,30 +1403,30 @@ body_default
 		[DEFAULT_RELSIZE:100]
 
 [BODY:HUMANOID_JOINTS]
-	[BP:RUA_J:right shoulder:STP][CON:RUA][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:100]
-	[BP:LUA_J:left shoulder:STP][CON:LUA][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:100]
+	{BP:RUA_J:right shoulder:STP}{CON:RUA}{JOINT}{SMALL}{INTERNAL}{RIGHT}{CATEGORY:JOINT  Revision: removed shoulders; they've been repurposed.}
+		{DEFAULT_RELSIZE:100}
+	{BP:LUA_J:left shoulder:STP}{CON:LUA}{JOINT}{SMALL}{INTERNAL}{LEFT}{CATEGORY:JOINT}
+		{DEFAULT_RELSIZE:100}
 	[BP:RLA_J:right elbow:STP][CON:RLA][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
+		[DEFAULT_RELSIZE:100]{:20  Revision: made joints stronger.}
 	[BP:LLA_J:left elbow:STP][CON:LLA][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
+		[DEFAULT_RELSIZE:100]{:20  Revision: made joints stronger.}
 	[BP:RH_J:right wrist:STP][CON:RH][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
+		[DEFAULT_RELSIZE:75]{:20  Revision: made joints stronger.}
 	[BP:LH_J:left wrist:STP][CON:LH][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
-	[BP:RUL_J:right hip:STP][CON:RUL][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:50]
-	[BP:LUL_J:left hip:STP][CON:LUL][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:50]
+		[DEFAULT_RELSIZE:75]{:20  Revision: made joints stronger.}
+	{BP:RUL_J:right hip:STP}{CON:RUL}{JOINT}{SMALL}{INTERNAL}{RIGHT}{CATEGORY:JOINT  Revision: removed hips; they've been repurposed.}
+		{DEFAULT_RELSIZE:50}
+	{BP:LUL_J:left hip:STP}{CON:LUL}{JOINT}{SMALL}{INTERNAL}{LEFT}{CATEGORY:JOINT}
+		{DEFAULT_RELSIZE:50}
 	[BP:RLL_J:right knee:STP][CON:RLL][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
+		[DEFAULT_RELSIZE:150]{:20  Revision: made joints stronger.}
 	[BP:LLL_J:left knee:STP][CON:LLL][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
+		[DEFAULT_RELSIZE:150]{:20  Revision: made joints stronger.}
 	[BP:RF_J:right ankle:STP][CON:RF][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
+		[DEFAULT_RELSIZE:100]{:20  Revision: made joints stronger.}
 	[BP:LF_J:left ankle:STP][CON:LF][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]
-		[DEFAULT_RELSIZE:20]
+		[DEFAULT_RELSIZE:100]{:20  Revision: made joints stronger.}
 
 [BODY:THROAT]
 	[BP:THROAT:throat:STP][CON_CAT:NECK][THROAT][EMBEDDED][SMALL][CATEGORY:THROAT]
@@ -1749,9 +1921,13 @@ body_default
 		[DEFAULT_RELSIZE:150]
 	[BP:HD:head:STP][CON:NK][HEAD][CATEGORY:HEAD]
 		[DEFAULT_RELSIZE:300]
-	[BP:RUA:right upper arm:STP][CON:UB][LIMB][RIGHT][CATEGORY:ARM_UPPER]
+	[BP:RUA_J:right shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LUA_J:left shoulder:STP][CONTYPE:UPPERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RUA:right upper arm:STP][CON:RUA_J][LIMB][RIGHT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
-	[BP:LUA:left upper arm:STP][CON:UB][LIMB][LEFT][CATEGORY:ARM_UPPER]
+	[BP:LUA:left upper arm:STP][CON:LUA_J][LIMB][LEFT][CATEGORY:ARM_UPPER]{CON:UB}
 		[DEFAULT_RELSIZE:200]
 	[BP:RLA:right lower arm:STP][CON:RUA][LIMB][RIGHT][CATEGORY:ARM_LOWER]
 		[DEFAULT_RELSIZE:200]
@@ -1761,17 +1937,25 @@ body_default
 		[DEFAULT_RELSIZE:80]
 	[BP:LH:left hand:STP][CON:LLA][GRASP][LEFT][CATEGORY:HAND]
 		[DEFAULT_RELSIZE:80]
-	[BP:RA:right front leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_FRONT]
+	[BP:RA_J:right front hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LA_J:left front hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RA:right front leg:STP][CON:RA_L][LIMB][RIGHT][CATEGORY:LEG_FRONT]{CON:LB}
 		[DEFAULT_RELSIZE:900]
-	[BP:LA:left front leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_FRONT]
+	[BP:LA:left front leg:STP][CON:LA_L][LIMB][LEFT][CATEGORY:LEG_FRONT]{CON:LB}
 		[DEFAULT_RELSIZE:900]
 	[BP:RFF:right front foot:right front feet][CON:RA][STANCE][RIGHT][CATEGORY:FOOT_FRONT]
 		[DEFAULT_RELSIZE:120]
 	[BP:LFF:left front foot:left front feet][CON:LA][STANCE][LEFT][CATEGORY:FOOT_FRONT]
 		[DEFAULT_RELSIZE:120]
-	[BP:RL:right rear leg:STP][CON:LB][LIMB][RIGHT][CATEGORY:LEG_REAR]
+	[BP:RL_J:right rear hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][RIGHT][CATEGORY:JOINT]{+  Revision: added separating 'limbs' for better armor coverage.}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:LL_J:left rear hip:STP][CONTYPE:LOWERBODY][LIMB][JOINT][SMALL][INTERNAL][LEFT][CATEGORY:JOINT]{+}
+		[DEFAULT_RELSIZE:150]{:100  Revision: made joints stronger.}
+	[BP:RL:right rear leg:STP][CON:RL_J][LIMB][RIGHT][CATEGORY:LEG_REAR]{CON:LB}
 		[DEFAULT_RELSIZE:900]
-	[BP:LL:left rear leg:STP][CON:LB][LIMB][LEFT][CATEGORY:LEG_REAR]
+	[BP:LL:left rear leg:STP][CON:LL_J][LIMB][LEFT][CATEGORY:LEG_REAR]{CON:LB}
 		[DEFAULT_RELSIZE:900]
 	[BP:RRF:right rear foot:right rear feet][CON:RL][STANCE][RIGHT][CATEGORY:FOOT_REAR]
 		[DEFAULT_RELSIZE:120]
@@ -1813,3 +1997,8 @@ body_default
 [BODY:TUSK]
 	[BP:TUSK:tusk:STP][CONTYPE:HEAD][RIGHT][CATEGORY:TUSK]
 		[DEFAULT_RELSIZE:25]
+
+[BODY:PEARL]{+  Revision: added pearls to fix bug 4108.}
+	[BP:PEARL:pearl:STP][CONTYPE:UPPERBODY][SMALL][INTERNAL][CATEGORY:PEARL]
+		[DEFAULT_RELSIZE:20]
+		[VERMIN_BUTCHER_ITEM]

@@ -199,6 +199,10 @@ creature_standard
 
 	[MAXAGE:150:170]
 
+	Revision: leather from humanoids is a little creepy, so rename it to hide.
+
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+}
+
 	Attack definitions are formatted as follows:
 
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
@@ -211,6 +215,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
@@ -220,29 +225,30 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 
 	This causes all of the nails on the finger's of a given grasp to be used.
 
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
 
 	This causes all of the teeth on a given head to be used.
 
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 
 	Here, GENERAL_BABY_NAME is at the creature level, and BABYNAME is at the caste level.  These names could be gender-specific but aren't right now.
 
@@ -311,17 +317,23 @@ creature_standard
 	[MANNERISM_STRETCH]
 	[MANNERISM_EYELIDS]
 	[SPOUSE_CONVERSION_TARGET]
-	
+
 	Now we'll declare the specific castes.
 
 	[CASTE:FEMALE]
 		The gender tag lets it know how breeding works.
 		[FEMALE]
+		[BABYNAME:dwarven baby girl:dwarven baby girls]{+}
+		[CHILDNAME:dwarven girl:dwarven girls]{+}
+		[DESCRIPTION:A short, sturdy woman fond of drink and industry.  She has a strong back and hairy arms, and her skin feels rougher than you'd expect.  A strange longing to explore deep under the earth inspires her.]{+}
 		[MULTIPLE_LITTER_RARE]
 		To add beards, put square brackets around the following:
 		BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:dwarven baby boy:dwarven baby boys]{+}
+		[CHILDNAME:dwarven boy:dwarven boys]{+}
+		[DESCRIPTION:A short, sturdy man fond of drink and industry.  He has a strong back and hairy arms, and his skin feels rougher than you'd expect.  A strange longing to explore deep under the earth inspires him.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 
@@ -338,7 +350,7 @@ creature_standard
 		 [PLUS_TL_GROUP:BY_CATEGORY:HEAD:SIDEBURNS]
 		 [PLUS_TL_GROUP:BY_CATEGORY:HEAD:EYEBROW]
 		 [PLUS_TL_GROUP:BY_CATEGORY:EYELID:EYELASH]
-			
+
 			A color modifier takes a list of color patterns (every color is associated to a monotone color pattern of its color, so you can also use color tokens) and frequencies.
 
 	[TL_COLOR_MODIFIER:AMBER:1:AUBURN:1:BLACK:1:BROWN:1:BUFF:1:BURNT_SIENNA:1:BURNT_UMBER:1:CHARCOAL:1:CHESTNUT:1:CHOCOLATE:1:CINNAMON:1:COPPER:1:DARK_BROWN:1:DARK_CHESTNUT:1:DARK_TAN:1:ECRU:1:FLAX:1:GOLD:1:GOLDEN_YELLOW:1:GOLDENROD:1:LIGHT_BROWN:1:MAHOGANY:1:OCHRE:1:PALE_BROWN:1:PALE_CHESTNUT:1:PUMPKIN:1:RAW_UMBER:1:RUSSET:1:SAFFRON:1:SEPIA:1:TAN:1:TAUPE_DARK:1:TAUPE_GRAY:1:TAUPE_MEDIUM:1:TAUPE_PALE:1:TAUPE_SANDY:1]
@@ -346,7 +358,7 @@ creature_standard
 			[TL_COLOR_MODIFIER:GRAY:1]
 
 				This gives the start and finish time in <year>|<days> for the color change to occur
-		
+
 				[TLCM_NOUN:hair:SINGULAR]
 				[TLCM_TIMING:ROOT:80:0:130:0]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -381,7 +393,7 @@ creature_standard
 				[APP_MOD_NOUN:hair:SINGULAR]
 
 				Here we set the growth rate.  This will change the modifier (LENGTH) by 1 each day up to a maximum of 1000 from the start of the dwarf's life (early beards!) for as long as the dwarf is alive.  The format is (APP_MOD_RATE|<rate>|<scale>|<min>|<max>|<start year>|<start day>|<end year>|<end day>) where the final two tokens can be replaced by NO_END if the growth is to continue indefinitely.
-				
+
 				[APP_MOD_RATE:1:DAILY:0:1000:0:0:NO_END]
 				[APP_MOD_DESC_RANGE:10:25:75:125:200:300]
 
@@ -561,6 +573,7 @@ creature_standard
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[MAXAGE:60:120]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -568,6 +581,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -576,23 +590,24 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -633,8 +648,14 @@ creature_standard
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:human baby girl:human baby girls]{+}
+		[CHILDNAME:human girl:human girls]{+}
+		[DESCRIPTION:A medium-sized woman prone to great ambition.  She looks almost ordinary in a world of strange things.  She works with others to build villages, kingdoms, and trade networks.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:human baby boy:human baby boys]{+}
+		[CHILDNAME:human boy:human boys]{+}
+		[DESCRIPTION:A medium-sized man prone to great ambition.  He looks almost ordinary in a world of strange things.  He works with others to build villages, kingdoms, and trade networks.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -817,16 +838,16 @@ creature_standard
 			[APP_MOD_NOUN:nose bridge:SINGULAR]
 	[SET_BP_GROUP:BY_CATEGORY:EAR]
 		[BP_APPEARANCE_MODIFIER:SPLAYED_OUT:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 		[BP_APPEARANCE_MODIFIER:HANGING_LOBES:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 		[BP_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
-		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
-			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+		[BP_APPEARANCE_MODIFIER:LENGTH:99:100:102:105:110:115:120]{:HEIGHT:90:95:98:100:102:105:110  Revision: pointy ears are long, not tall.}
+			[APP_MOD_IMPORTANCE:800]{:700  Revision: emphasize the pointy ears.}
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[SET_BP_GROUP:BY_CATEGORY:TOOTH]
 		[BP_APPEARANCE_MODIFIER:GAPS:0:70:90:100:110:130:200]
@@ -850,6 +871,8 @@ creature_standard
 		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
+	[MAXAGE:800:1000]{+  Revision: everything should die of old age.}
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -857,6 +880,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -865,23 +889,24 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -922,9 +947,15 @@ creature_standard
 	[SPOUSE_CONVERSION_TARGET]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[BABYNAME:elven baby girl:elven baby girls]{+}
+		[CHILDNAME:elven girl:elven girls]{+}
+		[DESCRIPTION:A medium-sized, graceful woman with flawless, hairless skin, eldritch eyes, and a reputation for beauty and cruelty.  She feels most at home among her beloved trees and seems driven to protect them.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:elven baby boy:elven baby boys]{+}
+		[CHILDNAME:elven boy:elven boys]{+}
+		[DESCRIPTION:A medium-sized, graceful man with flawless, hairless skin, eldritch eyes, and a reputation for beauty and cruelty.  He feels most at home among his beloved trees and seems driven to protect them.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -954,6 +985,9 @@ creature_standard
 				[APP_MOD_RATE:1:DAILY:0:1000:0:0:NO_END]
 				[APP_MOD_NOUN:hair:SINGULAR]
 				[APP_MOD_DESC_RANGE:10:25:75:125:200:300]
+		[SET_TL_GROUP:BY_CATEGORY:HEAD:HAIR]{+  Revision: elves style their hair.}
+			[TISSUE_STYLE_UNIT:HAIR:STANDARD_HAIR_SHAPINGS]
+				[TSU_NOUN:hair:SINGULAR]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 	[TL_COLOR_MODIFIER:BROWN:1:BURNT_UMBER:1:CINNAMON:1:COPPER:1:DARK_BROWN:1:DARK_PEACH:1:DARK_TAN:1:ECRU:1:PALE_BROWN:1:PALE_CHESTNUT:1:PALE_PINK:1:PEACH:1:PINK:1:RAW_UMBER:1:SEPIA:1:TAN:1:TAUPE_PALE:1:TAUPE_SANDY:1]
 				[TLCM_NOUN:skin:SINGULAR]
@@ -1071,16 +1105,16 @@ creature_standard
 			[APP_MOD_NOUN:nose bridge:SINGULAR]
 	[SET_BP_GROUP:BY_CATEGORY:EAR]
 		[BP_APPEARANCE_MODIFIER:SPLAYED_OUT:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 		[BP_APPEARANCE_MODIFIER:HANGING_LOBES:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 		[BP_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
-		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
-			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+		[BP_APPEARANCE_MODIFIER:LENGTH:99:100:102:105:110:115:120]{:HEIGHT:90:95:98:100:102:105:110  Revision: pointy ears are long, not tall.}
+			[APP_MOD_IMPORTANCE:800]{:700  Revision: emphasize the pointy ears.}
+			[APP_MOD_NOUN:pointy ears:PLURAL]{:ears:PLURAL}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[SET_BP_GROUP:BY_CATEGORY:TOOTH]
 		[BP_APPEARANCE_MODIFIER:GAPS:0:70:90:100:110:130:200]
@@ -1104,6 +1138,8 @@ creature_standard
 		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
+	[MAXAGE:400:600]{+  Revision: everything should die of old age.  Goblins in particular, to help prevent FPS loss.}
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -1111,6 +1147,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1119,23 +1156,24 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -1146,6 +1184,7 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:5341:4723:4112:1254:6433:7900] 7 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_LEARNED]
 	[MANNERISM_FINGERS:finger:fingers]
 	[MANNERISM_NOSE:nose]
@@ -1174,8 +1213,14 @@ creature_standard
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:goblin baby girl:goblin baby girls]{+}
+		[CHILDNAME:goblin girl:goblin girls]{+}
+		[DESCRIPTION:A medium-sized, cruel woman with leathery skin, sharply-defined features, and a lanky body.  She doesn't need food or drink, only sleep and distractions from her boredom.  She works with others to dig pits and trenches that connect many towers.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:goblin baby boy:goblin baby boys]{+}
+		[CHILDNAME:goblin boy:goblin boys]{+}
+		[DESCRIPTION:A medium-sized, cruel man with leathery skin, sharply-defined features, and a lanky body.  He doesn't need food or drink, only sleep and distractions from his boredom.  He works with others to dig pits and trenches that connect many towers.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -1205,6 +1250,9 @@ creature_standard
 				[APP_MOD_RATE:1:DAILY:0:1000:0:0:NO_END]
 				[APP_MOD_NOUN:hair:SINGULAR]
 				[APP_MOD_DESC_RANGE:10:25:75:125:200:300]
+		[SET_TL_GROUP:BY_CATEGORY:HEAD:HAIR]{+  Revision: goblins style their hair.}
+			[TISSUE_STYLE_UNIT:HAIR:STANDARD_HAIR_SHAPINGS]
+				[TSU_NOUN:hair:SINGULAR]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 	[TL_COLOR_MODIFIER:ASH_GRAY:1:DARK_GREEN:1:DARK_OLIVE:1:EMERALD:1:FERN_GREEN:1:GRAY:1:GREEN:1:JADE:1:LIME:1:MINT_GREEN:1:MOSS_GREEN:1:OLIVE:1:PINE_GREEN:1:SEA_GREEN:1:SLATE_GRAY:1:SPRING_GREEN:1]
 				[TLCM_NOUN:skin:SINGULAR]
@@ -1224,6 +1272,7 @@ creature_standard
 	[BONECARN]
 	[CANOPENDOORS]
 	[PREFSTRING:mischief]
+	[PREFSTRING:adorable snouts]{+}
 	[PERSONALITY:ANXIETY_PROPENSITY:50:75:100]
 	[PERSONALITY:TRUST:0:25:50]
 	[PERSONALITY:ACTIVITY_LEVEL:50:75:100]
@@ -1315,16 +1364,16 @@ creature_standard
 			[APP_MOD_NOUN:nose bridge:SINGULAR]
 	[SET_BP_GROUP:BY_CATEGORY:EAR]
 		[BP_APPEARANCE_MODIFIER:SPLAYED_OUT:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:floppy ears:PLURAL]{:ears}
 		[BP_APPEARANCE_MODIFIER:HANGING_LOBES:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:floppy ears:PLURAL]{:ears}
 		[BP_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:floppy ears:PLURAL]{:ears}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
-		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
-			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+		[BP_APPEARANCE_MODIFIER:LENGTH:99:100:102:105:110:115:120]{:HEIGHT:90:95:98:100:102:105:110  Revision: floppy ears are long, not tall.}
+			[APP_MOD_IMPORTANCE:800]{:700  Revision: emphasize the floppy ears.}
+			[APP_MOD_NOUN:floppy ears:PLURAL]{:ears}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[SET_BP_GROUP:BY_CATEGORY:TOOTH]
 		[BP_APPEARANCE_MODIFIER:GAPS:0:70:90:100:110:130:200]
@@ -1349,6 +1398,7 @@ creature_standard
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[MAXAGE:150:170]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -1356,6 +1406,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1364,23 +1415,24 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -1417,25 +1469,30 @@ creature_standard
 	[MANNERISM_EYELIDS]
 	[CASTE:FEMALE]
 		[FEMALE]
-		[LAYS_EGGS]
-			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
-			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
-			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_YOLK:LIQUID]
-			[EGG_SIZE:1100]
-			[CLUTCH_SIZE:1:2]
+		[DESCRIPTION:A small, quiet woman with leathery, scale-like skin and large, floppy ears.  She has wide, bright eyes and an innocent expression, feigned or real.  She lives in a cave with her tribe; she leaves often to steal.  Like most kobolds, she doesn't know her real parents.  Her tribe is her family.]{+}
+		{LAYS_EGGS                Revision: egg laying is kind of broken for humanoids.  For now, just get rid of it.}
+			{EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID}
+			{EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID}
+			{EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_YOLK:LIQUID}
+			{EGG_SIZE:1100}
+			{CLUTCH_SIZE:1:2}
+		[MULTIPLE_LITTER_RARE]{+  Revision: egg laying is kind of broken for humanoids.  For now, just get rid of it.}
+		[CHILDNAME:kobold girl:kobold girls]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A small, quiet man with leathery, scale-like skin and large, floppy ears.  He has wide, bright eyes and an innocent expression, feigned or real.  He lives in a cave with his tribe; he leaves often to steal.  Like most kobolds, he doesn't know his real parents.  His tribe is his family.]{+}
+		[CHILDNAME:kobold boy:kobold boys]{+}
 		undescended, not geldable
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
-			[TL_COLOR_MODIFIER:BROWN:1]
+			[TL_COLOR_MODIFIER:BROWN:1:RUSSET:1:PALE_BROWN:1:DARK_BROWN:1:TAN:1:DARK_TAN:1:GRAY:1:ASH_GRAY:1:SLATE_GRAY:1:DARK_CHESTNUT:1:AUBURN:1]{:BROWN:1}
 				[TLCM_NOUN:skin:SINGULAR]
 			[TISSUE_LAYER_APPEARANCE_MODIFIER:WRINKLY:0:0:0:0:0:0:0]
 				[APP_MOD_RATE:1:YEARLY:0:100:60:0:NO_END]
 				[APP_MOD_NOUN:skin:SINGULAR]
 				[APP_MOD_DESC_RANGE:0:0:0:1:25:50]
 		[SET_TL_GROUP:BY_CATEGORY:EYE:EYE]
-			[TL_COLOR_MODIFIER:PUPIL_EYE_YELLOW:1]
+			[TL_COLOR_MODIFIER:PUPIL_EYE_YELLOW:1:PUPIL_EYE_GOLDEN_YELLOW:1:PUPIL_EYE_AMBER:1:PUPIL_EYE_SAFFRON:1]{:PUPIL_EYE_YELLOW:1}
 				[TLCM_NOUN:eyes:PLURAL]
 
 [CREATURE:GREMLIN]
@@ -1447,6 +1504,7 @@ creature_standard
 	[UNDERGROUND_DEPTH:1:3]
 	[POPULATION_NUMBER:1:1]
 	[CAN_LEARN][CAN_SPEAK]
+	[FREQUENCY:50]{+  Revision: gremlins rarely appeared; let's fix that.}
 	[PET_EXOTIC]
 	[LOCKPICKER][TRAPAVOID][MISCHIEVOUS]
 	[NATURAL_SKILL:SNEAK:3]
@@ -1564,6 +1622,7 @@ creature_standard
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[MAXAGE:800:1000]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -1571,6 +1630,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1579,23 +1639,24 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -1611,8 +1672,14 @@ creature_standard
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:gremlin baby girl:gremlin baby girls]{+}
+		[CHILDNAME:gremlin girl:gremlin girls]{+}
+		[DESCRIPTION:A pint-sized, goblin-like woman with sharply-defined features, leathery skin, and wide, pointy ears.  She has a toothy, unusually wide smile; she seems to delight in chaos and mischief.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:gremlin baby boy:gremlin baby boys]{+}
+		[CHILDNAME:gremlin boy:gremlin boys]{+}
+		[DESCRIPTION:A pint-sized, goblin-like man with sharply-defined features, leathery skin, and wide, pointy ears.  He has a toothy, unusually wide smile; he seems to delight in chaos and mischief.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
@@ -1640,6 +1707,10 @@ creature_standard
 	[GRASSTRAMPLE:20]
 	[BONECARN]
 	[PREFSTRING:terrifying features]
+	[SOUND:ALERT:100:10000:VOCALIZATION:howl:howls:a brutish howl]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:50:2500:VOCALIZATION:grunt idly:grunts idly:an idle grunt]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:2500:VOCALIZATION:growl idly:growls idly:an idle growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a deep sniff]{+}
 	[BODY:HUMANOID_NECK:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE:2HEAD_HORN:2TUSKS]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[USE_MATERIAL_TEMPLATE:HORN:HORN_TEMPLATE]
@@ -1743,6 +1814,7 @@ creature_standard
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[MAXAGE:800:1000]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -1750,6 +1822,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1758,23 +1831,24 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 	[ATTACK:TGORE:BODYPART:BY_CATEGORY:TUSK]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:gore:gores]
@@ -1782,6 +1856,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_WITH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[ATTACK:HGORE:BODYPART:BY_CATEGORY:HORN]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:gore:gores]
@@ -1789,6 +1864,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[EQUIPS]
 	[CANOPENDOORS]
 	[ALL_ACTIVE]
@@ -1798,12 +1874,19 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:troll baby girl:troll baby girls]{+}
+		[CHILDNAME:troll girl:troll girls]{+}
+		[DESCRIPTION:A huge, monstrous woman with large tusks, curved horns, broad shoulders, and a strong back.  Enslaved by goblins, her shaggy fur is sheared for wool; she also does brutish work for her masters.  She's always naked but it's hard to say if that's by choice.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:troll baby boy:troll baby boys]{+}
+		[CHILDNAME:troll boy:troll boys]{+}
+		[DESCRIPTION:A huge, monstrous man with large tusks, curved horns, broad shoulders, and a strong back.  Enslaved by goblins, his shaggy fur is sheared for wool; he also does brutish work for his masters.  He's always naked but it's hard to say if that's by choice.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -1842,9 +1925,14 @@ creature_standard
 	[BUILDINGDESTROYER:2]
 	[LARGE_PREDATOR][MEANDERER]
 	[CAN_LEARN][SLOW_LEARNER]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: ogres will steal and immediately drink any alcohol in their path.}
 	[GRASSTRAMPLE:20]
 	[BONECARN]
 	[PREFSTRING:low howls]
+	[SOUND:ALERT:100:10000:VOCALIZATION:howl:howls:a howl echoing across the plains]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:PEACEFUL_INTERMITTENT:50:2500:VOCALIZATION:grunt idly:grunts idly:an idle grunt]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:2500:VOCALIZATION:growl idly:growls idly:an idle growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a deep sniff]{+}
 	[BODY:HUMANOID_NECK:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -1941,6 +2029,7 @@ creature_standard
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[MAXAGE:20:30]
 	[CHILD:10][BABY:1][MULTIPLE_LITTER_RARE]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -1948,6 +2037,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -1956,23 +2046,24 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
-	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
-		[ATTACK_SKILL:GRASP_STRIKE]
-		[ATTACK_VERB:scratch:scratches]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
-		[ATTACK_SKILL:BITE]
-		[ATTACK_VERB:bite:bites]
-		[ATTACK_CONTACT_PERC:100]
-		[ATTACK_PENETRATION_PERC:100]
-		[ATTACK_FLAG_EDGE]
-		[ATTACK_PREPARE_AND_RECOVER:3:3]
-		[ATTACK_PRIORITY:SECOND]
-		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat is too deadly, so reduce the velocity.}
+	{ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL  Revision: scratching's a daft idea.}
+		{ATTACK_SKILL:GRASP_STRIKE}
+		{ATTACK_VERB:scratch:scratches}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+	{ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH  Revision: biting's a daft idea.}
+		{ATTACK_SKILL:BITE}
+		{ATTACK_VERB:bite:bites}
+		{ATTACK_CONTACT_PERC:100}
+		{ATTACK_PENETRATION_PERC:100}
+		{ATTACK_FLAG_EDGE}
+		{ATTACK_PREPARE_AND_RECOVER:3:3}
+		{ATTACK_PRIORITY:SECOND}
+		{ATTACK_FLAG_CANLATCH}
 	[EQUIPS]
 	[CANOPENDOORS]
 	[NOCTURNAL]
@@ -1981,13 +2072,20 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
 		[CASTE_NAME:ogress:ogresses:ogress]
+		[BABYNAME:ogress baby:ogress babies]{+}
+		[CHILDNAME:ogress child:ogress children]{+}
+		[DESCRIPTION:A giant, monstrous woman that stomps about certain plains.  Her low howls can be heard long before she's seen.  She has leathery skin, a craggy, weather-beaten face, and an almost primitive appearance.  Her great size makes her nudity obvious; she certainly doesn't seem modest.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:ogre baby:ogre babies]{+}
+		[CHILDNAME:ogre child:ogre children]{+}
+		[DESCRIPTION:A giant, monstrous man that stomps about certain plains.  His low howls can be heard long before he's seen.  He has leathery skin, a craggy, weather-beaten face, and an almost primitive appearance.  His great size makes his nudity obvious; he certainly doesn't seem modest.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[CASTE_NAME:ogre:ogres:ogre]
 	[SELECT_CASTE:ALL]
@@ -2002,6 +2100,7 @@ creature_standard
 	[DESCRIPTION:A horse-like creature with a spiral horn growing from its forehead.]
 	[NAME:unicorn:unicorns:unicorn]
 	[CASTE_NAME:unicorn:unicorns:unicorn]
+	[CHILD:3][GENERAL_CHILD_NAME:unicorn foal:unicorn foals]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'U'][COLOR:7:0:1]
 	[CREATURE_CLASS:MAMMAL]
 	[PETVALUE:1000]
@@ -2062,6 +2161,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[ATTACK:KICK:BODYPART:BY_CATEGORY:HOOF_FRONT]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2105,9 +2205,11 @@ creature_standard
 			[TLCM_NOUN:eyes:PLURAL]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:An otherworldly, horse-like creature with a strange beauty to her; her fur and mane are silky and a long spiral horn grows from her forehead.  Elusive and mysterious, she wanders certain forests and plains with her herd.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:An otherworldly, horse-like creature with a strange beauty to him; his fur and mane are silky and a long spiral horn grows from his forehead.  Elusive and mysterious, he wanders certain forests and plains with his herd.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 	[SELECT_MATERIAL:ALL]
@@ -2117,10 +2219,11 @@ creature_standard
 	[DESCRIPTION:A gigantic reptilian creature.  It is magical and can breathe fire.  These monsters can live for thousands of years.]
 	[NAME:dragon:dragons:draconic]
 	[CASTE_NAME:dragon:dragons:draconic]
+	[CHILD:23][GENERAL_CHILD_NAME:drakeling:drakelings]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'D'][COLOR:2:0:0]
 	[PETVALUE:10000]
 	[PET_EXOTIC]
-	[TRAINABLE]
+	[TRAINABLE_WAR]{+  Revision: dragons can't be trained to hunt.}
 	[MOUNT_EXOTIC]
 	[BIOME:ANY_LAND]
 	[FREQUENCY:5]
@@ -2142,10 +2245,15 @@ creature_standard
 	[SPHERE:WEALTH]
 	[CURIOUSBEAST_ITEM]
 	[NOFEAR][NOEXERT]
+	[NOPAIN]{+  Revision: make them feel no pain.}
 	[BUILDINGDESTROYER:2]
 	[GRASSTRAMPLE:50]
 	[BONECARN]
 	[PREFSTRING:terrible majesty]
+	[SOUND:ALERT:100:15000:VOCALIZATION:roar, spewing cinders and ash:roars, spewing cinders and ash:the echoing roar of an ancient dragon]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:5000:VOCALIZATION:growl:lets out a deep, rumbling growl that shakes your bones:a deep, rumbling growl from far away]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:5000:VOCALIZATION:growl idly:growls idly:an unsettling growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a deep sniff]{+}
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:4TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
@@ -2214,10 +2322,12 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:730:561:351:1900:2900] 25 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:15]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A gigantic reptilian creature that breathes fire and can live for thousands of years.  Covetous and almost unstoppable, she hoards treasure and seeks rare artifacts.  Her tough scales are fringed with dark colors.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -2226,6 +2336,7 @@ creature_standard
 			[CLUTCH_SIZE:1:3]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A gigantic reptilian creautre that breathes fire and can live for thousands of years.  Covetous and almost unstoppable, he hoards treasure and seeks rare artifacts.  His tough scales are fringed with dark colors.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:GREEN:1]
@@ -2255,6 +2366,7 @@ creature_standard
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:3:5]
 	[CANOPENDOORS]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: satyrs will steal and immediately drink alcohol in their path.}
 	[BENIGN][GOOD][FANCIFUL]
 	[GRASSTRAMPLE:0]
 	[NO_VEGETATION_PERTURB]
@@ -2349,16 +2461,16 @@ creature_standard
 			[APP_MOD_NOUN:nose bridge:SINGULAR]
 	[SET_BP_GROUP:BY_CATEGORY:EAR]
 		[BP_APPEARANCE_MODIFIER:SPLAYED_OUT:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:horse-like ears:PLURAL]{:ears:PLURAL}
 		[BP_APPEARANCE_MODIFIER:HANGING_LOBES:0:70:90:100:110:130:200]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:horse-like ears:PLURAL]{:ears:PLURAL}
 		[BP_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+			[APP_MOD_NOUN:horse-like ears:PLURAL]{:ears:PLURAL}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
-		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
-			[APP_MOD_IMPORTANCE:700]
-			[APP_MOD_NOUN:ears:PLURAL]
+		[BP_APPEARANCE_MODIFIER:LENGTH:99:100:102:105:110:115:120]{:HEIGHT:90:95:98:100:102:105:110  Revision: horse-like ears are long, not tall.}
+			[APP_MOD_IMPORTANCE:800]{:700  Revision: emphasize the horse-like ears.}
+			[APP_MOD_NOUN:horse-like ears:PLURAL]{:ears:PLURAL}
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[SET_BP_GROUP:BY_CATEGORY:TOOTH]
 		[BP_APPEARANCE_MODIFIER:GAPS:0:70:90:100:110:130:200]
@@ -2382,6 +2494,9 @@ creature_standard
 		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
+	[MAXAGE:30:40]{+                                     Revision: everything should die of old age.}
+	[CHILD:10][BABY:1]{+                                 Revision: I dislike mono-gendered humanoids.}
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -2389,6 +2504,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2397,6 +2513,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:GORE:BODYPART:BY_CATEGORY:HORN]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:gore:gores]
@@ -2404,6 +2521,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: horn attacks are too deadly, so reduce the velocity.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -2412,6 +2530,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2421,6 +2540,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[CAN_LEARN]
 	[CAN_SPEAK]
 	[EQUIPS]
@@ -2430,9 +2550,23 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:5341:4723:4112:1254:6433:7900] 7 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
-	[MALE]
-	[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
+	[CASTE:FEMALE]{+  Revision: I dislike mono-gendered humanoids.}
+		[FEMALE]
+		[MULTIPLE_LITTER_RARE]
+		[CASTE_NAME:satyress:satyresses:satyress]
+		[BABYNAME:satyress baby:satyress babies]
+		[CHILDNAME:satyress girl:satyress girls]
+		[DESCRIPTION:A hooved, medium-sized woman with a hairy body, woolly legs, and short, spiral horns.  Capricious and lewd, she wanders certain forests, looking for fun.  She likes being naked; she's comfy as she is.]
+	[CASTE:MALE]{+  Revision: I dislike mono-gendered humanoids.}
+		[MALE]
+		[CASTE_NAME:satyr:satyrs:satyr]
+		[BABYNAME:satyr baby:satyr babies]
+		[CHILDNAME:satyr boy:satyr boys]
+		[DESCRIPTION:A hooved, medium-sized man with a hairy body, woolly legs, and short, spiral horns.  Capricious and lewd, he wanders certain forests, looking for fun.  He likes being naked; he's comfy as he is.]
+		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
+	[SELECT_CASTE:ALL]
 	[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 		[SET_TL_GROUP:BY_CATEGORY:HEAD:HAIR]
 		 [PLUS_TL_GROUP:BY_CATEGORY:BODY_LOWER:HAIR]
@@ -2497,8 +2631,13 @@ creature_standard
 
 [CREATURE:COLOSSUS_BRONZE]
 	[DESCRIPTION:A gigantic magic statue made of bronze and bent on mayhem.]
-	[NAME:bronze colossus:bronze colossuses:bronze colossus]
-	[CASTE_NAME:bronze colossus:bronze colossuses:bronze colossus]
+	[CASTE:FEMALE]
+		[DESCRIPTION:A gigantic magic statue of a nude woman, made of bronze and bent on mayhem.  Some unknown power has animated it.  It simply steps over fortifications, often smashing them.]{+}
+	[CASTE:MALE]
+		[DESCRIPTION:A gigantic magic statue of a nude man, made of bronze and bent on mayhem.  Some unknown power has animated it.  It simply steps over fortifications, often smashing them.]{+}
+	[SELECT_CASTE:ALL]
+	[NAME:bronze colossus:bronze colossi:bronze colossus]{:bronze colossuses}
+	[CASTE_NAME:bronze colossus:bronze colossi:bronze colossus]{:bronze colossuses}
 	[CREATURE_TILE:'C'][COLOR:6:0:0]
 	[MEGABEAST][DIFFICULTY:15] 11 or higher does not get assigned as adv mode quests
 		[ATTACK_TRIGGER:80:10000:100000]
@@ -2520,6 +2659,9 @@ creature_standard
 	[EQUIPS]
 	[NOFEAR]
 	[PREFSTRING:height]
+	[SOUND:ALERT:100:15000:NONE:open your mouth and let out a trumpeting cry:opens its mouth and lets out a deep, trumpeting cry, shaking your bones:a deep trumpeting, like a titanic instrument]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:5000:NONE:make a hideous noise, like a grinding bell:makes a hideous noise, like a grinding bell:the hideous grinding of massive gears]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:10000:NONE:shake the earth as you walk:shakes the earth as it walks:titanic footsteps that shake the earth]{+}
 	[NOBONES]
 	[ODOR_LEVEL:0] no smell
 	[SMELL_TRIGGER:10000] cannot smell
@@ -2545,6 +2687,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2553,6 +2696,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ITEMCORPSE:STATUE:NO_SUBTYPE:INORGANIC:BRONZE]
 	[ITEMCORPSE_QUALITY:5]
 	[DIURNAL]
@@ -2561,6 +2705,7 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:15]{+  Revision: make them fight longer.}
 	[SWIMS_LEARNED]
 
 [CREATURE:GIANT]
@@ -2694,6 +2839,7 @@ creature_standard
 		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -2701,6 +2847,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2709,6 +2856,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -2717,6 +2865,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2726,6 +2875,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -2736,13 +2886,20 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:10]{+  Revision: make them fight longer.}
 	[SWIMS_LEARNED]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
 		[CASTE_NAME:giantess:giantesses:giantess]
+		[BABYNAME:giantess baby:giantess babies]{+}
+		[CHILDNAME:giantess child:giantess children]{+}
+		[DESCRIPTION:A gigantic, monstrous woman almost unparalleled in size.  She has a hairy, strong body, shaggy hair, and an almost primitive appearance.  She lives quietly in a cozy burrow and keeps to herself.  She steps over fortifications and crushes buildings underfoot, whether she means to or not.  Her great size makes her nudity obvious; she certainly doesn't seem modest.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:giant baby:giant babies]{+}
+		[CHILDNAME:giant child:giant children]{+}
+		[DESCRIPTION:A gigantic, monstrous man almost unparalleled in size.  He has a hairy, strong body, shaggy hair, and an almost primitive appearance.  He lives quietly in a cozy burrow and keeps to himself.  He steps over fortifications and crushes buildings underfoot, whether he means to or not.  His great size makes his nudity obvious; he certainly doesn't seem modest.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 		[CASTE_NAME:giant:giants:giant]
@@ -2817,6 +2974,7 @@ creature_standard
 		[ATTACK_TRIGGER:50:5000:50000]
 	[CAN_LEARN][CAN_SPEAK]
 	[CANOPENDOORS]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: cyclops will steal and immediately drink any alcohol in their path.}
 	[BUILDINGDESTROYER:2]
 	[PREFSTRING:single eye]
 	[BIOME:ANY_LAND]
@@ -2933,6 +3091,7 @@ creature_standard
 		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -2940,6 +3099,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -2948,6 +3108,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -2956,6 +3117,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -2965,6 +3127,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -2975,12 +3138,19 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:10]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:cyclops baby girl:cyclops baby girls]{+}
+		[CHILDNAME:cyclops girl:cyclops girls]{+}
+		[DESCRIPTION:A giant, monstrous woman with leathery, veined skin and a primitive-looking face with one large eye set in her forehead.  She mostly stays in her cozy cave but is sometimes lured into pillaging by rumors of wealth.  Her great size makes her nudity obvious; she certainly doesn't seem modest.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:cyclops baby boy:cyclops baby boys]{+}
+		[CHILDNAME:cyclops boy:cyclops boys]{+}
+		[DESCRIPTION:A giant, monstrous man with leathery, veined skin and a primitive-looking face with one large eye set in his forehead.  He mostly stays in his cozy cave but is sometimes lured into pillaging by rumors of wealth.  His great size makes his nudity obvious; he certainly doesn't seem modest.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -3175,6 +3345,7 @@ creature_standard
 		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -3182,6 +3353,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -3190,6 +3362,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -3198,6 +3371,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -3207,6 +3381,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -3218,12 +3393,19 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:10]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:ettin baby girl:ettin baby girls]{+}
+		[CHILDNAME:ettin girl:ettin girls]{+}
+		[DESCRIPTION:A giant, monstrous woman with a thick, muscular body and two arguing heads.  Each head controls one arm, resulting in movement strange and (often) funny.  She mostly lives in her cozy cave but is sometimes lured into pillaging by rumors of wealth.  Her great size makes her nudity obvious; she certainly doesn't seem modest.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:ettin baby boy:ettin baby boys]{+}
+		[CHILDNAME:ettin boy:ettin boys]{+}
+		[DESCRIPTION:A giant, monstrous man with a thick, muscular body and two arguing heads.  Each head controls one arm, resulting in movement strange and (often) funny.  He mostly lives in his cozy cave but is sometimes lured into pillaging by rumors of wealth.  His great size makes his nudity obvious; he certainly doesn't seem modest.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -3297,6 +3479,7 @@ creature_standard
 		[ATTACK_TRIGGER:50:5000:50000]
 	[CAN_LEARN][CAN_SPEAK]
 	[CANOPENDOORS]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: minotaurs will steal and immediately drink any alcohol in their path.}
 	[BUILDINGDESTROYER:2]
 	[PREFSTRING:horns]
 	[BIOME:ANY_LAND]
@@ -3306,10 +3489,12 @@ creature_standard
 	[SPHERE:DARKNESS]
 	[SPHERE:DEFORMITY]
 	[SPHERE:STRENGTH]
-	[BODY:HUMANOID_NECK:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:2HEAD_HORN:5FINGERS:5TOES:MOUTH:TONGUE:EYELIDS:CHEEKS:TEETH:RIBCAGE]
+	[BODY:HUMANOID_NECK_HOOF:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:2HEAD_HORN:5FINGERS:5TOES:MOUTH:TONGUE:EYELIDS:CHEEKS:TEETH:RIBCAGE]{:HUMANOID_NECK  Revision: hooves seem more appropriate than feet.}
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+		[USE_MATERIAL_TEMPLATE:HOOF:HOOF_TEMPLATE]{+  Revision: hooves seem more appropriate than feet.}
 		[USE_MATERIAL_TEMPLATE:HORN:HORN_TEMPLATE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
+		[USE_TISSUE_TEMPLATE:HOOF:HOOF_TEMPLATE]{+    Revision: hooves seem more appropriate than feet.}
 		[USE_TISSUE_TEMPLATE:HORN:HORN_TEMPLATE]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[TISSUE_LAYER:BY_CATEGORY:HEAD:HAIR:NORMAL]
@@ -3360,6 +3545,7 @@ creature_standard
 	[BODY_SIZE:12:0:220000]
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -3367,6 +3553,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:GORE:BODYPART:BY_CATEGORY:HORN]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:gore:gores]
@@ -3374,6 +3561,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -3382,6 +3570,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -3390,6 +3579,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -3399,6 +3589,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -3442,12 +3633,19 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:10]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:minotaur baby girl:minotaur baby girls]{+}
+		[CHILDNAME:minotaur girl:minotaur girls]{+}
+		[DESCRIPTION:A giant, brutish woman with woolly legs and arms, large hooves, and a bull's head.  She rarely leaves her labyrinth but enjoys taunting her (rare) intruders.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:minotaur baby boy:minotaur baby boys]{+}
+		[CHILDNAME:minotaur boy:minotaur boys]{+}
+		[DESCRIPTION:A giant, brutish man with woolly legs and arms, large hooves, and a bull's head.  He rarely leaves his labyrinth but enjoys taunting his (rare) intruders.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -3475,6 +3673,7 @@ creature_standard
 	[CLUSTER_NUMBER:1:1]
 	[BUILDINGDESTROYER:2]
 	[LARGE_PREDATOR][MEANDERER]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: yetis will steal and immediately drink any alcohol in their path.}
 	[FANCIFUL]
 	[GRASSTRAMPLE:0]
 	[BONECARN]
@@ -3514,6 +3713,7 @@ creature_standard
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:800:1000]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -3521,6 +3721,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -3529,6 +3730,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -3537,6 +3739,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -3546,6 +3749,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[EQUIPS]
 	[CANOPENDOORS]
 	[ALL_ACTIVE]
@@ -3554,12 +3758,19 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:yeti baby girl:yeti baby girls]{+}
+		[CHILDNAME:yeti girl:yeti girls]{+}
+		[DESCRIPTION:A large, ape-like woman covered in shaggy fur save for her sad-looking face and her broad hands and feet.  She wanders certain lonely, wintery wastes.  She's protective of her territory and her kind; if you've seen one you may soon see another.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:yeti baby boy:yeti baby boys]{+}
+		[CHILDNAME:yeti boy:yeti boys]{+}
+		[DESCRIPTION:A large, ape-like man covered in shaggy fur save for his sad-looking and his broad hands and feet.  He wanders certain lonely, wintery wastes.  He's protective of his territory and his kind; if you've seen one you may soon see another.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -3588,6 +3799,7 @@ creature_standard
 	[CLUSTER_NUMBER:1:1]
 	[BUILDINGDESTROYER:2]
 	[LARGE_PREDATOR][MEANDERER]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: sasquatches will steal and immediately drink any alcohol in their path.}
 	[FANCIFUL]
 	[GRASSTRAMPLE:0]
 	[BONECARN]
@@ -3627,6 +3839,7 @@ creature_standard
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:800:1000]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -3634,6 +3847,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -3642,6 +3856,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -3650,6 +3865,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -3659,6 +3875,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[EQUIPS]
 	[CANOPENDOORS]
 	[ALL_ACTIVE]
@@ -3667,12 +3884,19 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:sasquatch baby girl:sasquatch baby girls]{+}
+		[CHILDNAME:sasquatch girl:sasquatch girls]{+}
+		[DESCRIPTION:A large, ape-like woman covered in shaggy fur save for her sad-looking face and her broad hands and feet.  Her arms are almost long enough for her hands to brush the ground.  She lives quietly by herself in certain forests.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:sasquatch baby boy:sasquatch baby boys]{+}
+		[CHILDNAME:sasquatch boy:sasquatch boys]{+}
+		[DESCRIPTION:A large, ape-like man covered in shaggy fur save for his sad-looking face and his broad hands and feet.  His arms are almost long enough for his hands to brush the ground.  He lives quietly by himself in certain forests.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -3688,7 +3912,7 @@ creature_standard
 		[MULTIPLY_VALUE:3]
 
 [CREATURE:BLIZZARD_MAN]
-	[DESCRIPTION:A large humanoid monster from the wild tundra.  It has translucent skin, icicles for teeth, red glowing eyes and pointed ears.]
+	[DESCRIPTION:A large and simple automaton of ice that aimlessly wanders certain tundra, animated with unknown power.  Its icy skin is clouded, its teeth are icicles, and its eldritch eyes glow red.]{:A large humanoid monster from the wild tundra.  It has translucent skin, icicles for teeth, red glowing eyes and pointed ears.}
 	[NAME:blizzard man:blizzard men:blizzard man]
 	[CASTE_NAME:blizzard man:blizzard men:blizzard man]
 	[CREATURE_TILE:'M'][COLOR:3:0:1]
@@ -3709,12 +3933,12 @@ creature_standard
 	[BODY:HUMANOID_NECK:2EYES:2EARS:NOSE:HUMANOID_JOINTS:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH]
 	[NO_THOUGHT_CENTER_FOR_MOVEMENT]
 	*** needs to be made out of ice
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: it yields no leather; it's supposed to be made of ice.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:STANDARD_HEAD_POSITIONS]
 	[BODY_DETAIL_PLAN:HUMANOID_HEAD_POSITIONS]
-	[BODY_DETAIL_PLAN:HUMANOID_RIBCAGE_POSITIONS]
+	{BODY_DETAIL_PLAN:HUMANOID_RIBCAGE_POSITIONS  Revision: blizzard men have no ribs.}
 	[BODY_DETAIL_PLAN:HUMANOID_RELSIZES]
 	[USE_MATERIAL_TEMPLATE:NAIL:NAIL_TEMPLATE]
 	[USE_TISSUE_TEMPLATE:NAIL:NAIL_TEMPLATE]
@@ -3723,6 +3947,11 @@ creature_standard
 	[BODY_SIZE:0:0:300000]
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
+	[SET_BP_GROUP:BY_CATEGORY:EAR]{+  Revision: blizzard men have pointy ears, as indicated in Toady's description.}
+		[BP_APPEARANCE_MODIFIER:LENGTH:99:100:102:105:110:115:120]
+			[APP_MOD_IMPORTANCE:800]
+			[APP_MOD_NOUN:pointy ears:PLURAL]
+			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -3730,6 +3959,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -3738,6 +3968,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -3746,6 +3977,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -3755,6 +3987,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[EQUIPS]
 	[CANOPENDOORS]
 	[ALL_ACTIVE]
@@ -3765,6 +3998,8 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
+	[NOFEAR]{+                      Revision: make them fear nothing.}
 	[SWIMS_INNATE]
 	[SET_TL_GROUP:BY_CATEGORY:EYE:EYE]
 		[TL_COLOR_MODIFIER:RED:1]
@@ -3787,6 +4022,12 @@ creature_standard
 	[GRASSTRAMPLE:0][EVIL]
 	[BONECARN]
 	[PREFSTRING:piercing howls]
+	[SOUND:ALERT:100:2500:VOCALIZATION:growl:growls:a low growl]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:100:2500:VOCALIZATION:snarl:snarls:a vicious snarl]{+}
+	[SOUND:ALERT:25:10000:VOCALIZATION:bark:bark:a loud bark]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:200:20000:VOCALIZATION:howl:howls:a distant howl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:2500:VOCALIZATION:growl idly:growls idly:an idle growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a sniff]{+}
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:4TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
@@ -3821,6 +4062,7 @@ creature_standard
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:10:20]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -3843,11 +4085,14 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:480:320:160:1900:2900] 55 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A fierce, medium-sized canine with shaggy fur and a piercing howl.  Despite her wagging tail, she seems very different from her domesticated cousins.  She hunts and wanders certain tundra, sometimes alone but often with others.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A fierce, medium-sized canine with shaggy fur and a piercing howl.  Despite his wagging tail, he seems very different from his domesticated cousins.  He hunts and wanders certain tundra, sometimes alone but often with others.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -3881,9 +4126,16 @@ creature_standard
 	[PREFSTRING:babylike giggles]
 	[PREFSTRING:lacy wings]
 	*** need lacy wings
-	[BODY:HUMANOID_NECK:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY:HUMANOID_NECK:2WINGS:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]{:HUMANOID_NECK:2EYES...  Revision: added wings.}
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
+		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_SMALL_TEMPLATE]{+   Revision: make the wings made out of thin chitin.}
+		[SELECT_MATERIAL:CHITIN]{+                               Revision: now, describe the chitin as lace.}
+			[STATE_NAME:ALL_SOLID:lace]
+			[STATE_ADJ:ALL_SOLID:lace]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
+		[USE_TISSUE_TEMPLATE:CHITIN:CHITIN_TEMPLATE]{+           Revision: make the wings made out of thin chitin.}
+		[SELECT_TISSUE:CHITIN]{+                                 Revision: now, describe the chitin as lace.}
+			[TISSUE_NAME:lace:NP]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:HEAD_HAIR_TISSUE_LAYERS]
 	[USE_TISSUE_TEMPLATE:EYEBROW:EYEBROW_TEMPLATE]
@@ -3894,6 +4146,7 @@ creature_standard
 	[USE_TISSUE_TEMPLATE:NAIL:NAIL_TEMPLATE]
 	[TISSUE_LAYER:BY_CATEGORY:FINGER:NAIL:FRONT]
 	[TISSUE_LAYER:BY_CATEGORY:TOE:NAIL:FRONT]
+	[SELECT_TISSUE_LAYER:ALL:BY_CATEGORY:WING][SET_LAYER_TISSUE:CHITIN]{+  Revision: make the wings made out of thin chitin.}
 	[SELECT_TISSUE_LAYER:HEART:BY_CATEGORY:HEART]
 	 [PLUS_TISSUE_LAYER:SKIN:BY_CATEGORY:THROAT]
 		[TL_MAJOR_ARTERIES]
@@ -3984,6 +4237,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -3992,6 +4246,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -4000,6 +4255,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -4009,6 +4265,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -4024,8 +4281,14 @@ creature_standard
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:fairy baby girl:fairy baby girls]{+}
+		[CHILDNAME:fairy girl:fairy girls]{+}
+		[DESCRIPTION:A tiny, unusually light homunculus that seems to dance through the air on delicate wings.  She's an otherworldly beauty with eldritch eyes, flowing hair, and long, slender legs.  She has a habit of giggling and a carefree attitude.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:fairy baby boy:fairy baby boys]{+}
+		[CHILDNAME:fairy boy:fairy boys]{+}
+		[DESCRIPTION:A tiny, unusually light homunculus that seems to dance through the air on delicate wings.  He's an otherworldly beauty with eldritch eyes, flowing hair, and long, slender legs.  He has a habit of giggling and a carefree attitude.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -4061,6 +4324,9 @@ creature_standard
 		[SET_TL_GROUP:BY_CATEGORY:EYE:EYE]
 	[TL_COLOR_MODIFIER:IRIS_EYE_AQUA:1:IRIS_EYE_AQUAMARINE:1:IRIS_EYE_AZURE:1:IRIS_EYE_BLUE:1:IRIS_EYE_CERULEAN:1:IRIS_EYE_DARK_BLUE:1:IRIS_EYE_DARK_GREEN:1:IRIS_EYE_DARK_OLIVE:1:IRIS_EYE_EMERALD:1:IRIS_EYE_FERN_GREEN:1:IRIS_EYE_GREEN:1:IRIS_EYE_JADE:1:IRIS_EYE_LIGHT_BLUE:1:IRIS_EYE_MINT_GREEN:1:IRIS_EYE_MOSS_GREEN:1:IRIS_EYE_OLIVE:1:IRIS_EYE_PALE_BLUE:1:IRIS_EYE_PINE_GREEN:1:IRIS_EYE_SEA_GREEN:1:IRIS_EYE_SKY_BLUE:1:IRIS_EYE_SPRING_GREEN:1:IRIS_EYE_TEAL:1:IRIS_EYE_TURQUOISE:1:IRIS_EYE_AMBER:1:IRIS_EYE_GOLD:1:IRIS_EYE_GOLDEN_YELLOW:1:IRIS_EYE_YELLOW:1]
 				[TLCM_NOUN:eyes:PLURAL]
+	[SET_TL_GROUP:BY_CATEGORY:WING:CHITIN]{+  Revision: added lacy wings.}
+		[TL_COLOR_MODIFIER:SPOTS_WHITE_SILVER:2:SPOTS_WHITE_PERIWINKLE:2:SPOTS_WHITE_PEARL:2:STRIPES_WHITE_SILVER:2:STRIPES_WHITE_PERIWINKLE:2:STRIPES_WHITE_PEARL:2:PERIWINKLE:1:PEARL:1:SILVER:1:WHITE:1:CLEAR:4]
+			[TLCM_NOUN:lacy wings:PLURAL]
 
 [CREATURE:PIXIE]
 	[DESCRIPTION:A tiny winged humanoid with shifting colors which performs intricate aerial dances in large groups.]
@@ -4082,9 +4348,16 @@ creature_standard
 	[PREFSTRING:shifting colors]
 	[PREFSTRING:intricate aerial dances]
 	*** need lacy wings
-	[BODY:HUMANOID_NECK:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY:HUMANOID_NECK:2WINGS:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:5TOES:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]{:HUMANOID_NECK:2EYES...  Revision: added wings.}
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
+		[USE_MATERIAL_TEMPLATE:CHITIN:CHITIN_SMALL_TEMPLATE]{+   Revision: make the wings made out of thin chitin.}
+		[SELECT_MATERIAL:CHITIN]{+                               Revision: now, describe the chitin as lace.}
+			[STATE_NAME:ALL_SOLID:lace]
+			[STATE_ADJ:ALL_SOLID:lace]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
+		[USE_TISSUE_TEMPLATE:CHITIN:CHITIN_TEMPLATE]{+           Revision: make the wings made out of thin chitin.}
+		[SELECT_TISSUE:CHITIN]{+                                 Revision: now, describe the chitin as lace.}
+			[TISSUE_NAME:lace:NP]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:HEAD_HAIR_TISSUE_LAYERS]
 	[USE_TISSUE_TEMPLATE:EYEBROW:EYEBROW_TEMPLATE]
@@ -4095,6 +4368,7 @@ creature_standard
 	[USE_TISSUE_TEMPLATE:NAIL:NAIL_TEMPLATE]
 	[TISSUE_LAYER:BY_CATEGORY:FINGER:NAIL:FRONT]
 	[TISSUE_LAYER:BY_CATEGORY:TOE:NAIL:FRONT]
+	[SELECT_TISSUE_LAYER:ALL:BY_CATEGORY:WING][SET_LAYER_TISSUE:CHITIN]{+  Revision: make the wings made out of thin chitin.}
 	[SELECT_TISSUE_LAYER:HEART:BY_CATEGORY:HEART]
 	 [PLUS_TISSUE_LAYER:SKIN:BY_CATEGORY:THROAT]
 		[TL_MAJOR_ARTERIES]
@@ -4183,6 +4457,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -4191,6 +4466,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -4199,6 +4475,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -4208,6 +4485,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -4223,8 +4501,14 @@ creature_standard
 	[CASTE:FEMALE]
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:pixie baby girl:pixie baby girls]{+}
+		[CHILDNAME:pixie girl:pixie girls]{+}
+		[DESCRIPTION:A tiny, unusually light homunculus with shifting colors and an otherworldly beauty.  She has eldritch eyes, flowing hair, and plenty of freckles.  She performs intricate aerial dances, often with others.  She has a carefree attitude.  She doesn't care that she's naked.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:pixie baby boy:pixie baby boys]{+}
+		[CHILDNAME:pixie boy:pixie boys]{+}
+		[DESCRIPTION:A tiny, unusually light homunculus with shifting colors and an otherworldly beauty.  He has eldritch eyes, flowing hair, and plenty of freckles.  He performs intricate aerial dances, often with others.  He has a carefree attitude.  He doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 	[SELECT_CASTE:ALL]
@@ -4260,6 +4544,9 @@ creature_standard
 		[SET_TL_GROUP:BY_CATEGORY:EYE:EYE]
 	[TL_COLOR_MODIFIER:IRIS_EYE_AQUA:1:IRIS_EYE_AQUAMARINE:1:IRIS_EYE_AZURE:1:IRIS_EYE_BLUE:1:IRIS_EYE_CERULEAN:1:IRIS_EYE_DARK_BLUE:1:IRIS_EYE_DARK_GREEN:1:IRIS_EYE_DARK_OLIVE:1:IRIS_EYE_EMERALD:1:IRIS_EYE_FERN_GREEN:1:IRIS_EYE_GREEN:1:IRIS_EYE_JADE:1:IRIS_EYE_LIGHT_BLUE:1:IRIS_EYE_MINT_GREEN:1:IRIS_EYE_MOSS_GREEN:1:IRIS_EYE_OLIVE:1:IRIS_EYE_PALE_BLUE:1:IRIS_EYE_PINE_GREEN:1:IRIS_EYE_SEA_GREEN:1:IRIS_EYE_SKY_BLUE:1:IRIS_EYE_SPRING_GREEN:1:IRIS_EYE_TEAL:1:IRIS_EYE_TURQUOISE:1:IRIS_EYE_AMBER:1:IRIS_EYE_GOLD:1:IRIS_EYE_GOLDEN_YELLOW:1:IRIS_EYE_YELLOW:1]
 				[TLCM_NOUN:eyes:PLURAL]
+	[SET_TL_GROUP:BY_CATEGORY:WING:CHITIN]{+  Revision: added lacy wings.}
+		[TL_COLOR_MODIFIER:SPOTS_WHITE_SILVER:2:SPOTS_WHITE_PERIWINKLE:2:SPOTS_WHITE_PEARL:2:STRIPES_WHITE_SILVER:2:STRIPES_WHITE_PERIWINKLE:2:STRIPES_WHITE_PEARL:2:PERIWINKLE:1:PEARL:1:SILVER:1:WHITE:1:CLEAR:4]
+			[TLCM_NOUN:lacy wings:PLURAL]
 
 [CREATURE:BEAK_DOG]
 	[DESCRIPTION:A creature from the evil swamp.  It resembles a squat, wingless bird with powerful beak and legs.  Its blotchy skin is brightly colored.]
@@ -4343,9 +4630,11 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_WALKING_GAITS:900:585:390:195:1900:2900] 45 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large, beaked creature that chatters and clicks.  She wanders certain swamps on thick chicken-like legs and is often kept by goblins.  Hunched and wingless, she resembles a squat, dog-like bird with colorful, blotchy skin.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -4354,6 +4643,7 @@ creature_standard
 			[CLUTCH_SIZE:5:10]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large, beaked creature that chatters and clicks.  He wanders certain swamps on thick chicken-like legs and is often kept by goblins.  Hunched and wingless, he resembles a squat, dog-like bird with colorful, blotchy skin.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:STRIPES_RAINBOW:1]
@@ -4365,7 +4655,7 @@ creature_standard
 		[MULTIPLY_VALUE:2]
 
 [CREATURE:GRIMELING]
-	[DESCRIPTION:An evil monster from the swamp.  It resembles a knot of waterlogged weeds but will strike the unaware victim.]
+	[DESCRIPTION:A medium-sized, sexless humanoid of waterlogged weeds that strikes the unwary in certain swamps.  Water drips from its knotted, tangled weeds as it reaches out in mindless aggression.  An unknown power animates it.]{:An evil monster from the swamp.  It resembles a knot of waterlogged weeds but will strike the unaware victim.}
 	[NAME:grimeling:grimelings:grimeling]
 	[CASTE_NAME:grimeling:grimelings:grimeling]
 	[CREATURE_TILE:'g'][COLOR:2:0:0]
@@ -4397,7 +4687,7 @@ creature_standard
 	[BODY:HUMANOID_SIMPLE]
 	[NO_THOUGHT_CENTER_FOR_MOVEMENT]
 	*** needs to be made out of weeds
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: it yields no leather; it's supposed to be made of weeds.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:STANDARD_HEAD_POSITIONS]
@@ -4412,6 +4702,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -4420,6 +4711,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ODOR_LEVEL:5]
 	[CANOPENDOORS]
 	[ALL_ACTIVE]
@@ -4434,7 +4726,7 @@ creature_standard
 [CREATURE:BLENDEC_FOUL]
 	[DESCRIPTION:A man-shaped creature with the legs of a goat and the empty-eyed skull of a goat.]
 	[NAME:foul blendec:foul blendecs:foul blendec]
-	[CASTE_NAME:foul blendec:foul blendecs:foul blendec]
+	{CASTE_NAME:foul blendec:foul blendecs:foul blendec  Revision: I dislike mono-gendered humanoids.}
 	[CREATURE_TILE:'b'][COLOR:0:0:1]
 	[CREATURE_CLASS:MAMMAL]
 	[POPULATION_NUMBER:10:20]
@@ -4489,6 +4781,9 @@ creature_standard
 	[BODY_SIZE:12:0:60000]
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
+	[MAXAGE:30:40]{+                                     Revision: everything should die of old age.}
+	[CHILD:10][BABY:1]{+                                 Revision: I dislike mono-gendered humanoids.}
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -4496,6 +4791,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:KICK:BODYPART:BY_TYPE:STANCE]
 		[ATTACK_SKILL:STANCE_STRIKE]
 		[ATTACK_VERB:kick:kicks]
@@ -4504,6 +4800,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_BAD_MULTIATTACK]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:GORE:BODYPART:BY_CATEGORY:HORN]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:gore:gores]
@@ -4511,6 +4808,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -4519,6 +4817,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -4528,6 +4827,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[CAN_LEARN]
 	[CAN_SPEAK]
 	[EQUIPS]
@@ -4537,9 +4837,23 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:5341:4723:4112:1254:6433:7900] 7 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
-	[MALE]
+	[CASTE:FEMALE]{+  Revision: I dislike mono-gendered humanoids.}
+		[FEMALE]
+		[MULTIPLE_LITTER_RARE]
+		[CASTE_NAME:foul blendec:foul blendecs:foul blendec]
+		[BABYNAME:foul blendec baby girl:foul blendec baby girls]
+		[CHILDNAME:foul blendec girl:foul blendec girls]
+		[DESCRIPTION:A hooved, medium-sized horror with a hairy, gaunt body, woolly legs, and spiral horns on the empty-eyed skull of a goat.  Foul and lewd, she wanders certain forests, looking for fun.  She doesn't care that she's naked.]
+	[CASTE:MALE]{+  Revision: I dislike mono-gendered humanoids.}
+		[MALE]
+		[CASTE_NAME:foul blendec:foul blendecs:foul blendec]
+		[BABYNAME:foul blendec baby boy:foul blendec baby boys]
+		[CHILDNAME:foul blendec boy:foul blendec boys]
+		[DESCRIPTION:A hooved, medium-sized horror with a hairy, gaunt body, woolly legs, and spiral horns on the empty-eyed skull of a goat.  Foul and lewd, he wanders certain forests, looking for fun.  He doesn't care that he's naked.]
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
+	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:BODY_LOWER:HAIR]
 		 [PLUS_TL_GROUP:BY_CATEGORY:LEG_UPPER:HAIR]
 		 [PLUS_TL_GROUP:BY_CATEGORY:LEG_LOWER:HAIR]
@@ -4562,6 +4876,7 @@ creature_standard
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:3]
 	[LARGE_PREDATOR][EVIL]
+	[CURIOUSBEAST_GUZZLER]{+  Revision: stranglers will steal and immediately drink any alcohol in their path.}
 	[BIOME:FOREST_TROPICAL_MOIST_BROADLEAF]
 	[PREFSTRING:resounding hoots]
 	[PREFSTRING:graceful leaps]
@@ -4597,6 +4912,7 @@ creature_standard
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:30:50]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -4606,6 +4922,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -4614,6 +4931,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ALL_ACTIVE]
 	[HOMEOTHERM:10067]
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:730:561:351:1900:2900] 25 kph
@@ -4621,12 +4939,15 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[NATURAL_SKILL:CLIMBING:15]
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A medium-sized, four-armed horror with three eyes, rows of teeth, and a gaunt, almost simian appearance.  Her unnaturally long arms drag on the ground as she walks.  She's vicious and simple minded; she doesn't care that she's naked.]{+}
 		[MULTIPLE_LITTER_RARE]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A medium-sized, four-armed horror with three eyes, rows of teeth, and a gaunt, almost simian appearance.  His unnaturally long arms drag on the ground as he walks.  He's vicious and simple minded; he doesn't care that he's naked.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -4693,6 +5014,9 @@ creature_standard
 	[BODY_APPEARANCE_MODIFIER:LENGTH:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
+	[MAXAGE:30:40]{+                                     Revision: everything should die of old age.}
+	[CHILD:10][BABY:1]{+                                 Revision: I dislike mono-gendered humanoids.}
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -4703,6 +5027,7 @@ creature_standard
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_CANLATCH]
 		[SPECIALATTACK_SUCK_BLOOD:50:100]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -4711,6 +5036,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[NOCTURNAL]
 	[HOMEOTHERM:10067]
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:730:561:351:1900:2900] 25 kph
@@ -4718,7 +5044,21 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_LEARNED]
+	[CASTE:FEMALE]{+  Revision: I dislike ungendered humanoids.}
+		[FEMALE]
+		[MULTIPLE_LITTER_RARE]
+		[BABYNAME:nightwing baby girl:nightswing baby girls]
+		[CHILDNAME:nightwing girl:nightwing girls]
+		[DESCRIPTION:A large and sinister beastwoman with a jackal's head, a thin mane, and needle-like horns.  Her fur seems stretched over her gaunt, unusually light body.  Her enveloping back-wings are thin yet immense.  She circles overhead in certain deserts.  She doesn't seem to need food, drink, or even rest.  She doesn't care that she's naked.]
+	[CASTE:MALE]{+  Revision: I dislike ungendered humanoids.}
+		[MALE]
+		[BABYNAME:nightwing baby boy:nightswing baby boys]
+		[CHILDNAME:nightwing boy:nightwing boys]
+		[DESCRIPTION:A large and sinister beastman with a jackal's head, a thin mane, and needle-like horns.  His fur seems stretched over his gaunt, unusually light body.  His enveloping back-wings are thin yet immense.  He circles overhead in certain deserts.  He doesn't seem to need food, drink, or even rest.  He doesn't care that he's naked.]
+		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
+	[SELECT_CASTE:ALL]
 	[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
 		[TL_COLOR_MODIFIER:DARK_BROWN:1]
 			[TLCM_NOUN:hair:SINGULAR]
@@ -4744,7 +5084,7 @@ creature_standard
 	[FANCIFUL]
 	[CAN_LEARN]
 	[CAN_SPEAK]
-	[CHILD:1]
+	[CHILD:12]{:1  Revision: 1 is too young.}
 	[ALL_ACTIVE]
 	[BIOME:SHRUBLAND_TEMPERATE]
 	[BIOME:SAVANNA_TEMPERATE]
@@ -4761,6 +5101,7 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_WALKING_GAITS:900:750:600:439:1900:2900] 20 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[PREFSTRING:feathery wings]
 	[PREFSTRING:fearsome talons]
@@ -4813,6 +5154,14 @@ creature_standard
 		[APP_MOD_IMPORTANCE:500]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:75:95:98:100:102:105:125]
 		[APP_MOD_IMPORTANCE:500]
+	[CASTE:FEMALE]{+  Revision: I dislike monogendered humanoids.}
+		[FEMALE]
+		[DESCRIPTION:A small, feathery woman with arms that turn into mantled wings; her gaunt, unusually light body is covered in scalloped feathers; her feet are strong and taloned for tearing into flesh.  She doesn't care that she's naked.]
+		[MULTIPLE_LITTER_RARE]
+	[CASTE:MALE]{+    Revision: I dislike monogendered humanoids.}
+		[MALE]
+		[DESCRIPTION:A small, feathery man with arms that turn into mantled wings; his gaunt, unusually light body is covered in scalloped feathers; his feet are strong and taloned for tearing into flesh.  He doesn't care that he's naked.]
+	[SELECT_CASTE:ALL]{+}
 	[SET_BP_GROUP:BY_CATEGORY:EYE]
 		[BP_APPEARANCE_MODIFIER:CLOSE_SET:0:70:90:100:110:130:200]
 			[APP_MOD_NOUN:eyes:PLURAL]
@@ -4870,6 +5219,7 @@ creature_standard
 		[BP_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
+	[MAXAGE:60:80]{+  Revision: nobody lives forever.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:STANCE:BY_CATEGORY:ALL:TALON]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:snatch at:snatches at]
@@ -4879,6 +5229,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:MAIN]
 		[ATTACK_FLAG_WITH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -4888,7 +5239,8 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
-	[FEMALE]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
+	{FEMALE  Revision: I dislike monogendered humanoids.}
 	[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 		[TL_COLOR_MODIFIER:BROWN:1]
 			[TLCM_NOUN:feathers:PLURAL]
@@ -4903,9 +5255,11 @@ creature_standard
 	[DESCRIPTION:A giant dragon-like monster with seven biting heads.]
 	[NAME:hydra:hydras:hydra]
 	[CASTE_NAME:hydra:hydras:hydra]
+	[CHILD:10]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'H'][COLOR:4:0:1]
 	[PETVALUE:10000]
 	[PET_EXOTIC]
+	[TRAINABLE_WAR]{+  Revision: now they're trainable for war.}
 	[BIOME:ANY_LAND]
 	[FREQUENCY:5]
 	[FANCIFUL]
@@ -4922,6 +5276,10 @@ creature_standard
 	[GRASSTRAMPLE:50]
 	[BONECARN]
 	[PREFSTRING:seven heads]
+	[SOUND:ALERT:100:15000:VOCALIZATION:roar in resonant harmony:roars in a multi-tone harmony with its seven heads, shaking your bones:the echoing, harmonic roar of a hydra]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:5000:VOCALIZATION:growl:lets out a deep, rumbling growl that shakes your bones:a deep, rumbling growl echoing through the caverns]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:5000:VOCALIZATION:growl idly:growls idly:an unsettling growl]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a deep sniff]{+}
 	[BODY:BASIC_2PARTBODY:7HEADNECKS:BASIC_FRONTLEGS:BASIC_REARLEGS:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:SPINE:BRAIN:SKULL:3TOES_FQ_REG:3TOES_RQ_REG:MOUTH:TONGUE:GENERIC_TEETH_WITH_FANGS:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
@@ -4987,13 +5345,16 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:730:561:351:1900:2900] 25 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:3512:2634:1756:878:4900:6900] 10 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NATURAL_SKILL:DISCIPLINE:15]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CANNOT_JUMP]
 	[HOMEOTHERM:10040]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A giant dragon-like monster with seven biting heads on long, flexible necks.  Her armored tail whips and thrashes aggressively.  She preys on her victims with a flurry of attacks as her heads all bite at once.  Her wounds heal quickly.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A giant dragon-like monster with seven biting heads on long, flexible necks.  His armored tail whips and thrashes aggressively.  He preys on his victims with a flurry of attacks as his heads all bite at once.  His wounds heal quickly.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:GOLD:1:RED:1]
@@ -5021,13 +5382,14 @@ creature_standard
 	[FANCIFUL]
 	[GOOD]
 	[FREQUENCY:100]
-	[AQUATIC][UNDERSWIM]
+	[AMPHIBIOUS][UNDERSWIM]{AQUATIC                         Revision: merpeople can breathe air.}
 	[PREFSTRING:tails]
 	[BODY:HUMANOID_LEGLESS_NECK:TAIL_STANCE:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:HUMANOID_JOINTS:THROAT:NECK:SPINE:BRAIN:SKULL:5FINGERS:MOUTH:TONGUE:FACIAL_FEATURES:TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+		[USE_MATERIAL_TEMPLATE:SCALE:SCALE_TEMPLATE]{+  Revision: mermaid tails are scaly.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
+		[USE_TISSUE_TEMPLATE:SCALE:SCALE_TEMPLATE]{+    Revision: mermaid tails are scaly.}
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
-	*** need to add scales to the tail, and remove skin
 	[BODY_DETAIL_PLAN:HEAD_HAIR_TISSUE_LAYERS]
 	[USE_TISSUE_TEMPLATE:EYEBROW:EYEBROW_TEMPLATE]
 	[TISSUE_LAYER:BY_CATEGORY:HEAD:EYEBROW:ABOVE:BY_CATEGORY:EYE]
@@ -5036,6 +5398,8 @@ creature_standard
 	[USE_MATERIAL_TEMPLATE:NAIL:NAIL_TEMPLATE]
 	[USE_TISSUE_TEMPLATE:NAIL:NAIL_TEMPLATE]
 	[TISSUE_LAYER:BY_CATEGORY:FINGER:NAIL:FRONT]
+	[SELECT_TISSUE_LAYER:SKIN:BY_CATEGORY:TAIL]{+           Revision: mermaid tails are scaly.}
+		[SET_LAYER_TISSUE:SCALE]
 	[SELECT_TISSUE_LAYER:HEART:BY_CATEGORY:HEART]
 	 [PLUS_TISSUE_LAYER:SKIN:BY_CATEGORY:THROAT]
 		[TL_MAJOR_ARTERIES]
@@ -5134,6 +5498,7 @@ creature_standard
 			[APP_MOD_IMPORTANCE:700]
 			[APP_MOD_DESC_RANGE:91:94:98:102:106:109]
 	[MAXAGE:60:120]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:HIDE]{+  Revision: leather from humanoids is a little creepy.}
 	[ATTACK:PUNCH:BODYPART:BY_TYPE:GRASP]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:punch:punches]
@@ -5141,6 +5506,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_FLAG_WITH]
 		[ATTACK_PRIORITY:MAIN]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:SCRATCH:CHILD_TISSUE_LAYER_GROUP:BY_TYPE:GRASP:BY_CATEGORY:FINGER:NAIL]
 		[ATTACK_SKILL:GRASP_STRIKE]
 		[ATTACK_VERB:scratch:scratches]
@@ -5149,6 +5515,7 @@ creature_standard
 		[ATTACK_FLAG_EDGE]
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -5158,6 +5525,7 @@ creature_standard
 		[ATTACK_PREPARE_AND_RECOVER:3:3]
 		[ATTACK_PRIORITY:SECOND]
 		[ATTACK_FLAG_CANLATCH]
+		[ATTACK_VELOCITY_MODIFIER:500]{+  Revision: unarmed combat was too deadly.}
 	[BABY:1]
 	[CHILD:12]
 	[EQUIPS]
@@ -5173,12 +5541,20 @@ creature_standard
 		[FEMALE]
 		[MULTIPLE_LITTER_RARE]
 		[CASTE_NAME:mermaid:mermaids:mermaid]
+		[BABYNAME:mermaid baby:mermaid baby]{+}
+		[CHILDNAME:mermaid girl:mermaid girls]{+}
+		[DESCRIPTION:A medium-sized, ethereal woman with freckles and an otherworldly beauty.  Her hair flows behind her as she swims.  Her thighs merge into a finned, scaly tail.  She swims certain seas just offshore.  She doesn't care that she's naked.  What use is clothing in the sea?]{+}
 	[CASTE:MALE]
 		[MALE]
+		[BABYNAME:merman baby:merman babies]{+}
+		[CHILDNAME:merman boy:merman boys]{+}
+		[DESCRIPTION:A medium-sized, ethereal man with freckles and an otherworldly beauty.  His hair flows behind him as he swims.  His thighs merge into a finned, scaly tail.  He swims certain seas just offshore.  He doesn't care that he's naked.  What use is clothing in the sea?]{+}
 		[BODY_DETAIL_PLAN:FACIAL_HAIR_TISSUE_LAYERS]
 		[CASTE_NAME:merman:mermen:merman]
 	[SELECT_CASTE:ALL]
 		*** need scale colors -- turquoise, need scale mat and tissue placement
+		[SET_TL_GROUP:BY_CATEGORY:TAIL:SCALE]{+  Revision: color mermaid scales with beautiful patterns.}
+			[TL_COLOR_MODIFIER:MOTTLED_CERULEAN_EMERALD:1:MOTTLED_CERULEAN_JADE:1:MOTTLED_CERULEAN_SEA_GREEN:1:MOTTLED_PALE_BLUE_EMERALD:1:MOTTLED_PALE_BLUE_JADE:1:MOTTLED_PALE_BLUE_SEA_GREEN:1:MOTTLED_TURQUOISE_EMERALD:1:MOTTLED_TURQOISE_JADE:1:MOTTLED_TURQOISE_SEA_GREEN:1]
 		[SET_TL_GROUP:BY_CATEGORY:HEAD:HAIR]
 		 [PLUS_TL_GROUP:BY_CATEGORY:HEAD:CHEEK_WHISKERS]
 		 [PLUS_TL_GROUP:BY_CATEGORY:HEAD:CHIN_WHISKERS]
@@ -5264,6 +5640,10 @@ creature_standard
 	[PREFSTRING:majesty]
 	[MAXAGE:150:175]
 	[CHILD:6][CHILDNAME:sea serpent hatchling:sea serpent hatchlings]
+	[SOUND:ALERT:100:15000:VOCALIZATION:roar:roars:the echoing roar of a mighty serpent]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:5000:VOCALIZATION:hiss:lets out a deep, rumbling hiss that shakes your bones:a deep, rumbling hiss echoing across the water]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:5000:VOCALIZATION:hiss:hisses:an unsettling hiss]{+}
+	[SOUND:PEACEFUL_INTERMITTENT:25:1000:VOCALIZATION:sniff:sniffs:a deep sniff]{+}
 	[BODY:BASIC_2PARTBODY:BASIC_HEAD:FRONT_BODY_FLIPPERS:REAR_BODY_FLIPPERS:TAIL:2EYES:2LUNGS:HEART:GUTS:ORGANS:SPINE:BRAIN:SKULL:MOUTH:TONGUE:GENERIC_TEETH_WITH_LARGE_EYE_TEETH:RIBCAGE]
 	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
 		[REMOVE_MATERIAL:SKIN]
@@ -5318,10 +5698,12 @@ creature_standard
 	[ALL_ACTIVE]
 	[HOMEOTHERM:10067]
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:900:711:521:293:1900:2900] 30 kph
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CANNOT_JUMP]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A giant, serpentine dragon that lurks near the sea floor.  Her twisting, limbless body is covered in glittering scales.  She coils and flows through the water, steering with twin flippers near the end of her long tail.  She dwarfs the largest ships and crushes them in her coils.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -5330,6 +5712,7 @@ creature_standard
 			[CLUTCH_SIZE:1:1]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A giant, serpentine dragon that lurks near the sea floor.  His twisting, limbless body is covered in glittering scales.  He coils and flows through the water, steering with twin flippers near the end of his long tail.  He dwarfs the largest ships and crushes them in his coils.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:AQUA:1]
@@ -5341,7 +5724,7 @@ creature_standard
 		[MULTIPLY_VALUE:5]
 
 [CREATURE:SEA_MONSTER]
-	[DESCRIPTION:A giant creature with many eyes and arms to terrify the sea.]
+	[DESCRIPTION:A giant, unsettling monster of the deep with many eyes and arms to terrify the sea.  Its scales glisten in the sun when it surfaces, if it bothers to.  It often bites through ships from below with strong jaws and large pincers, then escapes into the depths with its drowning prey.]{:A giant creature with many eyes and arms to terrify the sea.}
 	[NAME:sea monster:sea monsters:sea monster]
 	[CASTE_NAME:sea monster:sea monsters:sea monster]
 	[CREATURE_TILE:'M'][COLOR:0:0:1]
@@ -5411,6 +5794,7 @@ creature_standard
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:3512:2634:1756:878:4900:6900] 10 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[NATURAL_SKILL:CLIMBING:15]
+	[NATURAL_SKILL:DISCIPLINE:1]{+  Revision: make them fight longer.}
 	[SWIMS_INNATE]
 	[CANNOT_JUMP]
 	[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
@@ -5442,6 +5826,8 @@ creature_standard
 	[SPHERE:HUNTING]
 	[CURIOUSBEAST_ITEM]
 	[CURIOUSBEAST_EATER]
+	[SOUND:ALERT:100:15000:VOCALIZATION:let out a shrieking cry:lets out a shrieking cry:the distant cry of a titanic bird]{+  Revision: vocalizations help the world feel alive.}
+	[SOUND:ALERT:50:15000:VOCALIZATION:screech:gives a deafening screech:a fierce and thunderous screeching from afar]{+}
 	[NATURAL]
 	[LARGE_PREDATOR]
 	[FLIER]
@@ -5457,10 +5843,13 @@ creature_standard
 	[NATURAL_SKILL:MELEE_COMBAT:6]
 	[NATURAL_SKILL:DODGING:6]
 	[NATURAL_SKILL:SITUATIONAL_AWARENESS:6]
+	[NATURAL_SKILL:DISCIPLINE:15]{+  Revision: make them fight longer.}
 	[APPLY_CREATURE_VARIATION:STANDARD_FLYING_GAITS:900:528:352:176:1900:2900] 50 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_WALKING_GAITS:3512:2634:1756:878:4900:6900] 10 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CRAWLING_GAITS:6561:6115:5683:1755:7456:8567] 5 kph
+	[NOFEAR]{+  Revision: make them fear nothing.}
+	[NOPAIN]{+  Revision: make them feel no pain.}
 	[SWIMS_INNATE]
 	[PREFSTRING:awe-inspiring size]
 	[PREFSTRING:dedication to their young]
@@ -5522,6 +5911,7 @@ creature_standard
 		[ATTACK_FLAG_WITH]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A graceful bird of prey so large she dwarfs dragons.  She has shaggy, scalloped feathers, a long beak, and huge, menacing claws.  All beneath her mighty wings should fear the sky.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -5530,6 +5920,7 @@ creature_standard
 			[CLUTCH_SIZE:1:2]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A graceful bird of prey so large he dwarfs dragons.  He has shaggy, scalloped feathers, a long beak, and huge, menacing claws.  All beneath his mighty wings should fear the sky.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:FEATHER]
 			[TL_COLOR_MODIFIER:WHITE:1]

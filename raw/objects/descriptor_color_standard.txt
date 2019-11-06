@@ -167,7 +167,7 @@ Most of these are from Wikipedia's color list.
 [COLOR:DARK_GREEN]
 	[NAME:dark green]
 	[WORD:GREEN]
-	[RGB:1:50:32]
+	[RGB:1:50:10]{:1:50:32  Revision: prevent vomit from turning blue in some color schemes.}
 
 [COLOR:DARK_INDIGO]
 	[NAME:dark indigo]

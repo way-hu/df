@@ -22,7 +22,7 @@ item_pants
 [LBSTEP:MAX]
 [SHAPED]
 [LAYER:ARMOR]
-[COVERAGE:100]
+[COVERAGE:50]{:100     Revision: no perfect armor coverage.}
 [LAYER_SIZE:15]
 [LAYER_PERMIT:30]
 [MATERIAL_SIZE:6]
@@ -50,6 +50,7 @@ item_pants
 
 [ITEM_PANTS:ITEM_PANTS_LOINCLOTH]
 [NAME:loincloth:loincloths]
+[LBSTEP:1]{+            Revision: compensate for the (new) hips.}
 [LAYER:UNDER]
 [COVERAGE:50]
 [LAYER_SIZE:10]
@@ -61,6 +62,7 @@ item_pants
 
 [ITEM_PANTS:ITEM_PANTS_THONG]
 [NAME:thong:thongs]
+[LBSTEP:1]{+            Revision: compensate for the (new) hips.}
 [LAYER:UNDER]
 [COVERAGE:25]
 [LAYER_SIZE:10]
@@ -72,7 +74,7 @@ item_pants
 
 [ITEM_PANTS:ITEM_PANTS_SKIRT]
 [NAME:skirt:skirts]
-[LBSTEP:1]
+[LBSTEP:2]{:1           Revision: compensate for the (new) hips.}
 [LAYER:OVER]
 [COVERAGE:100]
 [LAYER_SIZE:10]
@@ -85,6 +87,7 @@ item_pants
 [ITEM_PANTS:ITEM_PANTS_SKIRT_SHORT]
 [NAME:skirt:skirts]
 [ADJECTIVE:short]
+[LBSTEP:1]{+            Revision: compensate for the (new) hips.}
 [LAYER:OVER]
 [COVERAGE:100]
 [LAYER_SIZE:10]
@@ -110,7 +113,7 @@ item_pants
 [ITEM_PANTS:ITEM_PANTS_BRAIES]
 [PREPLURAL:pairs of]
 [NAME:braies:braies]
-[LBSTEP:1]
+[LBSTEP:2]{:1           Revision: compensate for the (new) hips.}
 [LAYER:UNDER]
 [COVERAGE:100]
 [LAYER_SIZE:10]

@@ -9,6 +9,7 @@ reaction_smelter
 [PRODUCT:100:9:BAR:NO_SUBTYPE:COAL:COKE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Make 9 coke bars from 1 bituminous coal.]{+}
 
 [REACTION:LIGNITE_TO_COKE]
 [NAME:make coke from lignite]
@@ -17,117 +18,148 @@ reaction_smelter
 [PRODUCT:100:5:BAR:NO_SUBTYPE:COAL:COKE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Make 5 coke bars from 1 lignite.]{+}
 
 [REACTION:BRASS_MAKING]
-[NAME:make brass bars (use ore)]
+[NAME:smelt brass from ore]{:make brass from ore}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:1:METAL_ORE:ZINC]
 [REAGENT:B:1:METAL_ORE:COPPER]
 [PRODUCT:100:8:BAR:NO_SUBTYPE:METAL:BRASS][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 8 brass bars from 1 zinc ore* and 1 copper ore**.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION: * sphalerite.]
+[DESCRIPTION:** malachite, tetrahedrite, or native copper.]
 
 [REACTION:BRASS_MAKING2]
-[NAME:make brass bars (use bars)]
+[NAME:smelt brass from bars]{:make brass from bars}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:150:BAR:NO_SUBTYPE:METAL:ZINC]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
 [PRODUCT:100:2:BAR:NO_SUBTYPE:METAL:BRASS][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 2 brass bars from 1 zinc bar and 1 copper bar.]{+}
 
 [REACTION:BRONZE_MAKING]
-[NAME:make bronze bars (use ore)]
+[NAME:smelt bronze from ore]{:make bronze from ore}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:1:METAL_ORE:TIN]
 [REAGENT:B:1:METAL_ORE:COPPER]
 [PRODUCT:100:8:BAR:NO_SUBTYPE:METAL:BRONZE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 8 bronze bars from 1 tin ore* and 1 copper ore**.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION: * cassiterite.]
+[DESCRIPTION:** malachite, tetrahedrite, or native copper.]
 
 [REACTION:BRONZE_MAKING2]
-[NAME:make bronze bars (use bars)]
+[NAME:smelt bronze from bars]{:make bronze from bars}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:150:BAR:NO_SUBTYPE:METAL:TIN]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
 [PRODUCT:100:2:BAR:NO_SUBTYPE:METAL:BRONZE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 2 bronze bars from 1 tin bar and 1 copper bar.]{+}
 
 [REACTION:ELECTRUM_MAKING]
-[NAME:make electrum bars (use ore)]
+[NAME:smelt electrum from ore]{:make electrum from ore}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:1:METAL_ORE:SILVER]
 [REAGENT:B:1:METAL_ORE:GOLD]
 [PRODUCT:100:8:BAR:NO_SUBTYPE:METAL:ELECTRUM][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 8 electrum bars from 1 silver ore* and 1 gold ore**.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION: * galena, tetrahedrite, horn silver, or native silver.]
+[DESCRIPTION:** native gold.]
 
 [REACTION:ELECTRUM_MAKING2]
-[NAME:make electrum bars (use bars)]
+[NAME:smelt electrum from bars]{:make electrum from bars}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:150:BAR:NO_SUBTYPE:METAL:SILVER]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:GOLD]
 [PRODUCT:100:2:BAR:NO_SUBTYPE:METAL:ELECTRUM][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 2 electrum bars from 1 silver bar and 1 gold bar.]{+}
 
 [REACTION:BILLON_MAKING]
-[NAME:make billon bars (use ore)]
+[NAME:smelt billon from ore]{:make billon from ore}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:1:METAL_ORE:SILVER]
 [REAGENT:B:1:METAL_ORE:COPPER]
 [PRODUCT:100:8:BAR:NO_SUBTYPE:METAL:BILLON][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 8 billon bars from 1 silver ore* and 1 copper ore**.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION: * galena, tetrahedrite, horn silver, or native silver.]
+[DESCRIPTION:** malachite, tetrahedrite, or native copper.]
 
 [REACTION:BILLON_MAKING2]
-[NAME:make billon bars (use bars)]
+[NAME:smelt billon from bars]{:make billon from bars}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:150:BAR:NO_SUBTYPE:METAL:SILVER]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
 [PRODUCT:100:2:BAR:NO_SUBTYPE:METAL:BILLON][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 2 billon bars from 1 silver bar and 1 copper bar.]{+}
 
 [REACTION:PEWTER_FINE_MAKING]
-[NAME:make fine pewter bars (use ore)]
+[NAME:smelt fine pewter from ore]{:make fine pewter from ore}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:3:METAL_ORE:TIN]
 [REAGENT:B:1:METAL_ORE:COPPER]
 [PRODUCT:100:16:BAR:NO_SUBTYPE:METAL:PEWTER_FINE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 16 fine pewter bars from 3 tin ore* and 1 copper ore**.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION: * cassiterite.]
+[DESCRIPTION:** malachite, tetrahedrite, or native copper.]
 
 [REACTION:PEWTER_FINE_MAKING2]
-[NAME:make fine pewter bars (use bars)]
+[NAME:smelt fine pewter from bars]{:make fine pewter from bars}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:450:BAR:NO_SUBTYPE:METAL:TIN]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:PEWTER_FINE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 4 fine pewter bars from 3 tin bars and 1 copper bar.]{+}
 
 [REACTION:PEWTER_TRIFLE_MAKING]
-[NAME:make trifle pewter bars (use ore)]
+[NAME:smelt trifle pewter from ore]{:make trifle pewter from ore}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:2:METAL_ORE:TIN]
 [REAGENT:B:1:METAL_ORE:COPPER]
 [PRODUCT:100:12:BAR:NO_SUBTYPE:METAL:PEWTER_TRIFLE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 12 trifle pewter bars from 2 tin ore* and 1 copper ore**.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION: * cassiterite.]
+[DESCRIPTION:** malachite, tetrahedrite, or native copper.]
 
 [REACTION:PEWTER_TRIFLE_MAKING2]
-[NAME:make trifle pewter bars (use bars)]
+[NAME:smelt trifle pewter from bars]{:make trifle pewter from bars}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:300:BAR:NO_SUBTYPE:METAL:TIN]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
 [PRODUCT:100:3:BAR:NO_SUBTYPE:METAL:PEWTER_TRIFLE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 3 trifle pewter bars from 2 tin bars and 1 copper bar.]{+}
 
 [REACTION:PEWTER_LAY_MAKING]
-[NAME:make lay pewter bars (use bars)]
+[NAME:smelt lay pewter from bars]{:make lay pewter from bars}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:300:BAR:NO_SUBTYPE:METAL:TIN]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
@@ -135,9 +167,10 @@ reaction_smelter
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:PEWTER_LAY][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 4 lay pewter bars from 2 tin bars, 1 copper bar, and 1 lead bar.]{+}
 
 [REACTION:PIG_IRON_MAKING]
-[NAME:make pig iron bars]
+[NAME:smelt pig iron]{:make pig iron}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:150:BAR:NO_SUBTYPE:METAL:IRON]
 [REAGENT:B:1:BOULDER:NO_SUBTYPE:NONE:NONE][REACTION_CLASS:FLUX]
@@ -145,9 +178,12 @@ reaction_smelter
 [PRODUCT:100:1:BAR:NO_SUBTYPE:METAL:PIG_IRON][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 1 pig iron bars from 1 iron bar, 1 flux stone*, and 1 coal bar.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION:* calcite, chalk, dolomite, limestone, or marble.]
 
 [REACTION:STEEL_MAKING]
-[NAME:make steel bars]
+[NAME:smelt steel]{:make steel}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:150:BAR:NO_SUBTYPE:METAL:IRON]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:PIG_IRON]
@@ -156,9 +192,12 @@ reaction_smelter
 [PRODUCT:100:2:BAR:NO_SUBTYPE:METAL:STEEL][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 2 steel bars from 1 iron bars, 1 pig iron bars, 1 flux stone*, and 1 coal bar.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION:* calcite, chalk, dolomite, limestone, or marble.]
 
 [REACTION:NICKEL_SILVER_MAKING]
-[NAME:make nickel silver bars]
+[NAME:smelt nickel silver]{:make nickel silver}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:300:BAR:NO_SUBTYPE:METAL:NICKEL]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
@@ -166,9 +205,10 @@ reaction_smelter
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:NICKEL_SILVER][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 4 nickel silver bars from 2 nickel bars, 1 copper bar, and 1 zinc bar.]{+}
 
 [REACTION:BLACK_BRONZE_MAKING]
-[NAME:make black bronze bars]
+[NAME:smelt black bronze]{:make black bronze}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:300:BAR:NO_SUBTYPE:METAL:COPPER]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:SILVER]
@@ -176,27 +216,30 @@ reaction_smelter
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:BLACK_BRONZE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 4 black bronze bars from 2 copper bars, 1 silver bar, and 1 gold bar.]{+}
 
 [REACTION:STERLING_SILVER_MAKING]
-[NAME:make sterling silver bars]
+[NAME:smelt sterling silver]{:make sterling silver}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:450:BAR:NO_SUBTYPE:METAL:SILVER]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:STERLING_SILVER][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 4 sterling silver bars from 3 copper bars and 1 silver bar.]{+}
 
 [REACTION:ROSE_GOLD_MAKING]
-[NAME:make rose gold bars]
+[NAME:smelt rose gold]{:make rose gold}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:450:BAR:NO_SUBTYPE:METAL:GOLD]
 [REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:ROSE_GOLD][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 4 rose gold bars from 3 gold bars and 1 copper bar.]{+}
 
 [REACTION:BISMUTH_BRONZE_MAKING]
-[NAME:make bismuth bronze bars]
+[NAME:smelt bismuth bronze]{:make bismuth bronze}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:150:BAR:NO_SUBTYPE:METAL:TIN]
 [REAGENT:B:300:BAR:NO_SUBTYPE:METAL:COPPER]
@@ -204,11 +247,15 @@ reaction_smelter
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:BISMUTH_BRONZE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 4 bismuth bronze bars from 1 tin bar, 2 copper bars, and 1 bismuth bar.]{+}
 
 [REACTION:ADAMANTINE_WAFERS]
-[NAME:make adamantine wafers]
+[NAME:smelt adamantine]{:make adamantine}
 [BUILDING:SMELTER:NONE]
 [REAGENT:A:15000:THREAD:NO_SUBTYPE:METAL:ADAMANTINE]
 [PRODUCT:100:1:BAR:NO_SUBTYPE:METAL:ADAMANTINE][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
+[DESCRIPTION:Smelt 1 adamantine wafer from 1 spool of adamatine thread.]{+}
+[DESCRIPTION:    ]
+[DESCRIPTION:Adamantine thread is spun from raw adamantine at a Craftdwarf's Workshop.]

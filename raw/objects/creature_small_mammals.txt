@@ -23,7 +23,7 @@ creature_small_mammals
 	[PREFSTRING:intelligence]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -79,8 +79,10 @@ creature_small_mammals
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, intelligent vermin with a long naked tail.  A common pest, she raids stored food and spreads disease.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, intelligent vermin with a long naked tail.  A common pest, he raids stored food and spreads disease.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -99,8 +101,10 @@ creature_small_mammals
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:rat man:rat men:rat man]
+		[DESCRIPTION:A small, shaggy-furred beastman with a long, naked tail.  The long whiskers at the end of his pointy snout help him look distinguished.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:rat woman:rat women:rat woman]
+		[DESCRIPTION:A small, shaggy-furred beastwoman with a long, naked tail.  The long whiskers at the end of her pointy snout help her look distinguished.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -137,7 +141,7 @@ creature_small_mammals
 	[PREFSTRING:tails]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -193,8 +197,10 @@ creature_small_mammals
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny gray rodent with a bushy tail and a white belly, often found chirping in the trees of temperate woodland.  She gathers food and stores it in small caches.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny gray rodent with a bushy tail and a white belly, often found chirping in the trees of temperate woodland.  He gathers food and stores it in small caches.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -213,8 +219,10 @@ creature_small_mammals
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:gray squirrel man:gray squirrel men:gray squirrel man]
+		[DESCRIPTION:A small and furry beastman with large eyes, a white belly, and a bushy tail.  He jumps and leaps through the trees, playing and looking for food.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:gray squirrel woman:gray squirrel women:gray squirrel woman]
+		[DESCRIPTION:A small and furry beastwoman with large eyes, a white belly, and a bushy tail.  She jumps and leaps through the trees, playing and looking for food.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -237,10 +245,15 @@ creature_small_mammals
 
 [CREATURE:GIANT_SQUIRREL_GRAY]
 	[COPY_TAGS_FROM:SQUIRREL_GRAY]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A fluffy, squirrel-like monster with a bushy tail and a white belly.  She gathers food for herself and stores it in large caches for later.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A fluffy, squirrel-like monster with a bushy tail and a white belly.  He gathers food for himself and stores it in large caches for later.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:67367]
 	[GO_TO_START]
@@ -255,6 +268,7 @@ creature_small_mammals
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[MAXAGE:6:9]{+  Revision: let them live long enough to be worth taming.}
 	[GO_TO_END]
 	[PREFSTRING:tails]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:750:600:439:1900:2900] 20 kph
@@ -278,7 +292,7 @@ creature_small_mammals
 	[PREFSTRING:tails]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -334,8 +348,10 @@ creature_small_mammals
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, bulky red rodent with a bushy tail and tall, bushy ears.  Found in the trees of temperate woodland, she collects and store food in caches for later.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, bulky red rodent with a bushy tail and tall, bushy ears.  Found in the trees of temperate woodland, he collects and store food in caches for later.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -354,8 +370,10 @@ creature_small_mammals
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:red squirrel man:red squirrel men:red squirrel man]
+		[DESCRIPTION:A small and furry beastman with large eyes, a bushy tail, and tall, bushy ears.  A skilled climber, he jumps and leaps through the trees, looking for food and playing with his kin.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:red squirrel woman:red squirrel women:red squirrel woman]
+		[DESCRIPTION:A small and furry beastwoman with large eyes, a bushy tail, and tall, bushy ears.  A skilled climber, she jumps and leaps through the trees, looking for food and playing with her kin.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -378,10 +396,15 @@ creature_small_mammals
 
 [CREATURE:GIANT_SQUIRREL_RED]
 	[COPY_TAGS_FROM:SQUIRREL_RED]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A fluffy, squirrel-like monster with a bushy tail and tall, bushy ears.  She gathers food for herself and stores it in large caches for later.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A fluffy, squirrel-like monster with a bushy tail and tall, bushy ears.  He gathers food for himself and stores it in large caches for later.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:67367]
 	[GO_TO_START]
@@ -396,6 +419,7 @@ creature_small_mammals
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[MAXAGE:6:9]{+  Revision: let them live long enough to be worth taming.}
 	[GO_TO_END]
 	[PREFSTRING:tails]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:750:600:439:1900:2900] 20 kph
@@ -419,7 +443,7 @@ creature_small_mammals
 	[PREFSTRING:stripes]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:TONGUE:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 	[BODY_DETAIL_PLAN:VERTEBRATE_TISSUE_LAYERS:SKIN:FAT:MUSCLE:BONE:CARTILAGE]
 	[BODY_DETAIL_PLAN:BODY_HAIR_TISSUE_LAYERS:HAIR]
@@ -475,8 +499,10 @@ creature_small_mammals
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny striped rodent that scurries through the bushes and trees of temperate forest.  She stuffs food in her cheek pouches and carries it to small caches for storage, looking funny with her fat cheeks.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny striped rodent that scurries through the bushes and trees of temperate forest.  He stuffs food in his cheek pouches and carries it to small caches for storage, looking funny with his fat cheeks.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -495,8 +521,10 @@ creature_small_mammals
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:chipmunk man:chipmunk men:chipmunk man]
+		[DESCRIPTION:A small and fluffy beastman with a bushy tail, a striped back, and small, round ears.  He stuffs food in his cheek pouches for later, giving him a funny, fat-cheeked look.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:chipmunk woman:chipmunk women:chipmunk woman]
+		[DESCRIPTION:A small and fluffy beastwoman with a bushy tail, a striped back, and small, round ears.  She stuffs food in her cheek pouches for later, giving her a funny, fat-cheeked look.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -519,10 +547,15 @@ creature_small_mammals
 
 [CREATURE:GIANT_CHIPMUNK]
 	[COPY_TAGS_FROM:CHIPMUNK]
+	[CV_REMOVE_TAG:MAXAGE]{+  Revision: remove the MAXAGE tag before adding a new one, to avoid bug #6393.}
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A fluffy, striped, squirrel-like monster with a bushy tail and small, round ears.  She stuffs food in her cheek pouches while carrying it to large caches, giving her a funny, fat-cheeked look.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A fluffy, striped, squirrel-like monster with a bushy tail and small, round ears.  He stuffs food in his cheek pouches while carrying it to large caches, giving him a funny, fat-cheeked look.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:67367]
 	[GO_TO_START]
@@ -537,6 +570,7 @@ creature_small_mammals
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[MAXAGE:6:9]{+  Revision: let them live long enough to be worth taming.}
 	[GO_TO_END]
 	[PREFSTRING:stripes]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:750:600:439:1900:2900] 20 kph

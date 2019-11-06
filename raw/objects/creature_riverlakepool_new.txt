@@ -90,8 +90,10 @@ Otters were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A midsized river mammal with webbed feet and hands, water repellent fur, and a long body.  She swims with the help of her powerful tail, closing her ears and nostrils to keep out water.  She eats shellfish and other small animals, and lives in a burrow near the water's edge.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A midsized river mammal with webbed feet and hands, water repellent fur, and a long body.  He swims with the help of his powerful tail, closing his ears and nostrils to keep out water.  He eats shellfish and other small animals, and lives in a burrow near the water's edge.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -185,8 +187,10 @@ Otters were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A midsized marine mammal with webbed feet and hands, water repellent fur, and a long body.  She swims with the help of her powerful tail, closing her ears and nostrils to keep out water.  She eats shellfish and other small animals.  She likes to float on the water, lying on her back and sleeping with a serene pose.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A midsized marine mammal with webbed feet and hands, water repellent fur, and a long body.  He swims with the help of his powerful tail, closing his ears and nostrils to keep out water.  He eats shellfish and other small animals.  He likes to float on the water, lying on his back and sleeping with a serene pose.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -205,13 +209,15 @@ Otters were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:otter man:otter men:otter man]
+		[DESCRIPTION:A small and furry beastman with webbed feet and hands and a water-repellent coat.  He swims quickly with the help of his powerful tail, flexing his sleek, long body and closing his ears and nostrils to keep out water.  By nature, he likes to lazily float on the waters surface, staring up at the sky.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:otter woman:otter women:otter woman]
+		[DESCRIPTION:A small and furry beastwoman with webbed feet and hands and a water-repellent coat.  She swims quickly with the help of her powerful tail, flexing her sleek, long body and closing her ears and nostrils to keep out water.  By nature, she likes to lazily float on the waters surface, staring up at the sky.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK  Revision: biting and scratching are daft ideas; remove them.}
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -233,6 +239,10 @@ Otters were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A furry otter-like monster with webbed feet and hands and water repellent fur.  She swims with the help of her powerful tail, flexing her long body and closing her ears and nostrils to keep out water.  She can often be found floating lazily in the water.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A furry otter-like monster with webbed feet and hands and water repellent fur.  He swims with the help of his powerful tail, flexing his long body and closing his ears and nostrils to keep out water.  He can often be found floating lazily in the water.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:2705]
 	[GO_TO_START]
@@ -246,7 +256,7 @@ Otters were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:6:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[GO_TO_END]
 	[PREFSTRING:playfulness]
 	[PREFSTRING:big fluffy faces]
@@ -261,11 +271,13 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 
 [CREATURE:SNAPPING TURTLE]
 	[DESCRIPTION:A medium-sized reptile with a thick shell, which it can retreat into when threatened.  This creature can administer a painful bite.]
-	[NAME:common snapping turtle:common snapping turtles:common snapping turtle]
-	[CASTE_NAME:common snapping turtle:common snapping turtles:common snapping turtle]
+	[NAME:snapping turtle:snapping turtles:snapping turtle]{:common snapping turtle:common snapping turtles:common snapping turtle}
+	[CASTE_NAME:snapping turtle:snapping turtles:snapping turtle]{:common snapping turtle:common snapping turtles:common snapping turtle}
+	[CHILD:1][GENERAL_CHILD_NAME:snapping turtle hatchling:snapping turtle hatchlings]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'t'][COLOR:2:0:0]
 	[PETVALUE:25]
 	[LARGE_ROAMING]
+	[GOBBLE_VERMIN_CLASS:MAMMAL]{+  Revision: too few creatures ate vermin.}
 	[AMPHIBIOUS]
 	[NATURAL][PET_EXOTIC]
 	[CARNIVORE]
@@ -334,6 +346,7 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A midsized reptile with a painful bite and a thick shell, which she retreats into when she needs to.  She has a long tail with triangular spikes.  She doesn't swim particularly well and often simply walks along the bottom.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -342,6 +355,7 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 			[CLUTCH_SIZE:5:10] actually much higher
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A midsized reptile with a painful bite and a thick shell, which he retreats into when he needs to.  He has a long tail with triangular spikes.  He doesn't swim particularly well and often simply walks along the bottom.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:DARK_GREEN:1]
@@ -352,12 +366,14 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 
 [CREATURE:ALLIGATOR SNAPPING TURTLE]
 	[DESCRIPTION:A large reptile with a thick ridged shell.  It has been known to consume snakes and smaller turtles, and its bite can amputate fingers.]
-	[NAME:alligator snapping turtle:alligator snapping turtles:alligator snapping turtle]
-	[CASTE_NAME:alligator snapping turtle:alligator snapping turtles:alligator snapping turtle]
+	[NAME:alligator turtle:alligator turtles:alligator turtle]{:alligator snapping turtle:alligator snapping turtles:alligator snapping turtle}
+	[CASTE_NAME:alligator turtle:alligator turtles:alligator turtle]{:alligator snapping turtle:alligator snapping turtles:alligator snapping turtle}
+	[CHILD:1][GENERAL_CHILD_NAME:alligator turtle hatchling:alligator turtle hatchlings]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:'T'][COLOR:2:0:0]
 	[PETVALUE:25]
 	[AMPHIBIOUS]
 	[NATURAL][PET_EXOTIC]
+	[GOBBLE_VERMIN_CLASS:MAMMAL]{+  Revision: too few creatures ate vermin.}
 	[CARNIVORE]
 	[LARGE_ROAMING]
 	[BIOME:RIVER_TEMPERATE_FRESHWATER]
@@ -426,6 +442,7 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A large reptile with a thick ridged shell, a beak-like jaw, and a thick, scaled tail.  She sometimes eats snakes and smaller turtles, and her bite can amputate fingers.  Her worm-shaped tongue lures curious fish or frogs close enough to be snatched.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -434,6 +451,7 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 			[CLUTCH_SIZE:5:10] actually much higher
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A large reptile with a thick ridged shell, a beak-like jaw, and a thick, scaled tail.  He sometimes eats snakes and smaller turtles, and his bite can amputate fingers.  His worm-shaped tongue lures curious fish or frogs close enough to be snatched.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:DARK_GREEN:1]
@@ -448,8 +466,10 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:snapping turtle man:snapping turtle men:snapping turtle man]
+		[DESCRIPTION:A midsized, scaly reptilian with small eyes and a great shell on his back.  His thick, scaled tail has triangular spikes and his beak-like jaws have a dangerous bite.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:snapping turtle woman:snapping turtle women:snapping turtle woman]
+		[DESCRIPTION:A midsized, scaly reptilian with small eyes and a great shell on her back.  Her thick, scaled tail has triangular spikes and her beak-like jaws have a dangerous bite.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
@@ -473,11 +493,16 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A shelled, scaly monster with immensely strong, beak-like jaws.  She mostly keeps to herself in the water.  Her thick, scaly tail drags behind her as she walks, menacing with large, triangular spikes.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A shelled, scaly monster with immensely strong, beak-like jaws.  He mostly keeps to himself in the water.  His thick, scaly tail drags behind him as he walks, menacing with large, triangular spikes.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:1380]
 	[GO_TO_START]
 	[NAME:giant snapping turtle:giant snapping turtles:giant snapping turtle]
 	[CASTE_NAME:giant snapping turtle:giant snapping turtles:giant snapping turtle]
+	[GENERAL_CHILD_NAME:giant snapping turtle hatchling:giant snapping turtle hatchlings]{+}
 	[DESCRIPTION:A large monster with an enormous shell and immensely powerful jaw.]
 	[POPULATION_NUMBER:25:50]
 	[CREATURE_TILE:'T']
@@ -485,6 +510,7 @@ Snapping turtles were sponsored by the generous contributions of the Bay 12 comm
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[LARGE_PREDATOR][AMBUSHPREDATOR]{+  Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:vicious bites]
 	[PREFSTRING:long necks]
@@ -549,6 +575,7 @@ Beavers were sponsored by the generous contributions of the Bay 12 community.
 	[BODY_APPEARANCE_MODIFIER:HEIGHT:90:95:98:100:102:105:110]
 	[BODY_APPEARANCE_MODIFIER:BROADNESS:90:95:98:100:102:105:110]
 	[MAXAGE:15:20]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[ATTACK:BITE:CHILD_BODYPART_GROUP:BY_CATEGORY:HEAD:BY_CATEGORY:TOOTH]
 		[ATTACK_SKILL:BITE]
 		[ATTACK_VERB:bite:bites]
@@ -576,8 +603,10 @@ Beavers were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A midsized river mammal with a board-like tail and buck teeth for chewing underwater.  She swims using her tail as a rudder, carrying wood to the dams she likes to build.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A midsized river mammal with a board-like tail and buck teeth for chewing underwater.  He swims using his tail as a rudder, carrying wood to the dams he likes to build.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -596,13 +625,15 @@ Beavers were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:beaver man:beaver men:beaver man]
+		[DESCRIPTION:A small and furry beastman with a board-like tail, small eyes, and sharp, long buck teeth.  Industrious and strong, he swims using his tail as a rudder and as a support while carrying things.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:beaver woman:beaver women:beaver woman]
+		[DESCRIPTION:A small and furry beastwoman with a board-like tail, small eyes, and sharp, long buck teeth.  Industrious and strong by nature, she swims using her tail as a rudder and as a support while carrying things.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK  Revision: biting and scratching are daft ideas; remove them.}
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -624,6 +655,10 @@ Beavers were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A furry, beaver-like monster that builds huge wooden fortresses.  She has sharp, long buck teeth and a board-like tail that acts as a rudder.  Industrious and destructive, she uses large quantities of wood for her dam, blocking the water for those downstream.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A furry, beaver-like monster that builds huge wooden fortresses.  He has sharp, long buck teeth and a board-like tail that acts as a rudder.  Industrious and destructive, he uses large quantities of wood for his dam, blocking the water for those downstream.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:1709]
 	[GO_TO_START]
@@ -637,7 +672,7 @@ Beavers were sponsored by the generous contributions of the Bay 12 community.
 	[COLOR:6:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[GO_TO_END]
 	[PREFSTRING:dams]
 	[PREFSTRING:tree-felling habits]
@@ -652,7 +687,7 @@ Leeches were sponsored by the generous contributions of the Bay 12 community.
 	Baalak Nalzar-aung
 
 [CREATURE:LEECH]
-	[DESCRIPTION:A tiny, aquatic, worm-like creature that feeds on blood.]
+	[DESCRIPTION:A tiny swimming parasite that latches onto skin and feeds on blood.  Its saliva can anesthetize wounds and prevents blood from clotting.]{:A tiny, aquatic, worm-like creature that feeds on blood.}
 	[NAME:leech:leeches:leech]
 	[CASTE_NAME:leech:leeches:leech]
 	[CREATURE_TILE:'~'][COLOR:0:0:1]
@@ -671,7 +706,7 @@ Leeches were sponsored by the generous contributions of the Bay 12 community.
 	[POPULATION_NUMBER:250:500]
 	[PREFSTRING:feeding habits]
 	[BODY:BASIC_1PARTBODY:BASIC_HEAD:HEART:GUTS:BRAIN:MOUTH]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 		[REMOVE_MATERIAL:BONE]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
@@ -720,7 +755,7 @@ Leeches were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_START]
 	[NAME:leech man:leech men:leech man]
 	[CASTE_NAME:leech man:leech men:leech man]
-	[DESCRIPTION:A large slug-like creature with the torso of a man.  Its face is a mockery of teeth and slime.]
+	[DESCRIPTION:A small, slug-like, unsettling humanoid, naked and sexless, with a long, ringed, segmented body.  Its featureless face is a mockery of teeth and slime.  Legless, it writhes forward to move.]{:A large slug-like creature with the torso of a man.  Its face is a mockery of teeth and slime.}
 	[POPULATION_NUMBER:5:10]
 	[CLUSTER_NUMBER:1:5]
 	[MAXAGE:60:80]
@@ -738,14 +773,16 @@ Leeches were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_START]
 	[NAME:giant leech:giant leeches:giant leech]
 	[CASTE_NAME:giant leech:giant leeches:giant leech]
-	[DESCRIPTION:A large monster in the shape of a leech.]
+	[CHILD:1][GENERAL_CHILD_NAME:giant leech larva:giant leech larvae:giant leech larva]{+  Revision: taming requires a child tag (bug 7983).}
+	[DESCRIPTION:A horrifying worm-like monster with rings along its long, segmented body.  Its large, gaping mouth is ringed with many sharp teeth.  It feeds on blood and flesh.]{:A large monster in the shape of a leech.}
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
 	[CREATURE_TILE:'L']
 	[COLOR:0:0:1]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[LARGE_PREDATOR]{+            Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:feeding habits]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:657:438:219:1900:2900] 40 kph
@@ -761,6 +798,7 @@ Axolotls were sponsored by the generous contributions of the Bay 12 community.
 	[DESCRIPTION:A small salamander found in remote lakes.  It has the mysterious ability to regrow limbs.]
 	[NAME:axolotl:axolotls:axolotl]
 	[CASTE_NAME:axolotl:axolotls:axolotl]
+	[CHILD:1][GENERAL_CHILD_NAME:axolotl pup:axolotl pups]{+  Revision: taming requires a child tag (bug 7983).}
 	[CREATURE_TILE:249][COLOR:5:0:0]
 	[PETVALUE:10]
 	[PET_EXOTIC]
@@ -775,7 +813,7 @@ Axolotls were sponsored by the generous contributions of the Bay 12 community.
 	[POPULATION_NUMBER:250:500]
 	[PREFSTRING:gills]
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:MOUTH:RIBCAGE]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 		[REMOVE_MATERIAL:HAIR]
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[REMOVE_TISSUE:HAIR]
@@ -818,8 +856,10 @@ Axolotls were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, neotenic salamander with feathery external gills and a dorsal fin along her long body.  She lives in remote lakes and has the mysterious ability to regrow limbs.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, neotenic salamander with feathery external gills and a dorsal fin along his long body.  He lives in remote lakes and has the mysterious ability to regrow limbs.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SKIN]
 			[TL_COLOR_MODIFIER:WHITE:1]
@@ -834,12 +874,14 @@ Axolotls were sponsored by the generous contributions of the Bay 12 community.
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:axolotl man:axolotl men:axolotl man]
+		[DESCRIPTION:A small and scaly salamander with a wide head and feathery external gills.  A dorsal fin runs down his thick neck and back, ending at the tip of his long tail.  He has the mysterious ability to regrow limbs.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:axolotl woman:axolotl women:axolotl woman]
+		[DESCRIPTION:A small and scaly salamanderess with a wide head and feathery external gills.  A dorsal fin runs down her thick neck and back, ending at the tip of her long tail.  She has the mysterious ability to regrow limbs.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -859,19 +901,25 @@ Axolotls were sponsored by the generous contributions of the Bay 12 community.
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A neotenic, scaly monster with feathery, external gills around her wide head and a dorsal fin that runs from the tip of her long tail to her head.  She has the mysterious ability to regrow limbs.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A neotenic, scaly monster with feathery, external gills around his wide head and a dorsal fin that runs from the tip of his long tail to his head.  He has the mysterious ability to regrow limbs.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:100700]
 	[GO_TO_START]
 	[NAME:giant axolotl:giant axolotls:giant axolotl]
 	[CASTE_NAME:giant axolotl:giant axolotls:giant axolotl]
 	[DESCRIPTION:A large monster in the shape of an axolotl.]
+	[GENERAL_CHILD_NAME:giant axolotl pup:giant axolotl pups:giant axolotl pup]{+}
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
 	[CREATURE_TILE:'A']
 	[COLOR:5:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC        Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
+	[LARGE_PREDATOR][AMBUSHPREDATOR]{+  Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:gills]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:657:438:219:1900:2900] 40 kph
@@ -900,7 +948,7 @@ Minks were sponsored by the generous contributions of the Bay 12 community.
 	[BODY:QUADRUPED_NECK:TAIL:2EYES:2EARS:NOSE:2LUNGS:HEART:GUTS:ORGANS:THROAT:NECK:SPINE:BRAIN:SKULL:4TOES_FQ_REG:5TOES_RQ_REG:MOUTH:RODENT_TEETH:RIBCAGE]
 	[BODYGLOSS:PAW]
 	[GRASSTRAMPLE:0]
-	[BODY_DETAIL_PLAN:STANDARD_MATERIALS]
+	[BODY_DETAIL_PLAN:STANDARD_SMALL_MATERIALS]{:STANDARD_MATERIALS  Revision: too small to yield leather.}
 	[BODY_DETAIL_PLAN:STANDARD_TISSUES]
 		[SELECT_TISSUE:HAIR]
 			[INSULATION:200]
@@ -959,8 +1007,10 @@ Minks were sponsored by the generous contributions of the Bay 12 community.
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny, predatory, weasel-like mammal with a rich, glossy coat and a long body and tail.  She lives close to water, sometimes swimming and sometimes hunting nearby.]{+}
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny, predatory, weasel-like mammal with a rich, glossy coat and a long body and tail.  He lives close to water, sometimes swimming and sometimes hunting nearby.]{+}
 		[SET_BP_GROUP:BY_TYPE:LOWERBODY][BP_ADD_TYPE:GELDABLE]
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:HAIR]
@@ -976,16 +1026,19 @@ Minks were sponsored by the generous contributions of the Bay 12 community.
 [CREATURE:MINK_MAN]
 	[COPY_TAGS_FROM:MINK]
 	[APPLY_CREATURE_VARIATION:ANIMAL_PERSON]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:mink man:mink men:mink man]
+		[DESCRIPTION:A small, furry beastman with a long body, short limbs, and a broad head with rounded ears.  He has a rich, glossy coat and a long, warm tail.  He is predatory by nature but finds time to relax and play in the water.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:mink woman:mink women:mink woman]
+		[DESCRIPTION:A small, furry beastwoman with a long body, short limbs, and a broad head with rounded ears.  She has a rich, glossy coat and a long, warm tail.  She is predatory by nature but finds time to relax and play in the water.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK]
-	[APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:NAIL_SCRATCH_ATTACK  Revision: biting and scratching are daft ideas; remove them.}
+	{APPLY_CREATURE_VARIATION:TOOTH_BITE_ATTACK}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -1006,7 +1059,12 @@ Minks were sponsored by the generous contributions of the Bay 12 community.
 	[APPLY_CREATURE_VARIATION:GIANT]
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
+	[APPLY_CREATURE_VARIATION:RENAME_LEATHER_TO:FUR]{+  Revision: the leather is still furry after tanning.}
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A predatory, weasel-like monster with a rich, glossy coat and a long body and tail.  She lives close to water and mostly keeps to herself when she's not hungry.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A predatory, weasel-like monster with a rich, glossy coat and a long body and tail.  He lives close to water and mostly keeps to himself when he's not hungry.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:25700]
 	[GO_TO_START]
@@ -1021,6 +1079,7 @@ Minks were sponsored by the generous contributions of the Bay 12 community.
 	[PET_EXOTIC]
 	[PETVALUE:500]
 	[MOUNT_EXOTIC]
+	[LARGE_PREDATOR]{+  Revision: best be cautious.}
 	[GO_TO_END]
 	[PREFSTRING:long bodies]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:657:438:219:1900:2900] 40 kph
@@ -1101,6 +1160,7 @@ Pond turtles were sponsored by the generous contributions of the Bay 12 communit
 	[MUNDANE]
 	[CASTE:FEMALE]
 		[FEMALE]
+		[DESCRIPTION:A tiny reptile with a smooth shell on her back.  She lives in rivers and ponds, basking in the sun when she can and diving into the water at the first sign of danger.]{+}
 		[LAYS_EGGS]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGGSHELL:SOLID]
 			[EGG_MATERIAL:LOCAL_CREATURE_MAT:EGG_WHITE:LIQUID]
@@ -1109,6 +1169,7 @@ Pond turtles were sponsored by the generous contributions of the Bay 12 communit
 			[CLUTCH_SIZE:1:15]
 	[CASTE:MALE]
 		[MALE]
+		[DESCRIPTION:A tiny reptile with a smooth shell on his back.  He lives in rivers and ponds, basking in the sun when he can and diving into the water at the first sign of danger.]{+}
 	[SELECT_CASTE:ALL]
 		[SET_TL_GROUP:BY_CATEGORY:ALL:SCALE]
 			[TL_COLOR_MODIFIER:DARK_GREEN:1]
@@ -1123,12 +1184,14 @@ Pond turtles were sponsored by the generous contributions of the Bay 12 communit
 	[GO_TO_END]
 	[SELECT_CASTE:MALE]
 		[CASTE_NAME:pond turtle man:pond turtle men:pond turtle man]
+		[DESCRIPTION:A small, scaly reptilian with small eyes and a great, smooth shell on his back.  He has a long tail and walks slowly on land.  He basks in the sun whenever he can, on land or in water.  He doesn't care that he's naked.]{+}
 	[SELECT_CASTE:FEMALE]
 		[CASTE_NAME:pond turtle woman:pond turtle women:pond turtle woman]
+		[DESCRIPTION:A small, scaly reptilian with small eyes and a great, smooth shell on her back.  She has a long tail and a slow gait on land.  She basks in the sun whenever she can, on land or in water.  She doesn't care that she's naked.]{+}
 	[SELECT_CASTE:ALL]
 	[APPLY_CREATURE_VARIATION:PUNCH_ATTACK]
 	[APPLY_CREATURE_VARIATION:KICK_ATTACK]
-	[APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK]
+	{APPLY_CREATURE_VARIATION:MOUTH_BITE_ATTACK  Revision: biting's a daft idea.}
 	[APPLY_CREATURE_VARIATION:STANDARD_BIPED_GAITS:900:711:521:293:1900:2900] 30 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_CLIMBING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
 	[APPLY_CREATURE_VARIATION:STANDARD_SWIMMING_GAITS:2990:2257:1525:731:4300:6100] 12 kph
@@ -1148,11 +1211,16 @@ Pond turtles were sponsored by the generous contributions of the Bay 12 communit
 	[CV_REMOVE_TAG:CHANGE_BODY_SIZE_PERC]
 	[APPLY_CURRENT_CREATURE_VARIATION]
 	[GO_TO_END]
+	[SELECT_CASTE:FEMALE]
+		[DESCRIPTION:A slow-moving scaly monster with a smooth, spotted shell on her broad back.  She's shy by nature despite her size, diving into the water at the first sign of danger.  She basks in the sun when she can, on land or in water.]{+}
+	[SELECT_CASTE:MALE]
+		[DESCRIPTION:A slow-moving scaly monster with a smooth, spotted shell on his broad back.  He's shy by nature despite his size, diving into the water at the first sign of danger.  He basks in the sun when he can, on land or in water.]{+}
 	[SELECT_CASTE:ALL]
 	[CHANGE_BODY_SIZE_PERC:40700]
 	[GO_TO_START]
 	[NAME:giant pond turtle:giant pond turtles:giant pond turtle]
 	[CASTE_NAME:giant pond turtle:giant pond turtles:giant pond turtle]
+	[CHILD:1][GENERAL_CHILD_NAME:giant pond turtle hatchling:giant pond turtle hatchlings:giant pond turtle hatchling]{+  Revision: taming requires a child tag (bug 7983).}
 	[DESCRIPTION:A huge monster shaped like a pond turtle.]
 	[POPULATION_NUMBER:10:20]
 	[CLUSTER_NUMBER:1:1]
@@ -1160,7 +1228,7 @@ Pond turtles were sponsored by the generous contributions of the Bay 12 communit
 	[COLOR:2:0:0]
 	[PET_EXOTIC]
 	[PETVALUE:500]
-	[MOUNT_EXOTIC]
+	[TRAINABLE_WAR]{MOUNT_EXOTIC  Revision: amphibious mounts are dangerous (bug 926); allowed war training instead.}
 	[GO_TO_END]
 	[PREFSTRING:shells]
 	[APPLY_CREATURE_VARIATION:STANDARD_QUADRUPED_GAITS:900:750:600:439:1900:2900] 20 kph
