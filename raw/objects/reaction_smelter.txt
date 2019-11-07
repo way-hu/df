@@ -203,3 +203,28 @@ reaction_smelter
 [DESCRIPTION:Smelt 1 adamantine wafer from 1 spool of adamatine thread.]{+}
 [DESCRIPTION:    ]
 [DESCRIPTION:Adamantine thread is spun from raw adamantine at a Craftdwarf's Workshop.]
+
+Way: smelt a small amount of mithril from ores.
+[REACTION:MITHRIL_MAKING]
+[NAME:smelt mithril from ores]
+[BUILDING:SMELTER:NONE]
+[REAGENT:A:1:METAL_ORE:NICKEL]
+[REAGENT:B:1:METAL_ORE:COBOLT]
+[PRODUCT:100:1:BAR:NO_SUBTYPE:METAL:MITHRIL][PRODUCT_DIMENSION:150]
+[FUEL]
+[SKILL:SMELT]
+[DESCRIPTION:Smelt 1 mithril bar from 1 nickel ore* and 1 cobolt ore**.]
+[DESCRIPTION:    ]
+[DESCRIPTION: * garnierite.]
+[DESCRIPTION:** coboltite.]
+
+Way: smelt a small amount of mithril from bars.
+[REACTION:MITHRIL_MAKING2]
+[NAME:smelt mithril from bars]
+[BUILDING:SMELTER:NONE]
+[REAGENT:A:600:BAR:NO_SUBTYPE:METAL:NICKEL]
+[REAGENT:B:600:BAR:NO_SUBTYPE:METAL:COBOLT]
+[PRODUCT:100:1:BAR:NO_SUBTYPE:METAL:MITHRIL][PRODUCT_DIMENSION:150]
+[FUEL]
+[SKILL:SMELT]
+[DESCRIPTION:Smelt 1 mithril bar from 4 nickel bars and 4 cobolt bars.]
