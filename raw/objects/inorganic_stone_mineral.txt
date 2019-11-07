@@ -187,6 +187,7 @@ http://www.bay12forums.com/smf/index.php?topic=80022.0
 [IS_STONE]
 [MELTING_POINT:12005]
 [BOILING_POINT:12305]
+[MATERIAL_REACTION_PRODUCT:GLAZE_MAT:INORGANIC:LEAD_GLAZE]
 
 [INORGANIC:SPHALERITE]
 [USE_MATERIAL_TEMPLATE:STONE_TEMPLATE]
@@ -523,6 +524,7 @@ this is uranium oxide, but was possibly used for glazing ceramics (colored glass
 [MELTING_POINT:12070]
 [BOILING_POINT:12340]
 [SOLID_DENSITY:7600] Ranges from ~6000-9000+ based on UO2-UO3 ratio.  This might be too low.
+[MATERIAL_REACTION_PRODUCT:GLAZE_MAT:INORGANIC:BRIGHT_GLAZE]
 
 an ore of aluminum, but through a too-advanced process, in-game as the source of the corundum gemstones (ruby and sapphire)
 bauxite melts around 2000C, so it's not practical to smelt it for aluminum (magma only goes up to 1300-1400)
