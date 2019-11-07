@@ -89,6 +89,20 @@ reaction_smelter
 [SKILL:SMELT]
 [DESCRIPTION:Smelt 2 electrum bars from 1 silver bar and 1 gold bar.]{+}
 
+[REACTION:QUICKSILVER_MAKING]
+[NAME:smelt quicksilver with mercury]
+[BUILDING:SMELTER:NONE]
+[REAGENT:A:600:BAR:NO_SUBTYPE:METAL:SILVER]
+[REAGENT:B:150:GLOB:NONE:METAL:MERCURY]
+[REAGENT:C:1:NONE:NONE:NONE:NONE]
+    [CONTAINS:B]
+    [PRESERVE_REAGENT]
+    [DOES_NOT_DETERMINE_PRODUCT_AMOUNT]
+[PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:QUICKSILVER][PRODUCT_DIMENSION:150]
+[FUEL]
+[SKILL:SMELT]
+[DESCRIPTION:Smelt 4 quicksilver bars from 4 silver bars and 1 jug of mercury.]{+}
+
 [REACTION:BILLON_MAKING]
 [NAME:smelt billon from ore]{:make billon from ore}
 [BUILDING:SMELTER:NONE]
@@ -173,14 +187,18 @@ reaction_smelter
 [DESCRIPTION:Smelt 4 sterling silver bars from 3 copper bars and 1 silver bar.]{+}
 
 [REACTION:ROSE_GOLD_MAKING]
-[NAME:smelt rose gold]{:make rose gold}
+[NAME:smelt rose gold with mercury]
 [BUILDING:SMELTER:NONE]
-[REAGENT:A:450:BAR:NO_SUBTYPE:METAL:GOLD]
-[REAGENT:B:150:BAR:NO_SUBTYPE:METAL:COPPER]
+[REAGENT:A:600:BAR:NO_SUBTYPE:METAL:GOLD]
+[REAGENT:B:150:GLOB:NONE:METAL:MERCURY]
+[REAGENT:C:1:NONE:NONE:NONE:NONE]
+    [CONTAINS:B]
+    [PRESERVE_REAGENT]
+    [DOES_NOT_DETERMINE_PRODUCT_AMOUNT]
 [PRODUCT:100:4:BAR:NO_SUBTYPE:METAL:ROSE_GOLD][PRODUCT_DIMENSION:150]
 [FUEL]
 [SKILL:SMELT]
-[DESCRIPTION:Smelt 4 rose gold bars from 3 gold bars and 1 copper bar.]{+}
+[DESCRIPTION:Smelt 4 rose gold bars from 4 gold bars and 1 jug of mercury.]{+}
 
 [REACTION:BISMUTH_BRONZE_MAKING]
 [NAME:smelt bismuth bronze]{:make bismuth bronze}
@@ -228,3 +246,20 @@ Way: smelt a small amount of mithril from bars.
 [FUEL]
 [SKILL:SMELT]
 [DESCRIPTION:Smelt 1 mithril bar from 4 nickel bars and 4 cobolt bars.]
+
+[REACTION:MERCURY_MAKING]
+[NAME:smelt mercury into jug from ore]
+[BUILDING:SMELTER:NONE]
+[REAGENT:A:1:BOULDER:NO_SUBTYPE:INORGANIC:CINNABAR]
+	[REAGENT:liquid container:1:TOOL:NONE:NONE:NONE]
+		[EMPTY]
+		[DOES_NOT_ABSORB]
+		[PRESERVE_REAGENT]
+		[HAS_TOOL_USE:LIQUID_CONTAINER]
+		[DOES_NOT_DETERMINE_PRODUCT_AMOUNT]
+[PRODUCT:100:1:GLOB:NONE:METAL:MERCURY][PRODUCT_TO_CONTAINER:liquid container][PRODUCT_DIMENSION:150]
+[FUEL]
+[SKILL:SMELT]
+[DESCRIPTION:Smelt a jug of mercury from 1 mercury ore*.]
+[DESCRIPTION:    ]
+[DESCRIPTION: * cinnabar.]
