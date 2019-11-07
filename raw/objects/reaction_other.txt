@@ -124,10 +124,10 @@ reaction_other
 	[BUILDING:KILN:CUSTOM_B]
 	[REAGENT:clay:1:BOULDER:NONE:NONE:NONE]
 		[HAS_MATERIAL_REACTION_PRODUCT:FIRED_MAT]
-	[PRODUCT:100:1:BLOCKS:NONE:GET_MATERIAL_FROM_REAGENT:clay:FIRED_MAT]
+	[PRODUCT:100:4:BLOCKS:NONE:GET_MATERIAL_FROM_REAGENT:clay:FIRED_MAT]
 	[FUEL]
 	[SKILL:POTTERY]
-	[DESCRIPTION:Make an earthenware brick from clay, a stoneware brick from fire clay, or a porcelain brick from kaolinite.]{+}
+	[DESCRIPTION:Make 4 earthenware bricks from clay, 4 stoneware bricks from fire clay, or 4 porcelain bricks from kaolinite.]{+}
 
 [REACTION:MAKE_CLAY_STATUE]
 	[NAME:make clay statue]
