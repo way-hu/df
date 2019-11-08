@@ -292,6 +292,8 @@ entity_default
 	[PERMITTED_REACTION:PROCESS_FRUIT_TO_SEED]{+  Revision: dwarves can use the new seedpod reaction.}
 	[PERMITTED_REACTION:EMPTY_BUCKET]{+           Revision: dwarves can use the new empty bucket reaction.}
 	[PERMITTED_REACTION:MAKE_GUT_THREAD]{+        Revision: dwarves can dry and spin tough intestine into thread.}
+	[PERMITTED_REACTION:IMPROVE_BED_CLOTH]
+	[PERMITTED_REACTION:IMPROVE_BED_LEATHER]
 	[WORLD_CONSTRUCTION:TUNNEL]
 	[WORLD_CONSTRUCTION:BRIDGE]
 	[WORLD_CONSTRUCTION:ROAD]
